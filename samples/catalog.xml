@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <generated>2024-06-01</generated>
+  <book id="B-101" available="yes">
+    <title>Zero to One</title>
+    <author>Blake Masters</author>
+    <price currency="USD">18.50</price>
+    <year>2014</year>
+  </book>
+  <book id="B-102" available="yes">
+    <title>The Pragmatic Programmer</title>
+    <author>Andrew Hunt</author>
+    <price currency="USD">42.00</price>
+    <year>1999</year>
+  </book>
+  <book id="B-103" available="no">
+    <title>Refactoring</title>
+    <author>Martin Fowler</author>
+    <price currency="USD">54.99</price>
+    <year>2018</year>
+  </book>
+  <book id="B-104" available="yes">
+    <title>Clean Code</title>
+    <author>Robert Martin</author>
+    <price currency="USD">39.99</price>
+    <year>2008</year>
+  </book>
+</catalog>

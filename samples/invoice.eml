@@ -1,0 +1,19 @@
+From: Alice Smith <alice@example.com>
+To: bob@example.com
+Cc: carol@example.com
+Subject: =?UTF-8?Q?Q3_sales_report_=E2=80=93_draft?=
+Date: Mon, 01 Jul 2024 09:30:00 +0000
+Message-ID: <abc123@example.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Bob,
+
+Q3 revenue: $12,400.50 (+8.25% vs Q2). The caf=C3=A9 menu items sold out =
+in every region.
+
+Mail ops@example.com if the dashboard is slow, or call +1 415 555 0100.
+
+Regards,
+Alice
