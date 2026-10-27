@@ -1,0 +1,91 @@
+{
+  "generated": "2024-06-01",
+  "currency": "USD",
+  "customers": [
+    {
+      "id": 1,
+      "name": "Alice Smith",
+      "contact": {
+        "email": "alice@northwind.test",
+        "phone": "+1 415 555 0101"
+      },
+      "orders": [
+        {
+          "sku": "A-1",
+          "qty": 3,
+          "price": 19.99
+        },
+        {
+          "sku": "A-2",
+          "qty": 1,
+          "price": 5.5
+        }
+      ],
+      "active": true,
+      "tags": [
+        "vip",
+        "beta"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bob Jones",
+      "contact": {
+        "email": "bob@contoso.test",
+        "phone": "+1 212 555 0198"
+      },
+      "orders": [
+        {
+          "sku": "B-7",
+          "qty": 8,
+          "price": 12.25
+        }
+      ],
+      "active": false,
+      "tags": [
+        "churn-risk"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Carol Rivera",
+      "contact": {
+        "email": "carol@globex.test",
+        "phone": "+44 20 7946 0958"
+      },
+      "orders": [
+        {
+          "sku": "C-3",
+          "qty": 5,
+          "price": 42
+        },
+        {
+          "sku": "C-4",
+          "qty": 2,
+          "price": 9.75
+        }
+      ],
+      "active": true,
+      "tags": []
+    },
+    {
+      "id": 4,
+      "name": "Dan Okafor",
+      "contact": {
+        "email": "dan@initech.test",
+        "phone": "+49 30 901820"
+      },
+      "orders": [
+        {
+          "sku": "D-1",
+          "qty": 12,
+          "price": 4.5
+        }
+      ],
+      "active": true,
+      "tags": [
+        "new"
+      ]
+    }
+  ]
+}

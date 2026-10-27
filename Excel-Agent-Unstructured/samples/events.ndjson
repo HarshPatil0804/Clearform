@@ -1,0 +1,6 @@
+{"ts":"2024-03-01T10:00:00Z","event":"login","user":"alice","duration":12.4}
+{"ts":"2024-03-01T10:00:05Z","event":"view","user":"alice","duration":3.1}
+{"ts":"2024-03-01T10:00:09Z","event":"purchase","user":"bob","duration":44.2,"amount":99.9}
+THIS LINE IS CORRUPT {{{
+{"ts":"2024-03-01T10:01:00Z","event":"logout","user":"bob","duration":1.2}
+{"ts":"2024-03-01T10:01:30Z","event":"login","user":"carol","duration":8.8}

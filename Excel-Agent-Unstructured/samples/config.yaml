@@ -1,0 +1,13 @@
+app:
+  name: order-service
+  version: 3.4.1
+servers:
+  - host: api1.example.com
+    port: 8443
+    primary: true
+  - host: api2.example.com
+    port: 9443
+    primary: false
+logging:
+  level: info
+  json: true

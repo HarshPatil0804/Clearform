@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8f5"><title>Clearform — Local Data Cleaner</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#" aria-label="Clearform home"><span class="brand-mark">c</span> clearform</a><div class="local-badge"><span></span> Private, on-device processing</div></header>
+  <main class="shell">
+    <section class="intro"><div class="kicker">LOCAL DATA WORKSPACE</div><h1>Turn messy files into<br>clear, usable data.</h1><p>Bring in spreadsheets, documents, scans, and text. Clean the extracted data, inspect it, then download a table or a pivot summary.</p></section>
+    <nav class="stepper" aria-label="Workflow"><div id="step1" class="step active"><span>1</span><b>Upload & clean</b></div><i></i><div id="step2" class="step"><span>2</span><b>Review & download</b></div></nav>
+    <section class="card upload-card" aria-labelledby="upload-title"><div id="drop" class="dropzone" tabindex="0" role="button" aria-label="Choose a file or drop it here"><div class="upload-art">↥</div><h2 id="upload-title">Drop your file here</h2><p>or browse from your device</p><button id="browse" class="button primary" type="button">Choose a file</button><input id="file" type="file" hidden accept=".csv,.tsv,.txt,.log,.json,.jsonl,.xlsx,.xls,.pdf,.docx,.html,.htm,.png,.jpg,.jpeg,.webp,.bmp"><div class="formats">CSV · TSV · TXT · LOG · JSON · JSONL · XLSX · XLS · PDF · DOCX · HTML · PNG · JPG · WEBP · BMP</div></div>
+      <div class="privacy"><span>◉</span><div><b>Your files stay on this device.</b> Parsing, cleaning, pivoting, and downloads happen in this browser. Libraries may load from CDNs, so an internet connection is needed.</div></div>
+      <div id="selection" class="selection hidden"><div class="selected-file"><span class="file-icon">▤</span><div><b id="fileName"></b><small id="fileMeta"></small></div><button id="cancel" class="text-button" type="button">Cancel</button></div><div id="sourcePicker" class="source-picker hidden"><label for="sourceSelect">Choose sheet or table</label><select id="sourceSelect"></select></div><button id="process" class="button primary" type="button">Extract and clean data</button></div>
+      <div id="progress" class="progress hidden"><div class="progress-head"><span id="progressLabel">Preparing file…</span><button id="stop" class="text-button" type="button">Cancel processing</button></div><div class="progress-track"><div id="progressBar"></div></div></div><div id="error" class="error hidden" role="alert"></div>
+    </section>
+    <section id="result" class="card result-card hidden"><div class="result-header"><div><div class="kicker">STEP 2 · CLEANED DATASET</div><h2 id="resultTitle">Your data is ready</h2><p id="resultSubtitle" class="muted"></p></div><button id="startOver" class="button quiet" type="button">Start over</button></div>
+      <div class="stats"><div class="stat"><strong id="rowCount">0</strong><span>Rows</span></div><div class="stat"><strong id="colCount">0</strong><span>Columns</span></div><div class="stat wide"><strong id="sourceType">—</strong><span>Source selected</span></div></div>
+      <details class="cleaning" open><summary>Cleaning summary</summary><ul id="cleaningList"></ul></details>
+      <div class="section-heading"><h3>Detected schema</h3><span id="previewCount" class="muted"></span></div><div id="schema" class="schema"></div>
+      <div class="section-heading"><h3 id="previewTitle">Cleaned preview</h3><button id="toggleRows" class="text-button" type="button">Show all rows</button></div><div id="preview" class="table-wrap" tabindex="0"></div>
+      <div class="section-heading"><h3>Choose an output</h3><span class="muted">Your cleaned data stays available until you start over.</span></div>
+      <div class="choices"><label id="tabularChoice" class="choice selected"><input type="radio" name="output" value="tabular" checked><span class="choice-icon">▦</span><span><b>Normal tabular format</b><small>Clean rows and columns, ready for a spreadsheet or database.</small></span></label><label id="pivotChoice" class="choice"><input type="radio" name="output" value="pivot"><span class="choice-icon">▤</span><span><b>Pivot table</b><small>Summarize numeric values across selected categories.</small></span></label></div>
+      <div id="pivotPanel" class="pivot-panel hidden"><div class="pivot-heading"><div><b>Configure your pivot</b><small>Hold Ctrl (Windows) or ⌘ (Mac) to select multiple dimensions.</small></div></div><div class="pivot-fields"><label>Row dimensions<select id="pivotRows" multiple size="4"></select></label><label>Column dimensions<select id="pivotCols" multiple size="4"></select></label><label>Value field<select id="pivotValue"></select></label><label>Aggregation<select id="pivotAgg"><option value="sum">Sum</option><option value="count">Count</option><option value="mean">Mean</option><option value="min">Minimum</option><option value="max">Maximum</option></select></label></div><div id="pivotHelp" class="hint"></div></div>
+      <div class="download-row"><b>Download</b><span id="downloadHint" class="muted">Normal table</span><div class="download-buttons"><button class="button outline" data-export="csv">↓ CSV</button><button class="button outline" data-export="xlsx">↓ XLSX</button><button class="button outline" data-export="json">↓ JSON</button></div></div><div id="resultError" class="error hidden" role="alert"></div>
+    </section>
+    <footer>Clearform runs entirely in your browser. It does not send file contents to a server.</footer>
+  </main>
+</body>
+</html>
