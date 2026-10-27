@@ -1,7 +1,0 @@
-Invoice #      Date         Client        Amount
-INV-1001       2024-01-05   Acme Corp     1,250.00
-INV-1002       2024-01-09   Globex        980.50
-INV-1003       2024-01-17   Initech       4,300.00
-INV-1004       2024-02-02   Acme Corp     725.00
-INV-1005       2024-02-11   Umbrella      12,000.00
-INV-1006       2024-02-20   Globex        2,450.75
