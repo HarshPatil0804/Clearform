@@ -1,9 +1,12 @@
+import type { DayMonthOrder } from '../lib/dates';
 import type { Dataset, ProgressUpdate } from '../types';
 
 export interface ProcessJob {
   name: string;
   mime: string;
   buffer: ArrayBuffer;
+  /** R3 – day/month fallback for patterns the file never proves. */
+  dateOrder?: DayMonthOrder;
 }
 
 type WorkerResponse =

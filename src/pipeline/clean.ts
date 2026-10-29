@@ -6,16 +6,39 @@ import type {
   FileReport,
   QualityReport,
   RawTable,
+  RejectedRow,
+  ValueMapping,
 } from '../types';
 import { cellKey, cleanText, isNullSentinel, standardizeNames } from '../lib/strings';
 import { hasCurrencySign, hasPercentSign, parseNumberValue } from '../lib/numbers';
-import { parseDateValue } from '../lib/dates';
-import { generatedNames, looksLikeHeaderRow, padRows } from '../lib/table';
+import { resolveDates, type DayMonthOrder } from '../lib/dates';
+import { generatedNames, padRows } from '../lib/table';
+import { findExportDate, rejectReasons, rejectRows, type HeaderMode } from './reject';
+import { splitColumn } from './packed';
+import { isIdColumn, normalizeIdColumn } from './ids';
+import {
+  buildLogicFlags,
+  clearSystemCells,
+  convertNumeric,
+  detectSystemRows,
+  findReportedTotal,
+  isNumericColumn,
+  normalizeCategories,
+  reconcile,
+} from './rules';
 
 const BOOL_TRUE = /^(true|yes)$/i;
 const BOOL_FALSE = /^(false|no)$/i;
 const MATCH_RATIO = 0.8;
 const SAMPLE_LIMIT = 1000;
+
+export interface CleanOptions {
+  /**
+   * R3 – day/month order used only for format patterns the file never proves.
+   * The UI toggle defaults to DD-MM ('DM') and re-runs the clean stage.
+   */
+  dateOrder?: DayMonthOrder;
+}
 
 /** A leading "+" means phone/reference-like text – keep it, never coerce. */
 function numericText(value: string): boolean {
@@ -31,6 +54,10 @@ function sampleOf<T>(values: T[]): T[] {
   return out;
 }
 
+function looksLikeDate(value: string): boolean {
+  return resolveDates([value]).values[0] !== null;
+}
+
 function inferType(values: Cell[]): ColumnType {
   const present = values.filter((value) => value !== null);
   if (present.length === 0) return 'text';
@@ -42,7 +69,7 @@ function inferType(values: Cell[]): ColumnType {
     if (booleans / sample.length >= MATCH_RATIO) return 'boolean';
     const numbers = sample.filter((value) => numericText(value)).length;
     if (numbers / sample.length >= MATCH_RATIO) return 'number';
-    const dates = sample.filter((value) => parseDateValue(value) !== null).length;
+    const dates = sample.filter((value) => looksLikeDate(value)).length;
     if (dates / sample.length >= MATCH_RATIO) return 'date';
     return 'text';
   }
@@ -61,36 +88,20 @@ function convertColumn(values: Cell[], type: ColumnType): Conversion {
   if (type === 'number') {
     let currency = 0;
     let percent = 0;
-    let keptRaw = 0;
     const out = values.map((value) => {
       if (value === null || typeof value === 'number') return value;
       if (typeof value === 'boolean') return value ? 1 : 0;
-      const raw = value;
-      const parsed = numericText(raw) ? parseNumberValue(raw) : null;
+      const parsed = numericText(value) ? parseNumberValue(value) : null;
       if (parsed !== null) {
-        if (hasCurrencySign(raw)) currency += 1;
-        if (hasPercentSign(raw)) percent += 1;
+        if (hasCurrencySign(value)) currency += 1;
+        if (hasPercentSign(value)) percent += 1;
         return parsed;
       }
-      keptRaw += 1;
-      return raw;
+      // R4: never leave text behind in a numeric column.
+      return null;
     });
     if (currency > 0) notes.push(`${currency} currency value(s) normalised to numbers`);
     if (percent > 0) notes.push(`${percent} percent value(s) normalised to plain numbers`);
-    if (keptRaw > 0) notes.push(`${keptRaw} non-numeric value(s) kept as text inside a numeric column`);
-    return { values: out, notes };
-  }
-
-  if (type === 'date') {
-    let keptRaw = 0;
-    const out = values.map((value) => {
-      if (value === null || typeof value !== 'string') return value;
-      const iso = parseDateValue(value);
-      if (iso !== null) return iso;
-      keptRaw += 1;
-      return value;
-    });
-    if (keptRaw > 0) notes.push(`${keptRaw} unparseable date value(s) kept as text`);
     return { values: out, notes };
   }
 
@@ -132,95 +143,340 @@ function modeOf(values: Cell[]): Cell | null {
   return best ? best.value : null;
 }
 
+/** Rebuild the column list after one column expanded into several. */
+interface Expansion {
+  names: string[];
+  force: boolean[];
+  conv: number[];
+  columns: Cell[][];
+}
+
+function rebuild(
+  columns: string[],
+  force: boolean[],
+  conv: number[],
+  rows: Cell[][],
+  expand: (index: number, name: string, values: Cell[]) => Expansion | null,
+): { columns: string[]; force: boolean[]; conv: number[]; rows: Cell[][]; added: string[] } {
+  const nextNames: string[] = [];
+  const nextForce: boolean[] = [];
+  const nextConv: number[] = [];
+  const nextRows: Cell[][] = rows.map(() => []);
+  const added: string[] = [];
+
+  columns.forEach((name, index) => {
+    const values = rows.map((row) => row[index]);
+    const expansion = expand(index, name, values);
+    if (!expansion) {
+      nextNames.push(name);
+      nextForce.push(force[index] ?? false);
+      nextConv.push(conv[index] ?? 0);
+      values.forEach((value, rowIndex) => nextRows[rowIndex].push(value));
+      return;
+    }
+    expansion.names.forEach((splitName, position) => {
+      if (position > 0) added.push(splitName);
+      nextNames.push(splitName);
+      nextForce.push(expansion.force[position] ?? false);
+      nextConv.push(expansion.conv[position] ?? 0);
+      expansion.columns[position].forEach((value, rowIndex) => nextRows[rowIndex].push(value));
+    });
+  });
+
+  return { columns: nextNames, force: nextForce, conv: nextConv, rows: nextRows, added };
+}
+
+/** Append one boolean flag column. */
+function appendFlag(
+  state: { columns: string[]; force: boolean[]; conv: number[]; types: ColumnType[]; rows: Cell[][] },
+  name: string,
+  values: Cell[],
+): void {
+  state.columns.push(name);
+  state.force.push(false);
+  state.conv.push(0);
+  state.types.push('boolean');
+  state.rows.forEach((row, index) => row.push(values[index] ?? null));
+}
+
 /**
- * Clean stage: header resolution, normalisation, de-duplication, type
- * inference, missing-value handling and outlier flagging (flag only, never
- * removal). Produces the Dataset plus its quality report.
+ * Clean stage: R1 reject → header → normalise → R5 packed split → sentinels →
+ * R2 ids → R7 system flag → R3 dates → R4 numbers → R6 categories → types →
+ * R8 de-duplicate → R9 logic flags → R10 reconciliation → report.
  */
-export function cleanTable(raw: RawTable, fileName: string, sourceType: string): Dataset {
+export function cleanTable(
+  raw: RawTable,
+  fileName: string,
+  sourceType: string,
+  options: CleanOptions = {},
+): Dataset {
+  const dateOrder: DayMonthOrder = options.dateOrder ?? 'DM';
   const notes = [...raw.notes];
   const cleanNotes: string[] = [];
 
-  // ---- 1. columns / header ------------------------------------------------
+  // ---- 1. R1: reject junk rows and locate the header ---------------------
+  const columnsKnown = raw.columns.length > 0;
+  const mode: HeaderMode = columnsKnown
+    ? 'no'
+    : raw.hasHeader === true
+      ? 'yes'
+      : raw.hasHeader === false
+        ? 'no'
+        : 'auto';
+  const scan = rejectRows(raw.rows, mode, columnsKnown);
+
   let columns: string[];
   let rows: Cell[][];
   let headerDetected: boolean;
   let generated: string[] = [];
 
-  if (raw.columns.length > 0) {
-    columns = [...raw.columns];
-    rows = raw.rows.map((row) => [...row]);
+  if (columnsKnown) {
+    columns = raw.columns.map((name) => cleanText(String(name)).trim());
+    rows = scan.kept.map((row) => [...row]);
     headerDetected = raw.hasHeader !== false;
+  } else if (scan.headerIndex >= 0) {
+    const headerRow = scan.kept[scan.headerIndex];
+    columns = headerRow.map((cell, index) =>
+      cell === null || cell === undefined || `${cell}`.trim() === '' ? `col_${index + 1}` : `${cell}`,
+    );
+    rows = scan.kept.filter((_row, index) => index !== scan.headerIndex).map((row) => [...row]);
+    headerDetected = true;
+    cleanNotes.push('header row detected and used as column names');
   } else {
-    const first = raw.rows[0] ?? [];
-    const rest = raw.rows.slice(1);
-    const looksLikeHeader = raw.hasHeader === true || (raw.hasHeader === null && looksLikeHeaderRow(first, rest));
-    if (looksLikeHeader) {
-      columns = first.map((cell, index) => (cell === null || `${cell}`.trim() === '' ? `col_${index + 1}` : `${cell}`));
-      rows = rest.map((row) => [...row]);
-      headerDetected = true;
-      cleanNotes.push('header row detected and used as column names');
-    } else {
-      columns = generatedNames(first.length);
-      generated = [...columns];
-      rows = raw.rows.map((row) => [...row]);
-      headerDetected = false;
-      cleanNotes.push('no header row found – generated column names');
-    }
+    const first = scan.kept[0] ?? [];
+    columns = generatedNames(first.length);
+    generated = [...columns];
+    rows = scan.kept.map((row) => [...row]);
+    headerDetected = false;
+    cleanNotes.push('no header row found – generated column names');
   }
 
-  const rowsIn = rows.length;
-  const columnsIn = columns.length;
-  if (rowsIn === 0) {
-    throw new Error('No data rows could be produced from this file');
+  const rejected: RejectedRow[] = scan.rejected;
+  const rowsIn = raw.rows.length - (columnsKnown || scan.headerIndex < 0 ? 0 : 1);
+
+  if (rows.length === 0) {
+    throw new Error(rowsIn === 0 ? 'No data rows could be produced from this file' : 'All rows were empty after cleaning');
   }
 
   rows = padRows(rows, columns.length);
 
-  // ---- 2. normalise cells (unicode, trim, sentinels → null) --------------
-  let nullsFixed = 0;
+  // ---- 2. unicode / trim (sentinels come after the packed split) ---------
   rows = rows.map((row) =>
     row.map((cell) => {
       if (cell === null || cell === undefined) return null;
       if (typeof cell === 'string') {
         const trimmed = cleanText(cell).trim();
-        if (trimmed === '') return null;
-        if (isNullSentinel(trimmed)) {
-          nullsFixed += 1;
-          return null;
-        }
-        return trimmed;
+        return trimmed === '' ? null : trimmed;
       }
       if (typeof cell === 'number' && !Number.isFinite(cell)) return null;
       return cell;
     }),
   );
 
-  // ---- 3. drop empty rows / columns --------------------------------------
+  let force = columns.map(() => false);
+  let conv = columns.map(() => 0);
+
+  // ---- 3. R5: split packed fields ---------------------------------------
+  const before = columns.length;
+  const packed = rebuild(columns, force, conv, rows, (_index, name, values) => {
+    const split = splitColumn(name, values);
+    if (!split) return null;
+    return {
+      names: split.names,
+      force: split.names.map(() => split.kind === 'pair'),
+      conv: split.names.map(() => 0),
+      columns: split.columns,
+    };
+  });
+  if (packed.columns.length > before) {
+    cleanNotes.push(`packed column(s) split into ${packed.columns.length} fields (R5)`);
+  }
+  columns = packed.columns;
+  force = packed.force;
+  conv = packed.conv;
+  rows = packed.rows;
+
+  // ---- 4. sentinels → null ----------------------------------------------
+  let nullsFixed = 0;
+  rows = rows.map((row) =>
+    row.map((cell) => {
+      if (typeof cell === 'string' && isNullSentinel(cell)) {
+        nullsFixed += 1;
+        return null;
+      }
+      return cell;
+    }),
+  );
+
+  // ---- 5. drop empty rows -------------------------------------------------
   const beforeRows = rows.length;
   rows = rows.filter((row) => row.some((cell) => !isNullSentinel(cell)));
   const emptyRowsDropped = beforeRows - rows.length;
-  if (rows.length === 0) {
-    throw new Error('All rows were empty after cleaning');
-  }
+  if (rows.length === 0) throw new Error('All rows were empty after cleaning');
 
-  const keep = columns.map((_column, index) => rows.some((row) => !isNullSentinel(row[index])));
-  if (keep.some((value) => !value)) {
-    const dropped = keep.filter((value) => !value).length;
-    cleanNotes.push(`${dropped} empty column(s) removed`);
-    columns = columns.filter((_column, index) => keep[index]);
-    rows = rows.map((row) => row.filter((_cell, index) => keep[index]));
-  }
-  const emptyColumnsDropped = keep.filter((value) => !value).length;
-
-  // ---- 4. standardise column names (snake_case) --------------------------
+  // ---- 6. standardise column names (snake_case) --------------------------
   const standardised = standardizeNames(columns);
   const renamed = standardised.filter((name, index) => name !== columns[index]).length;
   if (renamed > 0) cleanNotes.push(`${renamed} column name(s) normalised to snake_case`);
   columns = standardised;
 
-  // ---- 5. infer types and convert ----------------------------------------
-  const types: ColumnType[] = [];
+  // ---- 7. R2: identifier columns ----------------------------------------
+  const idColumns: string[] = [];
+  const idRebuilt = rebuild(columns, force, conv, rows, (index, name, values) => {
+    if (!isIdColumn(name, values)) return null;
+    const result = normalizeIdColumn(values);
+    if (result.normalised === 0) return null;
+    idColumns.push(name);
+    cleanNotes.push(
+      `column "${name}": ${result.normalised} identifier(s) normalised to a core key (original kept in ${name}_raw)`,
+    );
+    const names = [name, `${name}_raw`];
+    const columnsOut: Cell[][] = [result.core, result.raw];
+    const forceOut = [force[index] ?? false, false];
+    const convOut = [conv[index] ?? 0, 0];
+    if (result.hasTags) {
+      names.push(`${name}_tag`);
+      columnsOut.push(result.tag);
+      forceOut.push(false);
+      convOut.push(0);
+    }
+    return { names, force: forceOut, conv: convOut, columns: columnsOut };
+  });
+  columns = idRebuilt.columns;
+  force = idRebuilt.force;
+  conv = idRebuilt.conv;
+  rows = idRebuilt.rows;
+
+  // ---- 8. R7: system-generated notes ------------------------------------
+  const systemRows = detectSystemRows(columns, rows);
+  const systemCount = clearSystemCells(columns, rows, systemRows);
+  const hasSystem = systemRows.some(Boolean);
+  if (hasSystem) {
+    columns.push('system_flag');
+    force.push(false);
+    conv.push(0);
+    rows.forEach((row, index) => row.push(systemRows[index] ? true : null));
+    cleanNotes.push(`${systemCount} system-generated note(s) moved to system_flag (R7)`);
+  }
+
+  // ---- 9. export date (reference for R3 future / R9 scheduled) -----------
+  const exportDate = findExportDate(rejected);
+
+  // ---- 10. provisional types --------------------------------------------
+  let types: ColumnType[] = columns.map((_name, index) => inferType(rows.map((row) => row[index])));
+
+  // ---- 11. R3: dates with a proven per-pattern day/month order -----------
+  let ambiguousDates = 0;
+  const ambiguousRows: boolean[] = new Array<boolean>(rows.length).fill(false);
+  const dateIndices: number[] = [];
+
+  for (let index = 0; index < columns.length; index += 1) {
+    if (types[index] !== 'date') continue;
+    dateIndices.push(index);
+    const resolved = resolveDates(
+      rows.map((row) => row[index]),
+      dateOrder,
+    );
+    resolved.values.forEach((iso, rowIndex) => {
+      rows[rowIndex][index] = iso;
+    });
+    for (const position of resolved.ambiguousIndices) ambiguousRows[position] = true;
+    ambiguousDates += resolved.ambiguousIndices.length;
+    conv[index] = resolved.converted;
+    cleanNotes.push(`column "${columns[index]}": ${resolved.converted} date(s) normalised to ISO 8601 (R3)`);
+    if (resolved.ambiguousIndices.length > 0) {
+      cleanNotes.push(
+        `column "${columns[index]}": ${resolved.ambiguousIndices.length} ambiguous day/month value(s) read as ${
+          dateOrder === 'DM' ? 'DD-MM' : 'MM-DD'
+        } – flip the toggle to re-read them`,
+      );
+    }
+    types[index] = inferType(rows.map((row) => row[index]));
+  }
+
+  if (ambiguousDates > 0) {
+    columns.push('date_ambiguous');
+    force.push(false);
+    conv.push(0);
+    types.push('boolean');
+    rows.forEach((row, index) => row.push(ambiguousRows[index] ? true : null));
+  }
+
+  if (exportDate && dateIndices.length > 0) {
+    const futureRows = rows.map((row) =>
+      dateIndices.some(
+        (index) => typeof row[index] === 'string' && row[index] !== '' && (row[index] as string) > exportDate,
+      ),
+    );
+    if (futureRows.some(Boolean)) {
+      columns.push('date_future');
+      force.push(false);
+      conv.push(0);
+      types.push('boolean');
+      rows.forEach((row, index) => row.push(futureRows[index] ? true : null));
+      cleanNotes.push(
+        `column "date_future": ${futureRows.filter(Boolean).length} row(s) dated after the file's export date ${exportDate} (R3)`,
+      );
+    }
+  }
+
+  // ---- 12. R4: numbers, with the text moved to <col>_note ----------------
+  const numericFlags = columns.map((_name, index) => isNumericColumn(rows.map((row) => row[index])));
+  const numericRebuilt = rebuild(columns, force, conv, rows, (index, name, values) => {
+    if (!numericFlags[index]) return null;
+    const result = convertNumeric(values);
+    if (result.moved === 0 && result.converted === 0) return null;
+    const names = [name];
+    const columnsOut: Cell[][] = [result.values];
+    const forceOut = [force[index] ?? false];
+    const convOut = [(conv[index] ?? 0) + result.converted];
+    if (result.moved > 0) {
+      cleanNotes.push(`column "${name}": ${result.moved} non-numeric value(s) moved to ${name}_note (R4)`);
+      names.push(`${name}_note`);
+      columnsOut.push(result.notes);
+      forceOut.push(false);
+      convOut.push(0);
+    }
+    if (result.converted > 0) {
+      cleanNotes.push(`column "${name}": ${result.converted} value(s) normalised to plain numbers (R4)`);
+    }
+    return { names, force: forceOut, conv: convOut, columns: columnsOut };
+  });
+  columns = numericRebuilt.columns;
+  force = numericRebuilt.force;
+  conv = numericRebuilt.conv;
+  rows = numericRebuilt.rows;
+
+  // ---- 13. R6: category clustering + reshaping ---------------------------
+  const mappings: ValueMapping[] = [];
+  types = columns.map((_name, index) => inferType(rows.map((row) => row[index])));
+  columns.forEach((name, index) => {
+    if (types[index] !== 'text') return;
+    const result = normalizeCategories(name, rows.map((row) => row[index]), force[index] ?? false);
+    result.values.forEach((value, rowIndex) => {
+      rows[rowIndex][index] = value;
+    });
+    conv[index] += result.conversions;
+    mappings.push(...result.mappings);
+    if (result.conversions > 0) {
+      cleanNotes.push(`column "${name}": ${result.conversions} value(s) clustered to a canonical category form (R6)`);
+    }
+  });
+
+  // ---- 14. drop empty columns -------------------------------------------
+  const keep = columns.map((_name, index) => rows.some((row) => !isNullSentinel(row[index])));
+  const emptyColumnsDropped = keep.filter((value) => !value).length;
+  if (keep.some((value) => !value)) {
+    cleanNotes.push(`${emptyColumnsDropped} empty column(s) removed`);
+    columns = columns.filter((_name, index) => keep[index]);
+    force = force.filter((_name, index) => keep[index]);
+    conv = conv.filter((_name, index) => keep[index]);
+    types = types.filter((_name, index) => keep[index]);
+    rows = rows.map((row) => row.filter((_cell, index) => keep[index]));
+  }
+
+  // ---- 15. final type conversion ----------------------------------------
+  types = [];
   for (let index = 0; index < columns.length; index += 1) {
     const values = rows.map((row) => row[index]);
     const type = inferType(values);
@@ -230,13 +486,9 @@ export function cleanTable(raw: RawTable, fileName: string, sourceType: string):
       rows[rowIndex][index] = conversion.values[rowIndex];
     }
     for (const note of conversion.notes) cleanNotes.push(`column "${columns[index]}": ${note}`);
-    if (type === 'date') {
-      const converted = conversion.values.filter((value, i) => value !== values[i]).length;
-      if (converted > 0) cleanNotes.push(`column "${columns[index]}": ${converted} date(s) normalised to ISO 8601`);
-    }
   }
 
-  // ---- 6. de-duplicate rows ----------------------------------------------
+  // ---- 16. R8: de-duplicate rows ----------------------------------------
   const seen = new Set<string>();
   const deduped: Cell[][] = [];
   let duplicatesRemoved = 0;
@@ -250,18 +502,65 @@ export function cleanTable(raw: RawTable, fileName: string, sourceType: string):
     deduped.push(row);
   }
   rows = deduped;
-  if (duplicatesRemoved > 0) cleanNotes.push(`${duplicatesRemoved} duplicate row(s) removed`);
+  if (duplicatesRemoved > 0) cleanNotes.push(`${duplicatesRemoved} duplicate row(s) removed (R8)`);
 
-  // ---- 7. missing values --------------------------------------------------
+  // ---- 17. R9: logic flags ----------------------------------------------
+  const state = { columns, force, conv, types, rows };
+  const flagNames: string[] = [];
+  const flagCounts: { name: string; count: number }[] = [];
+
+  for (const flag of buildLogicFlags(columns, rows, types, exportDate)) {
+    flagCounts.push({ name: flag.name, count: flag.count });
+    if (flag.count === 0) continue;
+    appendFlag(state, flag.name, flag.values);
+    flagNames.push(flag.name);
+    cleanNotes.push(`column "${flag.name}": ${flag.count} row(s) flagged (R9 – flag only, never removed)`);
+  }
+
+  const countFlag = (name: string): number => {
+    const index = state.columns.indexOf(name);
+    if (index < 0) return 0;
+    return state.rows.reduce<number>((total, row) => (row[index] === true ? total + 1 : total), 0);
+  };
+  for (const name of ['date_ambiguous', 'date_future']) {
+    const count = countFlag(name);
+    flagCounts.push({ name, count });
+    if (count > 0) flagNames.push(name);
+  }
+
+  // R8 – same id, different content → keep both rows, flag the conflict.
+  const conflicts = idConflictFlags(state.columns, state.rows, idColumns);
+  const conflictCount = conflicts ? conflicts.filter(Boolean).length : 0;
+  flagCounts.push({ name: 'duplicate_id_conflict', count: conflictCount });
+  if (conflicts && conflictCount > 0) {
+    appendFlag(state, 'duplicate_id_conflict', conflicts);
+    flagNames.push('duplicate_id_conflict');
+    cleanNotes.push(`column "duplicate_id_conflict": ${conflictCount} row(s) share an id but differ (R8)`);
+  }
+
+  if (hasSystem) {
+    flagNames.push('system_flag');
+    flagCounts.push({ name: 'system_flag', count: countFlag('system_flag') });
+  }
+
+  columns = state.columns;
+  force = state.force;
+  conv = state.conv;
+  types = state.types;
+  rows = state.rows;
+
+  // ---- 18. missing values + outliers ------------------------------------
+  const columnMeta: ColumnMeta[] = [];
   let valuesFilled = 0;
+  let outliersFlagged = 0;
   let flaggedNulls = 0;
   const fillsByColumn = new Array<number>(columns.length).fill(0);
+
   for (let index = 0; index < columns.length; index += 1) {
     const values = rows.map((row) => row[index]);
-    const nullCount = values.filter((value) => value === null).length;
-    if (nullCount === 0) continue;
+    const nulls = values.filter((value) => value === null).length;
 
-    if (types[index] === 'text' && rows.length >= 5 && nullCount <= rows.length * 0.1) {
+    if (nulls > 0 && types[index] === 'text' && rows.length >= 5 && nulls <= rows.length * 0.1) {
       const present = values.filter((value) => value !== null);
       const mode = modeOf(values);
       const modeCount = present.filter((value) => cellKey(value) === cellKey(mode as Cell)).length;
@@ -273,21 +572,19 @@ export function cleanTable(raw: RawTable, fileName: string, sourceType: string):
             fillsByColumn[index] += 1;
           }
         }
-        cleanNotes.push(`column "${columns[index]}": ${nullCount} gap(s) filled with the column mode`);
-        continue;
+        cleanNotes.push(`column "${columns[index]}": ${nulls} gap(s) filled with the column mode`);
+      } else {
+        flaggedNulls += nulls;
+      }
+    } else if (nulls > 0) {
+      flaggedNulls += nulls;
+      if (types[index] !== 'text') {
+        cleanNotes.push(
+          `column "${columns[index]}": ${nulls} missing value(s) left as null (${types[index]} column)`,
+        );
       }
     }
-    flaggedNulls += nullCount;
-    if (types[index] !== 'text') {
-      cleanNotes.push(`column "${columns[index]}": ${nullCount} missing value(s) left as null (numeric/date column)`);
-    }
-  }
 
-  // ---- 8. outlier flagging (never removal) --------------------------------
-  const columnMeta: ColumnMeta[] = [];
-  let outliersFlagged = 0;
-  for (let index = 0; index < columns.length; index += 1) {
-    const values = rows.map((row) => row[index]);
     const present = values.filter((value) => value !== null);
     const unique = new Set(present.map(cellKey)).size;
 
@@ -316,26 +613,38 @@ export function cleanTable(raw: RawTable, fileName: string, sourceType: string):
       examples.push(value);
     }
 
-    const nulls = values.length - present.length;
     columnMeta.push({
       name: columns[index],
       type: types[index],
-      nulls,
+      nulls: values.length - present.length,
       filled: fillsByColumn[index] ?? 0,
       unique,
       outliers,
+      conversions: conv[index] ?? 0,
       examples,
     });
   }
 
-  const rowsOut = rows.length;
+  if (flaggedNulls > 0) cleanNotes.push(`${flaggedNulls} missing value(s) flagged across all columns`);
+
+  // ---- 19. R10: reconciliation ------------------------------------------
+  const reported = findReportedTotal(rejected);
+  const reconciliation = reconcile(columns, rows, types, reported);
+  if (reconciliation) {
+    cleanNotes.push(
+      reconciliation.reported === null
+        ? `reconciliation: sum of ${reconciliation.column} = ${reconciliation.parsed} (file declares no total)`
+        : `reconciliation (R10): ${reconciliation.column} parsed ${reconciliation.parsed} vs reported ${reconciliation.reported} → difference ${reconciliation.difference}`,
+    );
+  }
+
   const fileReport: FileReport = {
     fileName,
     sourceType,
     strategy: raw.strategy,
     rowsIn,
-    rowsOut,
-    columnsIn,
+    rowsOut: rows.length,
+    columnsIn: columns.length,
     columnsOut: columns.length,
     duplicatesRemoved,
     emptyRowsDropped,
@@ -345,13 +654,51 @@ export function cleanTable(raw: RawTable, fileName: string, sourceType: string):
     outliersFlagged,
     headerDetected,
     generatedHeaders: generated,
+    rejectedCount: rejected.length,
+    rejectedReasons: rejectReasons(rejected),
+    ambiguousDates,
+    flagCounts,
+    mappings,
+    reconciliation,
+    exportDate,
     notes: [...notes, ...cleanNotes],
   };
-  if (flaggedNulls > 0) {
-    fileReport.notes.push(`${flaggedNulls} missing value(s) flagged across all columns`);
-  }
 
   const report: QualityReport = { ...fileReport, files: [fileReport], columns: columnMeta };
 
-  return { columns, types, rows, report };
+  return { columns, types, rows, rejected, flagColumns: flagNames, report };
+}
+
+// ---- R8: same id, different content -------------------------------------
+
+/** Rows that share an id but not their content (null when there are no ids). */
+function idConflictFlags(columns: string[], rows: Cell[][], idColumns: string[]): boolean[] | null {
+  if (idColumns.length === 0) return null;
+  const flags = new Array<boolean>(rows.length).fill(false);
+  let any = false;
+
+  for (const name of idColumns) {
+    const index = columns.indexOf(name);
+    if (index < 0) continue;
+    const groups = new Map<string, number[]>();
+    rows.forEach((row, rowIndex) => {
+      const value = row[index];
+      if (value === null || value === undefined) return;
+      const key = String(value);
+      const bucket = groups.get(key);
+      if (bucket) bucket.push(rowIndex);
+      else groups.set(key, [rowIndex]);
+    });
+    for (const bucket of groups.values()) {
+      if (bucket.length < 2) continue;
+      const signatures = new Set(bucket.map((rowIndex) => rows[rowIndex].map(cellKey).join('\u0001')));
+      if (signatures.size < 2) continue;
+      bucket.forEach((rowIndex) => {
+        flags[rowIndex] = true;
+      });
+      any = true;
+    }
+  }
+
+  return any ? flags : null;
 }

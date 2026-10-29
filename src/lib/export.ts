@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import type { Cell, Dataset, QualityReport } from '../types';
+import type { Cell, Dataset, QualityReport, RejectedRow } from '../types';
 import { displayCell } from './strings';
 import type { PivotTable } from './pivot';
 
@@ -52,7 +52,16 @@ export interface SheetSpec {
   name: string;
   columns: string[];
   rows: Cell[][];
+  /**
+   * P5 – cells that hold a pivot total (total row / total column). They are
+   * written with a "total" cell comment so a consumer can tell them apart from
+   * ordinary category values instead of summing them twice.
+   */
+  totalCells?: { r: number; c: number }[];
 }
+
+/** SheetJS total cells: flagged with a comment (styles are CE read-only). */
+const TOTAL_COMMENT = 'total';
 
 export function workbookFromSheets(sheets: SheetSpec[]): Uint8Array<ArrayBuffer> {
   const workbook = XLSX.utils.book_new();
@@ -66,6 +75,13 @@ export function workbookFromSheets(sheets: SheetSpec[]): Uint8Array<ArrayBuffer>
       }
       return { wch: Math.min(width, 60) };
     });
+    // +1: row 0 of the sheet is the header row.
+    for (const { r, c } of sheet.totalCells ?? []) {
+      const address = XLSX.utils.encode_cell({ r: r + 1, c });
+      const cell = worksheet[address];
+      if (!cell) continue;
+      cell.c = [{ a: 'u2s', t: TOTAL_COMMENT }];
+    }
     XLSX.utils.book_append_sheet(workbook, worksheet, sheet.name.slice(0, 31) || 'Sheet1');
   }
   // SheetJS returns an ArrayBuffer for type:'array' — Uint8Array.from() on an
@@ -82,31 +98,206 @@ export function downloadXLSX(sheets: SheetSpec[], fileName: string): void {
   );
 }
 
+// ------------------------------------------------------- tabular sheets ----
+
+/** P7 – CSV/XLSX numbers: plain, no currency, rounded to 2 decimals. */
+function round2(value: number): number {
+  return Math.round(value * 100) / 100;
+}
+
+/** R1 – rejected rows as a table: reason + one column per source position. */
+export function rejectedToTable(rejected: RejectedRow[]): { columns: string[]; rows: Cell[][] } {
+  const width = rejected.reduce((max, row) => Math.max(max, row.values.length), 0);
+  const columns = ['reason', ...Array.from({ length: width }, (_unused, index) => `value_${index + 1}`)];
+  const rows = rejected.map((row) => {
+    const cells: Cell[] = [...row.values];
+    while (cells.length < width) cells.push(null);
+    return [row.reason, ...cells];
+  });
+  return { columns, rows };
+}
+
+/** Quality report as section/key/value rows (shared by CSV and XLSX). */
+export function qualityToTable(report: QualityReport): { columns: string[]; rows: Cell[][] } {
+  const rows: Cell[][] = [];
+  const push = (section: string, key: string, value: string | number): void => {
+    rows.push([section, key, value]);
+  };
+
+  push('summary', 'file', report.fileName);
+  push('summary', 'source_type', report.sourceType);
+  push('summary', 'strategy', report.strategy);
+  push('summary', 'rows_in', report.rowsIn);
+  push('summary', 'rows_out', report.rowsOut);
+  push('summary', 'columns_in', report.columnsIn);
+  push('summary', 'columns_out', report.columnsOut);
+  push('summary', 'rejected_rows', report.rejectedCount);
+  push('summary', 'duplicates_removed', report.duplicatesRemoved);
+  push('summary', 'empty_rows_dropped', report.emptyRowsDropped);
+  push('summary', 'empty_columns_dropped', report.emptyColumnsDropped);
+  push('summary', 'nulls_fixed', report.nullsFixed);
+  push('summary', 'values_filled', report.valuesFilled);
+  push('summary', 'outliers_flagged', report.outliersFlagged);
+  push('summary', 'ambiguous_dates', report.ambiguousDates);
+  push('summary', 'header_detected', report.headerDetected ? 'yes' : 'no');
+
+  for (const column of report.columns) {
+    const key = (suffix: string): string => `${column.name}.${suffix}`;
+    push('column', key('type'), column.type);
+    push('column', key('nulls'), column.nulls);
+    push('column', key('filled'), column.filled);
+    push('column', key('unique'), column.unique);
+    push('column', key('outliers'), column.outliers);
+    push('column', key('conversions'), column.conversions);
+    push('column', key('examples'), column.examples.map((example) => displayCell(example)).join(' | '));
+  }
+
+  for (const flag of report.flagCounts) push('flag', flag.name, flag.count);
+
+  for (const reason of report.rejectedReasons) push('rejected', reason.reason, reason.count);
+
+  if (report.reconciliation) {
+    const { column, parsed, reported, difference, matches } = report.reconciliation;
+    push('reconciliation', 'column', column);
+    push('reconciliation', 'parsed', parsed);
+    push('reconciliation', 'reported', reported ?? 'none');
+    push('reconciliation', 'difference', difference ?? 'n/a');
+    push('reconciliation', 'matches', matches === null ? 'unverifiable' : matches ? 'yes' : 'no');
+  }
+
+  if (report.files.length > 1) {
+    for (const file of report.files) {
+      const key = (suffix: string): string => `${file.fileName}.${suffix}`;
+      push('file', key('source_type'), file.sourceType);
+      push('file', key('rows_in'), file.rowsIn);
+      push('file', key('rows_out'), file.rowsOut);
+      push('file', key('duplicates_removed'), file.duplicatesRemoved);
+    }
+  }
+
+  for (const note of report.notes) push('note', '', note);
+
+  return { columns: ['section', 'key', 'value'], rows };
+}
+
+/**
+ * Tabular workbook – P8 multi-sheet: Clean data, Rejected rows,
+ * Quality report, Value mappings.
+ */
 export function datasetToSheets(dataset: Dataset): SheetSpec[] {
-  return [{ name: 'data', columns: dataset.columns, rows: dataset.rows }];
+  const rejected = rejectedToTable(dataset.rejected);
+  const quality = qualityToTable(dataset.report);
+  const mappings: SheetSpec = {
+    name: 'Value mappings',
+    columns: ['column', 'from', 'to', 'count'],
+    rows: dataset.report.mappings.map((mapping) => [mapping.column, mapping.from, mapping.to, mapping.count]),
+  };
+  return [
+    { name: 'Clean data', columns: dataset.columns, rows: dataset.rows },
+    { name: 'Rejected rows', columns: rejected.columns, rows: rejected.rows },
+    { name: 'Quality report', columns: quality.columns, rows: quality.rows },
+    mappings,
+  ];
 }
 
 // ------------------------------------------------------------ pivot export --
 
-/** Flatten a pivot table into a plain matrix (header + body + totals). */
-export function pivotToMatrix(pivot: PivotTable): { columns: string[]; rows: Cell[][] } {
-  const header = [...pivot.rowFields, ...pivot.columns, 'grand_total'];
-  const rows: Cell[][] = pivot.rowLabels.map((labels, rowIndex) => [
-    ...labels,
-    ...pivot.cells[rowIndex].map((value) => (value === null ? null : round(value))),
-    pivot.rowTotals[rowIndex] === null ? null : round(pivot.rowTotals[rowIndex] as number),
-  ]);
-  const totalRow: Cell[] = [
-    ...pivot.rowFields.map((_, index) => (index === 0 ? 'total' : '')),
-    ...pivot.colTotals.map((value) => (value === null ? null : round(value))),
-    pivot.grandTotal === null ? null : round(pivot.grandTotal),
-  ];
-  rows.push(totalRow);
+export interface PivotMatrixOptions {
+  /** P5 – include the Total row and Total column (CSV option, default on). */
+  includeTotals?: boolean;
+  /** P3 – show 0 instead of an empty cell (display/export, default off). */
+  showZero?: boolean;
+}
+
+/**
+ * Flatten a pivot table into a plain matrix (header + body + totals).
+ *
+ * P5 – the total row and the total column both carry the single label
+ * "Total", so nothing in the file pretends to be a category value.
+ * P7 – every number is rounded to 2 decimals and never carries a currency
+ * symbol; P3 – empty cells stay empty unless `showZero` is set.
+ */
+export function pivotToMatrix(
+  pivot: PivotTable,
+  options: PivotMatrixOptions = {},
+): { columns: string[]; rows: Cell[][] } {
+  const { includeTotals = true, showZero = false } = options;
+  const cell = (value: number | null | undefined): number | null => {
+    if (value === null || value === undefined || !Number.isFinite(value)) return showZero ? 0 : null;
+    return round2(value);
+  };
+
+  const header = [...pivot.rowFields, ...pivot.columns, ...(includeTotals ? ['Total'] : [])];
+  const rows: Cell[][] = pivot.rowLabels.map((labels, rowIndex) => {
+    const body = (pivot.cells[rowIndex] ?? []).map((value) => cell(value));
+    const row: Cell[] = [...labels, ...body];
+    if (includeTotals) row.push(cell(pivot.rowTotals[rowIndex]));
+    return row;
+  });
+
+  if (includeTotals) {
+    const totalRow: Cell[] = [
+      ...pivot.rowFields.map((_field, index) => (index === 0 ? 'Total' : '')),
+      ...pivot.colTotals.map((value) => cell(value)),
+      cell(pivot.grandTotal),
+    ];
+    rows.push(totalRow);
+  }
+
   return { columns: header, rows };
 }
 
-function round(value: number): number {
-  return Math.round(value * 1e6) / 1e6;
+/**
+ * P5/P8 – pivot workbook: the "Pivot" sheet (totals flagged as total cells)
+ * plus a "Pivot info" sheet describing how the pivot was built.
+ */
+export function pivotToSheets(
+  dataset: Dataset,
+  pivot: PivotTable,
+  options: PivotMatrixOptions = {},
+): SheetSpec[] {
+  const matrix = pivotToMatrix(pivot, options);
+  const totalCells: { r: number; c: number }[] = [];
+  if (options.includeTotals !== false) {
+    const totalRow = matrix.rows.length - 1;
+    const totalCol = matrix.columns.length - 1;
+    for (let c = 0; c <= totalCol; c += 1) totalCells.push({ r: totalRow, c });
+    for (let r = 0; r <= totalRow; r += 1) totalCells.push({ r, c: totalCol });
+  }
+
+  const info = pivotInfoTable(dataset, pivot);
+  return [
+    { name: 'Pivot', columns: matrix.columns, rows: matrix.rows, totalCells },
+    { name: 'Pivot info', columns: info.columns, rows: info.rows },
+  ];
+}
+
+/** P8 – everything needed to audit how the pivot was produced. */
+export function pivotInfoTable(
+  dataset: Dataset,
+  pivot: PivotTable,
+): { columns: string[]; rows: Cell[][] } {
+  const rowsUsed = Math.max(0, dataset.rows.length - pivot.rowsExcludedFlagged - pivot.rowsWithoutValue);
+  const recon = dataset.report.reconciliation;
+  const reconText = !recon
+    ? 'no reconciliation available'
+    : recon.reported === null
+      ? `${recon.column}: parsed ${recon.parsed} (file declares no total)`
+      : `${recon.column}: parsed ${recon.parsed} vs reported ${recon.reported} → difference ${recon.difference}`;
+
+  const info: [string, string | number][] = [
+    ['source file', dataset.report.fileName],
+    ['row field', pivot.rowFields.join(', ') || '(none)'],
+    ['column field', pivot.colFields.join(', ') || '(none)'],
+    ['value field', pivot.valueField || '(row count)'],
+    ['aggregation', pivot.agg],
+    ['filters applied', pivot.excludedFlag ? `exclude flagged rows: ${pivot.excludedFlag}` : 'none'],
+    ['rows used', rowsUsed],
+    ['rows excluded (null value)', pivot.rowsWithoutValue],
+    ['rows excluded (flagged)', pivot.rowsExcludedFlagged],
+    ['reconciliation result', reconText],
+  ];
+  return { columns: ['field', 'value'], rows: info.map(([field, value]) => [field, value]) };
 }
 
 // ------------------------------------------------------- quality report ----
@@ -116,51 +307,11 @@ function round(value: number): number {
  * (section, key, value) so the file parses as one consistent table.
  */
 export function qualityToCSV(report: QualityReport): string {
-  const lines: string[] = [];
+  const table = qualityToTable(report);
   const esc = (value: string | number): string =>
     /[",\r\n]/.test(String(value)) ? `"${String(value).replace(/"/g, '""')}"` : String(value);
-  const row = (section: string, key: string, value: string | number): void => {
-    lines.push([section, key, value].map(esc).join(','));
-  };
-
-  lines.push('section,key,value');
-  row('summary', 'file', report.fileName);
-  row('summary', 'source_type', report.sourceType);
-  row('summary', 'strategy', report.strategy);
-  row('summary', 'rows_in', report.rowsIn);
-  row('summary', 'rows_out', report.rowsOut);
-  row('summary', 'columns_in', report.columnsIn);
-  row('summary', 'columns_out', report.columnsOut);
-  row('summary', 'duplicates_removed', report.duplicatesRemoved);
-  row('summary', 'empty_rows_dropped', report.emptyRowsDropped);
-  row('summary', 'empty_columns_dropped', report.emptyColumnsDropped);
-  row('summary', 'nulls_fixed', report.nullsFixed);
-  row('summary', 'values_filled', report.valuesFilled);
-  row('summary', 'outliers_flagged', report.outliersFlagged);
-  row('summary', 'header_detected', report.headerDetected ? 'yes' : 'no');
-
-  for (const column of report.columns) {
-    const key = (suffix: string): string => `${column.name}.${suffix}`;
-    row('column', key('type'), column.type);
-    row('column', key('nulls'), column.nulls);
-    row('column', key('filled'), column.filled);
-    row('column', key('unique'), column.unique);
-    row('column', key('outliers'), column.outliers);
-    row('column', key('examples'), column.examples.map((example) => displayCell(example)).join(' | '));
-  }
-
-  if (report.files.length > 1) {
-    for (const file of report.files) {
-      const key = (suffix: string): string => `${file.fileName}.${suffix}`;
-      row('file', key('source_type'), file.sourceType);
-      row('file', key('rows_in'), file.rowsIn);
-      row('file', key('rows_out'), file.rowsOut);
-      row('file', key('duplicates_removed'), file.duplicatesRemoved);
-    }
-  }
-
-  for (const note of report.notes) row('note', '', note);
-
+  const lines = [table.columns.join(',')];
+  for (const row of table.rows) lines.push(row.map((cell) => esc(displayCell(cell))).join(','));
   return `\uFEFF${lines.join('\r\n')}\r\n`;
 }
 

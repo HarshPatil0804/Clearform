@@ -1,0 +1,1010 @@
+﻿RAW EXPORT - HOSPITAL PATIENT VISITS & BILLING LOGS - CONFIDENTIAL,,,,,,,,
+Export Date: 2026-10-27,,,,,,,,
+
+Visit_ID | Patient_Details | Visit_Date | Fee_INR | Department / Procedure | Visit_Status | Visit_Type | Payment_Status | Notes
+70001 | patient=Pooja Kulkarni; age=22; city=Nashik | 2025-06-01 | N/A | orthopedics / physiotherapy | SCHEDULED | Emergency |  INSURANCE  | duplicate registration suspected
+ 70002  | patient=Tara Chavan; city=Aurangabad | 11-23-2025 | Rs.12231.91 | Pediatrics / child wellness check | REFERRED | OPD | partial | patient arrived late
+" 70003  | patient=Sneha Kadam; age=73; city=Sangli | 2025/04/24 | ₹12,075.62 |  Pediatrics  - Child Wellness Check | REFERRED | Teleconsultation | pending | no extra notes"
+"#70004 | patient=Riya More; city=Indore | 2025/10/20 | ₹10,182.49 | Pediatrics - Growth Assessment | NO_SHOW | Emergency | PARTIAL | reschedule requested by family"
+ 70005  | patient=Rohan Sutar; city=Aurangabad | Feb 14 2025 | N/A | DERMATOLOGY / allergy test | NO_SHOW | Emergency | INSURANCE | patient arrived late
+"VIS-70006 | patient=Saanvi Iyer; age=90; city=Bengaluru | 2025/06/27 | ₹8,494.88 | CARDIOLOGY / stress test | COMPLETED | Inpatient Review |  PENDING  | no extra notes"
+ 70007  | patient=Ira Kulkarni; age=42; city=Thane | 17-Apr-2026 | 11953 | Cardiology - Stress Test | IN_PROGRESS | OPD |  WAIVED  | insurance approval pending
+70008 | patient=Riya Mane; age=11; city=Pune | 2025-03-14 | 2722 | cardiology - Stress Test | SCHEDULED | OPD |  PENDING  | insurance approval pending
+"70009 | patient=Kabir Desai; age=59; city=Bengaluru | 25-Feb-2025 | ₹3,539.85 | Dermatology - Biopsy Review | NO_SHOW | Teleconsultation |  PARTIAL  | reschedule requested by family"
+70010 | patient=Kunal Joshi; age=34; city=Delhi | 2026/08/05 | insurance pending | cardiology / cardiac consultation | REFERRED | OPD |  PARTIAL  | 
+70011 | patient=Myra Pawar; age=23; city=Nashik | Jun 06 2026 | Rs.2803.21 | OPHTHALMOLOGY - Eye Examination | SCHEDULED | Follow-up | PARTIAL | 
+70012 | patient=Meera Jadhav; age=13; city=Mumbai | 2025/02/07 | Rs.9708.11 | Dermatology / skin consultation | SCHEDULED | Emergency | insurance | duplicate registration suspected
+70013 | patient=Priya Jadhav; age=31; city=Pune | 30/06/2025 | N/A |  Ophthalmology  - Glaucoma Follow-up | SCHEDULED | Follow-up | INSURANCE | consultation completed; discharge notes pending
+#70014 | patient=Riya Iyer; age=14; city=Indore | 09-19-2025 | N/A | dermatology / biopsy review | COMPLETED | Teleconsultation | insurance | billing details need verification
+VIS-70015 | patient=Kavya Patil; age=79; city=Kolhapur | 2026/09/25 | Rs.3956.50 | OPHTHALMOLOGY - Glaucoma Follow-up | SCHEDULED | Follow-up | INSURANCE | reschedule requested by family
+70016 | patient=Tara Jadhav; age=39; city=Aurangabad | 15-Jun-2025 | 6781 | Orthopedics / physiotherapy | IN_PROGRESS | Follow-up | WAIVED | patient requested morning appointment
+"#70017 | patient=Anaya Nair; age=73; city=Solapur | 13-Nov-2025 | ₹11,846.51 | orthopedics - X-Ray | SCHEDULED | Teleconsultation |  PAID  | insurance approval pending"
+#70018 | patient=Aman Sharma; city=Nagpur | 2026-03-19 | Rs.12053.09 | dermatology / biopsy review | CANCELLED | Emergency | waived | consultation completed; discharge notes pending
+" 70019  | patient=Pooja Bhosale; age=10; city=Sangli | Apr 10 2025 | INR 5,751.85 | NEUROLOGY / neurology consultation | CANCELLED | Teleconsultation | PARTIAL | billing details need verification"
+"VIS-70020 | patient=Aarav Gupta; age=18; city=Nashik | 29-Jul-2025 | ₹9,324.67 |  General Medicine  - Diabetes Follow-up | NO_SHOW | Emergency | waived | referral letter uploaded"
+"VIS-70021 | patient=Kiara Kulkarni; age=61; city=Pune | 2025/06/20 | ₹2,224.74 | ORTHOPEDICS / mri review | REFERRED | OPD | WAIVED | follow-up advised in 2 weeks"
+#70022 | patient=Vikram Kulkarni; age=86; city=Nashik | Dec 13 2025 | N/A | CARDIOLOGY - ECG | CANCELLED | Emergency | waived | reschedule requested by family
+70023 | patient=Kunal Kadam; age=11; city=Chennai | 10-18-2025 | Rs.7704.20 | Pediatrics - Vaccination | CANCELLED | Follow-up |  WAIVED  | patient arrived late
+ 70024  | patient=Rohan Chavan; city=Pune | 2026/03/29 | Rs.12222.33 | Pediatrics / child wellness check | NO_SHOW | Follow-up | insurance | 
+"#70025 | patient=Pooja Shah; age=32; city=Satara | 01-01-2026 | ₹6,411.16 | DERMATOLOGY / skin consultation | NO_SHOW | Inpatient Review |  PAID  | no extra notes"
+VIS-70026 | patient=Myra Bhosale; city=Chennai | Mar 28 2026 | 1753 |  Neurology  - EEG | CANCELLED | Emergency | waived | referral letter uploaded
+VIS-70027 | patient=Vikram Desai; age=11; city=Pune | 06/02/2026 | N/A | Orthopedics - Physiotherapy | COMPLETED | Teleconsultation | pending | referral letter uploaded
+"#70028 | patient=Arjun Bhosale; city=Pune | 2025/03/03 | ₹1,061.02 | ORTHOPEDICS - Physiotherapy | SCHEDULED | Teleconsultation | PAID | insurance approval pending"
+#70029 | patient=Arjun Jadhav; age=27; city=Aurangabad | Feb 03 2026 | N/A | cardiology / ecg | SCHEDULED | OPD |  PAID  | 
+#70030 | patient=Neel Pawar; age=72; city=Solapur | 2026-08-15 | Rs.7699.51 | Dermatology - Skin Consultation | COMPLETED | Emergency | insurance | 
+"#70031 | patient=Aman Mehta; age=8; city=Satara | 02-12-2025 | INR 2,294.06 |  General Medicine  / fever consultation | SCHEDULED | Inpatient Review |  PARTIAL  | lab report not attached"
+VIS-70032 | patient=Arjun Kulkarni; age=60; city=Pune | May 16 2026 | 5724 |  Orthopedics  / physiotherapy | SCHEDULED | Follow-up | INSURANCE | no extra notes
+"70033 | patient=Saanvi Kulkarni; age=84; city=Bengaluru | May 08 2026 | INR 10,843.54 | Neurology / mri review | REFERRED | Inpatient Review | PARTIAL | billing details need verification"
+#70034 | patient=Rohan Desai; age=63; city=Solapur | Aug 29 2025 | Rs.8113.26 | DERMATOLOGY / acne follow-up | CANCELLED | Inpatient Review | partial | patient arrived late
+VIS-70035 | patient=Pooja Sharma; city=Nagpur | Jun 13 2026 | Rs.7457.67 |  Ophthalmology  / vision test | NO_SHOW | Emergency | waived | referral letter uploaded
+ 70036  | patient=Reyansh Pawar; age=50; city=Satara | 04-25-2025 | 9251 | Pediatrics / growth assessment | IN_PROGRESS | Teleconsultation | waived | 
+VIS-70037 | patient=Saanvi Chavan; age=89; city=Indore | 11-Feb-2026 | N/A |  General Medicine  / general checkup | CANCELLED | Teleconsultation | partial | consultation completed; discharge notes pending
+70038 | patient=VIKRAM SHARMA; age=unknown; city=SATARA | Apr 27 2025 | Rs.5133.04 | ORTHOPEDICS - X-Ray | COMPLETED | OPD | paid | patient arrived late
+VIS-70039 | patient=Pooja Chavan; age=22; city=Aurangabad | 24-Jun-2025 | N/A | dermatology - Skin Consultation | REFERRED | Emergency |  INSURANCE  | reschedule requested by family
+#70040 | patient=Kabir Sharma; age=74; city=Mumbai | 2026/03/28 | Rs.11236.22 |  Ophthalmology  / glaucoma follow-up | NO_SHOW | Teleconsultation |  PARTIAL  | follow-up advised in 2 weeks
+"VIS-70041 | patient=Vivaan Mane; age=77; city=Kolhapur | 06/01/2026 | ₹7,075.06 |  Orthopedics  / x-ray | NO_SHOW | Inpatient Review |  INSURANCE  | follow-up advised in 2 weeks"
+"#70042 | patient=Rahul Jadhav; age=50; city=Hyderabad | 2025/05/09 | ₹1,507.58 | Dermatology - Acne Follow-up | IN_PROGRESS | Follow-up |  INSURANCE  | "
+#70043 | patient=Anaya Bhosale; age=6; city=Pune | 10-Oct-2026 | 7316 |  Cardiology  - Cardiac Consultation | NO_SHOW | Follow-up | PAID | lab report not attached
+70044 | patient=Riya Reddy; age=52; city=Thane | 17-Jun-2026 | 5369 | ORTHOPEDICS - Physiotherapy | CANCELLED | Inpatient Review | WAIVED | insurance approval pending
+#70045 | patient=Diya Kulkarni; age=25; city=Solapur | Feb 23 2025 | Rs.11051.04 | Neurology / migraine follow-up | SCHEDULED | Teleconsultation | paid | billing details need verification
+70046 | patient=Meera More; age=1; city=Chennai | 10-10-2026 | N/A | Neurology / neurology consultation | CANCELLED | Follow-up | waived | doctor requested additional review
+70047 | patient=Arjun Chavan; age=45; city=Hyderabad | 12-Apr-2026 | 8626 |  Neurology  / eeg | REFERRED | Emergency |  PAID  | billing details need verification
+" 70048  | patient=Rahul Gupta; age=36; city=Chennai | 04-16-2026 | ₹3,757.11 | Ophthalmology - Vision Test | COMPLETED | Follow-up | WAIVED | consultation completed; discharge notes pending"
+70049 | patient=Om Chavan; city=Indore | 14/10/2025 | N/A | NEUROLOGY - EEG | CANCELLED | Inpatient Review |  PARTIAL  | patient arrived late
+#70050 | patient=Vivaan Pawar; age=65; city=Thane | Nov 14 2025 | Rs.6158.53 | NEUROLOGY / neurology consultation | REFERRED | Follow-up | WAIVED | lab report not attached
+"#70051 | patient=Saanvi Nair; age=83; city=Pune | 2026-09-01 | ₹10,902.74 |  Neurology  - MRI Review | REFERRED | Emergency |  INSURANCE  | follow-up advised in 2 weeks"
+" 70052  | patient=Aman Gupta; city=Sangli | 18-Mar-2025 | INR 7,011.61 | ophthalmology / vision test | REFERRED | Emergency |  PAID  | referral letter uploaded"
+#70053 | patient=Aarav Bhosale; age=36; city=Mumbai | Apr 24 2025 | 1391 |  Dermatology  / biopsy review | SCHEDULED | Inpatient Review | PENDING | follow-up advised in 2 weeks
+"70054 | patient=Arjun Shah; age=81; city=Aurangabad | Jan 08 2025 | INR 8,491.51 | ent - Throat Examination | COMPLETED | Inpatient Review | PENDING | consultation completed; discharge notes pending"
+ 70055  | patient=Priya Kulkarni; age=62; city=Indore | 19-Feb-2026 | insurance pending | Pediatrics / fever consultation | CANCELLED | OPD | paid | doctor requested additional review
+#70056 | patient=Aditi Mane; age=18; city=Solapur | Sep 20 2025 | Rs.1207.50 | GENERAL MEDICINE / diabetes follow-up | CANCELLED | Follow-up | INSURANCE | consultation completed; discharge notes pending
+70057 | patient=Ishaan Gaikwad; age=30; city=Aurangabad | 11-May-2025 | Rs.4516.30 |  Dermatology  / allergy test | IN_PROGRESS | Emergency | INSURANCE | patient requested morning appointment
+ 70058  | patient=Aditi More; age=89; city=Nagpur | 04-Feb-2025 | 8377 | neurology - Neurology Consultation | COMPLETED | Inpatient Review | PAID | consultation completed; discharge notes pending
+"#70059 | patient=Meera Sutar; age=64; city=Mumbai | 22-Oct-2025 | ₹2,987.89 | general medicine - General Checkup | NO_SHOW | Follow-up | paid | billing details need verification"
+#70060 | patient=RAHUL JADHAV; age=unknown; city=KOLHAPUR | Mar 13 2026 | N/A |  Pediatrics  / vaccination | in_progress | Follow-up | paid | 
+"70061 | patient=Kunal Chavan; age=65; city=Delhi | Nov 22 2025 | ₹8,235.62 | cardiology / echocardiogram | IN_PROGRESS | Emergency | PARTIAL | duplicate registration suspected"
+70062 | patient=Priya Shah; age=3; city=Sangli | 02-03-2026 | 5255 | neurology - Neurology Consultation | COMPLETED | Teleconsultation | insurance | referral letter uploaded
+ 70063  | patient=Kunal Kulkarni; age=30; city=Satara | 05-29-2026 |  |  Cardiology  - Stress Test | COMPLETED | Emergency |  PENDING  | referral letter uploaded
+" 70064  | patient=Diya Patil; age=7; city=Satara | 2026-10-02 | INR 11,426.07 |  General Medicine  / diabetes follow-up | NO_SHOW | Follow-up | WAIVED | patient arrived late"
+ 70065  | patient=Meera Chavan; age=24; city=Nagpur | 01-Sep-2026 | Rs.3760.18 | Pediatrics / growth assessment | REFERRED | Teleconsultation |  PENDING  | patient requested morning appointment
+#70066 | patient=Arjun Mehta; city=Bengaluru | Jan 18 2025 | Rs.3929.48 | general medicine / fever consultation | COMPLETED | Inpatient Review | paid | lab report not attached
+" 70067  | patient=Vikram Shah; age=38; city=Nashik | 2026-05-15 | INR 7,809.77 | ENT - Throat Examination | IN_PROGRESS | Emergency | PARTIAL | no extra notes"
+"VIS-70068 | patient=Pooja Chavan; age=67; city=Nashik | 24-May-2026 | ₹6,646.47 |  ENT  - Hearing Test | NO_SHOW | Teleconsultation | PAID | follow-up advised in 2 weeks"
+70069 | patient=Kiara Mehta; age=80; city=Mumbai | Sep 18 2025 | Rs.11958.25 | OPHTHALMOLOGY / glaucoma follow-up | REFERRED | Follow-up | INSURANCE | consultation completed; discharge notes pending
+" 70070  | patient=Diya Mane; age=2; city=Delhi | Oct 07 2025 | INR 5,102.39 | DERMATOLOGY / allergy test | CANCELLED | Inpatient Review | partial | "
+#70071 | patient=Arjun More; age=23; city=Indore | Jan 15 2025 | Rs.10489.55 | GENERAL MEDICINE - Fever Consultation | NO_SHOW | Teleconsultation | insurance | duplicate registration suspected
+VIS-70072 | patient=Reyansh Reddy; age=67; city=Indore | 06-Aug-2026 |  | CARDIOLOGY / stress test | SCHEDULED | Teleconsultation |  PENDING  | no extra notes
+"#70073 | patient=Diya Jadhav; age=44; city=Bengaluru | Jun 24 2025 | ₹7,409.52 | Dermatology / biopsy review | IN_PROGRESS | Emergency | insurance | referral letter uploaded"
+" 70074  | patient=Neel Joshi; city=Bengaluru | 2025/03/09 | INR 3,467.77 | GENERAL MEDICINE - Diabetes Follow-up | REFERRED | Inpatient Review | PAID | no extra notes"
+" 70074  | patient=Neel Joshi; city=Bengaluru | 2025/03/09 | INR 3,467.77 | GENERAL MEDICINE - Diabetes Follow-up | REFERRED | Inpatient Review | PAID | no extra notes"
+"70076 | patient=Dev Shah; age=89; city=Hyderabad | 11-Aug-2026 | INR 7,983.82 | CARDIOLOGY / echocardiogram | COMPLETED | Emergency | INSURANCE | follow-up advised in 2 weeks"
+70077 | patient=Meera Jadhav; age=18; city=Pune | 2026/08/03 |  | Orthopedics - MRI Review | NO_SHOW | Inpatient Review | WAIVED | lab report not attached
+ 70078  | patient=MEERA SUTAR; age=unknown; city=SOLAPUR | 2026/09/27 |  |  Pediatrics  / vaccination | CANCELLED | Emergency | WAIVED | patient arrived late
+ 70079  | patient=Ira Nair; age=7; city=Nagpur | 2025-01-09 | Rs.10825.24 |  Cardiology  - Stress Test | SCHEDULED | Inpatient Review |  PENDING  | insurance approval pending
+#70080 | patient=Saanvi Kadam; age=87; city=Pune | 06-29-2025 | Rs.4422.77 | cardiology - Stress Test | SCHEDULED | Emergency |  PARTIAL  | patient arrived late
+VIS-70081 | patient=Kiara Patil; age=46; city=Indore | 05-20-2026 | Rs.4506.76 | ent / sinus consultation | CANCELLED | OPD |  WAIVED  | doctor requested additional review
+"#70082 | patient=Aman More; age=29; city=Delhi | Feb 21 2026 | INR 11,060.12 | cardiology - Cardiac Consultation | CANCELLED | Follow-up | pending | "
+"VIS-70083 | patient=Ishaan Desai; age=89; city=Nashik | 2025/01/01 | ₹4,068.85 | cardiology - Cardiac Consultation | REFERRED | Emergency | waived | "
+"70084 | patient=Rohan Sharma; age=57; city=Satara | 2025-11-28 | INR 7,284.86 | neurology - Migraine Follow-up | REFERRED | Teleconsultation | PARTIAL | no extra notes"
+"VIS-70085 | patient=Aditya Bhosale; age=89; city=Satara | 09-24-2025 | ₹6,406.82 | orthopedics - X-Ray | NO_SHOW | Emergency | paid | patient arrived late"
+ 70086  | patient=Ishaan Shah; age=27; city=Nagpur | 09-30-2026 | insurance pending | DERMATOLOGY / biopsy review | REFERRED | Emergency |  PENDING  | follow-up advised in 2 weeks
+"#70087 | patient=Kunal Mane; age=39; city=Chennai | Aug 20 2025 | INR 3,804.52 | dermatology / biopsy review | IN_PROGRESS | Inpatient Review |  PAID  | referral letter uploaded"
+"70088 | patient=Neel Sharma; age=65; city=Bengaluru | 14-Jan-2026 | ₹10,240.76 |  General Medicine  / general checkup | IN_PROGRESS | OPD |  WAIVED  | patient arrived late"
+70089 | patient=Arjun More; age=66; city=Sangli | Feb 10 2025 | 9033 | neurology / mri review | COMPLETED | Follow-up | insurance | consultation completed; discharge notes pending
+#70090 | patient=KUNAL KADAM; age=unknown; city=PUNE | 13/10/2026 | N/A | neurology / neurology consultation | IN_PROGRESS | Follow-up | partial | patient arrived late
+70091 | patient=Myra Mehta; age=21; city=Aurangabad | 06-02-2026 | N/A | dermatology - Acne Follow-up | NO_SHOW | Emergency |  PARTIAL  | doctor requested additional review
+70092 | patient=Myra Bhosale; age=62; city=Pune | Nov 30 2025 | N/A | OPHTHALMOLOGY - Retina Review | IN_PROGRESS | Emergency | insurance | doctor requested additional review
+VIS-70093 | patient=Kunal Reddy; city=Indore | 28/06/2026 | Rs.1273.42 |  Neurology  / neurology consultation | REFERRED | Follow-up |  INSURANCE  | 
+VIS-70094 | patient=Meera More; age=25; city=Pune | 10-14-2025 | Rs.478.19 | general medicine - Diabetes Follow-up | COMPLETED | Teleconsultation |  PAID  | reschedule requested by family
+70095 | patient=Ishaan Nair; age=36; city=Nashik | Jan 29 2026 | Rs.4209.59 | DERMATOLOGY / skin consultation | IN_PROGRESS | Follow-up |  WAIVED  | consultation completed; discharge notes pending
+"#70096 | patient=Priya Joshi; age=53; city=Kolhapur | 2025/03/09 | ₹11,337.59 | ENT / throat examination | no_show | Teleconsultation |  WAIVED  | consultation completed; discharge notes pending"
+"VIS-70097 | patient=Tara Kadam; age=37; city=Nashik | 04-07-2025 | INR 2,193.58 |  Dermatology  - Biopsy Review | IN_PROGRESS | Emergency | PARTIAL | follow-up advised in 2 weeks"
+"VIS-70098 | patient=Tara Shah; age=32; city=Thane | 2025-03-15 | INR 5,658.27 |  General Medicine  - Blood Test Review |  CANCELLED  | Inpatient Review | pending | consultation completed; discharge notes pending"
+70099 | patient=Meera Reddy; city=Bengaluru | 03/08/2026 | N/A | PEDIATRICS - Growth Assessment | COMPLETED | Emergency | paid | follow-up advised in 2 weeks
+ 70100  | patient=Saanvi Kadam; age=22; city=Chennai | 2025/03/10 | 2248 | ENT - Sinus Consultation | COMPLETED | OPD | PARTIAL | duplicate registration suspected
+"70101 | patient=Riya Bhosale; age=45; city=Sangli | Apr 10 2026 | ₹4,502.07 | PEDIATRICS / fever consultation | COMPLETED | OPD | insurance | patient arrived late"
+ 70102  | patient=Vikram Bhosale; age=22; city=Solapur | 2026/05/25 |  | dermatology - Skin Consultation | SCHEDULED | Follow-up | WAIVED | reschedule requested by family
+ 70103  | patient=Kunal Bhosale; city=Mumbai | 2025-07-24 | Rs.6315.58 | NEUROLOGY - Neurology Consultation | COMPLETED | Emergency |  PARTIAL  | 
+"VIS-70104 | patient=Diya Mane; age=86; city=Kolhapur | Nov 03 2025 | INR 2,843.96 | Cardiology - Cardiac Consultation | REFERRED | Inpatient Review | waived | patient arrived late"
+#70105 | patient=Kabir Pawar; age=5; city=Kolhapur | Apr 12 2026 | 2192 |  Ophthalmology  / retina review | SCHEDULED | Inpatient Review |  PAID  | follow-up advised in 2 weeks
+ 70106  | patient=Aarav Gaikwad; age=33; city=Kolhapur | 01-05-2026 | 2234 | Orthopedics / x-ray |  COMPLETED  | Follow-up |  PARTIAL  | patient arrived late
+ 70107  | patient=Ira Gaikwad; age=35; city=Thane | 27/01/2025 |  | Dermatology - Biopsy Review | IN_PROGRESS | Emergency |  WAIVED  | referral letter uploaded
+ 70108  | patient=Diya Sutar; age=37; city=Hyderabad | 20-Mar-2026 | N/A | ENT / ear infection review | SCHEDULED | Teleconsultation | PARTIAL | consultation completed; discharge notes pending
+" 70109  | patient=Kabir Iyer; city=Thane | 06-Apr-2025 | INR 6,456.76 | pediatrics / fever consultation | NO_SHOW | OPD |  PENDING  | reschedule requested by family"
+"70110 | patient=Neel Jadhav; age=19; city=Satara | 2025-03-21 | ₹10,370.64 | pediatrics - Child Wellness Check | CANCELLED | Teleconsultation |  INSURANCE  | lab report not attached"
+#70111 | patient=Neel Reddy; age=50; city=Hyderabad | 05-Dec-2025 | Rs.9726.30 |  Neurology  - Migraine Follow-up | SCHEDULED | Inpatient Review |  PAID  | no extra notes
+VIS-70112 | patient=Rahul Kadam; age=65; city=Nagpur | 2026-06-19 | Rs.10062.76 | GENERAL MEDICINE / blood test review | CANCELLED | Teleconsultation | insurance | lab report not attached
+" 70113  | patient=Reyansh Sharma; age=20; city=Hyderabad | May 24 2026 | ₹5,815.75 |  Neurology  / eeg | CANCELLED | OPD | WAIVED | doctor requested additional review"
+VIS-70114 | patient=Priya Mane; age=20; city=Sangli | 30/04/2025 | N/A | Orthopedics - Joint Consultation | CANCELLED | Inpatient Review |  WAIVED  | 
+#70115 | patient=Priya Mehta; age=23; city=Aurangabad | 13/04/2026 | N/A |  ENT  / sinus consultation | IN_PROGRESS | OPD | WAIVED | duplicate registration suspected
+VIS-70116 | patient=Rohan Desai; city=Nagpur | 07-19-2025 | 1851 | General Medicine / fever consultation | IN_PROGRESS | Follow-up |  WAIVED  | 
+ 70117  | patient=Myra Jadhav; age=6; city=Satara | 2025/08/04 | 8744 | dermatology - Skin Consultation | REFERRED | Follow-up |  PENDING  | follow-up advised in 2 weeks
+#70118 | patient=Vikram Kulkarni; age=79; city=Sangli | 2026-08-31 | N/A | PEDIATRICS - Vaccination | no_show | Emergency |  PENDING  | duplicate registration suspected
+"70119 | patient=Tara Joshi; age=21; city=Kolhapur | 23/06/2025 | INR 8,538.00 | ENT / ear infection review | REFERRED | OPD |  PENDING  | patient arrived late"
+70120 | patient=KUNAL IYER; age=unknown; city=SATARA | 24/02/2025 | INR 644.38 | pediatrics - Fever Consultation | COMPLETED | Emergency | partial | billing details need verification
+" 70121  | patient=Tara Gupta; age=1; city=Mumbai | 2026/02/19 | INR 4,285.03 | OPHTHALMOLOGY - Eye Examination | CANCELLED | Emergency | PARTIAL | patient arrived late"
+#70122 | patient=Riya Patil; age=20; city=Chennai | 16/05/2026 | Rs.3691.19 | pediatrics - Growth Assessment | REFERRED | OPD | INSURANCE | insurance approval pending
+ 70123  | patient=Myra Joshi; age=15; city=Solapur | May 05 2026 | Rs.9508.36 | Ophthalmology - Glaucoma Follow-up | REFERRED | Teleconsultation | paid | 
+"70124 | patient=SNEHA SHAH; age=unknown; city=INDORE | 08-27-2025 | INR 1,272.45 |  Pediatrics  - Fever Consultation | COMPLETED | Inpatient Review |  PAID  | duplicate registration suspected"
+"#70125 | patient=Arjun Shah; age=29; city=Solapur | Dec 05 2025 | ₹11,932.38 |  Ophthalmology  / vision test | SCHEDULED | Emergency | pending | billing details need verification"
+ 70126  | patient=Vikram Patil; age=68; city=Satara | 2026/04/01 | 818 | ORTHOPEDICS / joint consultation | COMPLETED | Follow-up | insurance | patient arrived late
+ 70127  | patient=Kiara Mane; city=Solapur | 2025/07/02 | 11038 | Cardiology / cardiac consultation | REFERRED | Follow-up | PARTIAL | doctor requested additional review
+ 70128  | patient=Ishaan Sutar; age=8; city=Hyderabad | 16/04/2026 | INR 871.50 | General Medicine - Fever Consultation | IN_PROGRESS | Emergency |  PARTIAL  | no extra notes
+"VIS-70129 | patient=Rohan Pawar; age=84; city=Satara | 07-05-2026 | INR 5,950.67 |  ENT  - Throat Examination | CANCELLED | Teleconsultation | PARTIAL | follow-up advised in 2 weeks"
+ 70130  | patient=Aditya Gupta; age=53; city=Aurangabad | 04-01-2026 |  | cardiology - ECG | NO_SHOW | Inpatient Review | PENDING | patient requested morning appointment
+#70131 | patient=Vikram Kadam; age=46; city=Kolhapur | 2026/02/23 | 10307 |  Neurology  - Migraine Follow-up | COMPLETED | Emergency | waived | 
+"70132 | patient=Dev Kulkarni; age=71; city=Pune | 09-04-2025 | ₹2,875.29 | OPHTHALMOLOGY - Retina Review | SCHEDULED | Follow-up |  PARTIAL  | "
+"#70133 | patient=Vivaan Sharma; age=58; city=Nashik | 2025/12/22 | INR 8,441.65 | Neurology / migraine follow-up | REFERRED | OPD | INSURANCE | insurance approval pending"
+"#70134 | patient=Om Mane; age=38; city=Bengaluru | 2026-03-13 | INR 10,406.37 | ent - Ear Infection Review | SCHEDULED | Teleconsultation |  INSURANCE  | billing details need verification"
+"#70135 | patient=Neel Pawar; age=47; city=Nagpur | 2025/04/17 | INR 10,555.86 | General Medicine - Blood Test Review | REFERRED | Inpatient Review | INSURANCE | lab report not attached"
+" 70136  | patient=Aarav Mehta; age=61; city=Solapur | 27-Feb-2026 | ₹5,833.06 | ophthalmology - Retina Review | IN_PROGRESS | Inpatient Review | pending | doctor requested additional review"
+#70137 | patient=Tara Mehta; city=Satara | Jan 31 2025 | Rs.1388.82 | orthopedics - Physiotherapy | IN_PROGRESS | Follow-up |  PENDING  | follow-up advised in 2 weeks
+#70138 | patient=Vikram Chavan; age=58; city=Bengaluru | Feb 22 2025 | Rs.5735.98 |  Ophthalmology  - Glaucoma Follow-up | SCHEDULED | Follow-up |  PAID  | patient arrived late
+70139 | patient=Ishaan Sutar; age=78; city=Sangli | 16-Feb-2026 | N/A | ENT / throat examination | REFERRED | Emergency | waived | patient arrived late
+#70140 | patient=Ishaan Desai; city=Bengaluru | Feb 25 2026 | Rs.9768.76 |  Cardiology  - ECG | SCHEDULED | Inpatient Review |  PAID  | no extra notes
+ 70141  | patient=Kavya Sharma; age=71; city=Delhi | 2025-12-05 | 1024 | ORTHOPEDICS / physiotherapy | IN_PROGRESS | Teleconsultation | partial | consultation completed; discharge notes pending
+" 70142  | patient=Saanvi Shah; age=46; city=Mumbai | 15/07/2025 | INR 6,131.01 | GENERAL MEDICINE - Blood Test Review |  COMPLETED  | Emergency | waived | patient arrived late"
+ 70143  | patient=Reyansh Kadam; city=Aurangabad | 07-21-2025 | N/A | CARDIOLOGY - Echocardiogram | SCHEDULED | Inpatient Review | INSURANCE | 
+" 70144  | patient=Neel Mane; age=24; city=Delhi | 2026/01/18 | INR 4,328.84 |  Cardiology  - Stress Test | IN_PROGRESS | Follow-up | PAID | duplicate registration suspected"
+#70145 | patient=Ishaan Kadam; age=8; city=Kolhapur | 2025/07/20 | Rs.11145.75 |  General Medicine  / blood test review | SCHEDULED | OPD | PAID | 
+ 70146  | patient=Sneha Shah; age=18; city=Mumbai | 2025-11-22 | N/A | Dermatology - Acne Follow-up | SCHEDULED | Follow-up | pending | 
+ 70147  | patient=Rahul More; age=77; city=Sangli | 2025-01-19 | Rs.8685.30 | general medicine / diabetes follow-up | IN_PROGRESS | Follow-up | WAIVED | 
+ 70148  | patient=Kunal Patil; age=44; city=Nashik | 2025/11/14 | INR 769.05 |  ENT  - Ear Infection Review | SCHEDULED | Inpatient Review | partial | doctor requested additional review
+"VIS-70149 | patient=Dev Kadam; age=79; city=Nagpur | 09-12-2026 | ₹4,860.53 | Dermatology - Allergy Test | REFERRED | Teleconsultation | PARTIAL | insurance approval pending"
+"VIS-70150 | patient=Neel Nair; age=5; city=Bengaluru | 31-Aug-2025 | INR 7,699.75 | DERMATOLOGY - Skin Consultation | COMPLETED | Inpatient Review | WAIVED | insurance approval pending"
+"VIS-70151 | patient=Kabir Jadhav; age=27; city=Mumbai | 22-May-2025 | INR 11,357.28 | Orthopedics - X-Ray | SCHEDULED | Teleconsultation |  INSURANCE  | consultation completed; discharge notes pending"
+70152 | patient=Reyansh Sharma; age=51; city=Hyderabad | 2026-02-22 | ₹445.75 |  General Medicine  / diabetes follow-up | COMPLETED | Follow-up | PAID | reschedule requested by family
+#70153 | patient=Kavya Joshi; age=73; city=Aurangabad | 08-18-2026 | N/A | pediatrics / vaccination | COMPLETED | Follow-up |  PARTIAL  | lab report not attached
+"#70154 | patient=Vivaan Gaikwad; age=56; city=Pune | 21/07/2025 | INR 8,427.01 | neurology / eeg | CANCELLED | Teleconsultation | paid | patient arrived late"
+#70155 | patient=Pooja Desai; age=86; city=Nagpur | 2025-04-26 | insurance pending | general medicine - Fever Consultation | IN_PROGRESS | Teleconsultation | insurance | patient requested morning appointment
+ 70156  | patient=Saanvi Sutar; age=82; city=Mumbai | 23-Jul-2026 | N/A | Cardiology / stress test | CANCELLED | Teleconsultation | WAIVED | follow-up advised in 2 weeks
+" 70157  | patient=Om Joshi; age=6; city=Kolhapur | 2026-07-24 | INR 10,951.50 | Dermatology / biopsy review | CANCELLED | Emergency |  PARTIAL  | no extra notes"
+"#70158 | patient=Aarav Chavan; age=60; city=Hyderabad | 11/04/2025 | INR 8,667.89 | ophthalmology / vision test | IN_PROGRESS | OPD | PENDING | patient requested morning appointment"
+"70159 | patient=Riya Iyer; age=19; city=Thane | 31-Jul-2025 | ₹4,424.80 | NEUROLOGY - MRI Review |  IN_PROGRESS  | Emergency |  WAIVED  | doctor requested additional review"
+70160 | patient=Kiara Gaikwad; age=69; city=Kolhapur | 2026/07/18 | N/A | OPHTHALMOLOGY / glaucoma follow-up | IN_PROGRESS | OPD |  WAIVED  | duplicate registration suspected
+ 70161  | patient=Sneha More; age=47; city=Thane | 18-Sep-2026 | Rs.6236.89 | Orthopedics - Physiotherapy | SCHEDULED | Follow-up | INSURANCE | billing details need verification
+#70162 | patient=Om Mehta; age=5; city=Mumbai | 05-04-2025 | 8654 | neurology / eeg | COMPLETED | Follow-up | insurance | referral letter uploaded
+70163 | patient=Meera Jadhav; age=58; city=Mumbai | Feb 20 2026 | N/A | orthopedics / physiotherapy | COMPLETED | OPD | pending | patient arrived late
+70164 | patient=Rohan Mehta; age=23; city=Kolhapur | 04-Jan-2025 | N/A |  Neurology  - Migraine Follow-up | REFERRED | Teleconsultation | waived | billing details need verification
+" 70165  | patient=Myra Iyer; age=9; city=Bengaluru | 09/11/2025 | ₹1,387.05 |  Ophthalmology  / vision test | COMPLETED | Emergency | pending | patient arrived late"
+"VIS-70166 | patient=Saanvi Iyer; city=Satara | 24/07/2025 | INR 6,673.65 |  Dermatology  / biopsy review | COMPLETED | Emergency |  WAIVED  | doctor requested additional review"
+"70167 | patient=Tara Bhosale; age=29; city=Hyderabad | 03-12-2025 | INR 7,616.96 | ORTHOPEDICS / mri review | COMPLETED | Teleconsultation | partial | billing details need verification"
+VIS-70168 | patient=Diya Joshi; age=22; city=Aurangabad | 10-15-2025 | N/A | DERMATOLOGY - Biopsy Review | REFERRED | Follow-up |  PARTIAL  | no extra notes
+"#70169 | patient=Neel Shah; age=34; city=Chennai | 22/01/2026 | INR 9,073.23 |  Pediatrics  / growth assessment | COMPLETED | Emergency |  PAID  | no extra notes"
+"#70170 | patient=Aditya Mane; age=31; city=Sangli | 20/07/2026 | INR 11,140.14 |  Pediatrics  / child wellness check | COMPLETED | Emergency |  PARTIAL  | billing details need verification"
+VIS-70171 | patient=Om Sutar; age=72; city=Satara | 16/01/2025 | 2015 | DERMATOLOGY / allergy test | NO_SHOW | Inpatient Review |  INSURANCE  | patient arrived late
+" 70172  | patient=Arjun Mane; city=Kolhapur | 12-Apr-2025 | ₹2,325.77 |  General Medicine  - Fever Consultation | SCHEDULED | Teleconsultation |  PARTIAL  | referral letter uploaded"
+" 70173  | patient=Riya Sharma; age=4; city=Delhi | Feb 26 2026 | INR 5,167.53 |  General Medicine  / diabetes follow-up | SCHEDULED | OPD |  INSURANCE  | follow-up advised in 2 weeks"
+"70174 | patient=Reyansh Desai; age=47; city=Nashik | 07-19-2025 | INR 3,985.43 | DERMATOLOGY / biopsy review | REFERRED | Follow-up | pending | duplicate registration suspected"
+"VIS-70175 | patient=Aarav Iyer; age=78; city=Nashik | 2025/02/04 | ₹4,449.63 |  Orthopedics  / mri review | REFERRED | Follow-up | PENDING | no extra notes"
+ 70176  | patient=Kavya Chavan; age=15; city=Chennai | 10-Feb-2025 |  |  ENT  / sinus consultation | CANCELLED | Teleconsultation | PENDING | lab report not attached
+#70177 | patient=Anaya Gupta; age=14; city=Mumbai | 2025-12-01 |  |  ENT  / throat examination | COMPLETED | Emergency | insurance | patient arrived late
+VIS-70178 | patient=Aarav Nair; age=79; city=Sangli | Mar 21 2026 | 7093 | neurology / migraine follow-up | NO_SHOW | Follow-up | insurance | doctor requested additional review
+"70179 | patient=Nisha Gaikwad; age=7; city=Thane | 23/04/2026 | INR 7,595.09 | Cardiology - Echocardiogram | CANCELLED | Follow-up |  PARTIAL  | lab report not attached"
+"70180 | patient=Vivaan Chavan; age=31; city=Hyderabad | 08/07/2025 | ₹9,407.94 |  Cardiology  - Echocardiogram | REFERRED | Emergency |  PENDING  | billing details need verification"
+ 70181  | patient=Pooja Kadam; city=Indore | 09-07-2025 | 4533 | Dermatology / acne follow-up | IN_PROGRESS | OPD |  PAID  | billing details need verification
+#70182 | patient=Rohan Kulkarni; age=59; city=Sangli | 10-04-2026 | Rs.7536.53 | Dermatology / acne follow-up | CANCELLED | Emergency | waived | billing details need verification
+VIS-70183 | patient=Priya Sutar; age=80; city=Nagpur | Sep 29 2025 | Rs.742.97 | Neurology / neurology consultation | CANCELLED | Follow-up |  PAID  | patient arrived late
+#70184 | patient=Myra Kulkarni; age=79; city=Solapur | 2025/03/01 | N/A | Neurology / neurology consultation | REFERRED | Inpatient Review | waived | follow-up advised in 2 weeks
+70185 | patient=Rohan Joshi; age=24; city=Bengaluru | Jul 16 2026 | 2309 | general medicine / fever consultation | CANCELLED | OPD |  INSURANCE  | referral letter uploaded
+"VIS-70186 | patient=Saanvi Chavan; city=Nashik | Dec 14 2025 | INR 3,459.26 | Pediatrics - Fever Consultation | CANCELLED | OPD | WAIVED | patient arrived late"
+"70187 | patient=Kabir Jadhav; age=25; city=Indore | 2025-11-04 | INR 10,892.81 | DERMATOLOGY - Acne Follow-up | SCHEDULED | OPD |  WAIVED  | referral letter uploaded"
+VIS-70188 | patient=Vikram Gupta; age=21; city=Nagpur | 2026/08/03 | 8811 | pediatrics - Fever Consultation | CANCELLED | Teleconsultation | WAIVED | no extra notes
+VIS-70189 | patient=Aditya Kulkarni; age=73; city=Nashik | 30/05/2025 | Rs.10474.84 | ENT / sinus consultation | SCHEDULED | OPD | WAIVED | 
+#70190 | patient=Pooja Kulkarni; age=6; city=Thane | 07-Jul-2026 | 2388 | General Medicine - Fever Consultation | NO_SHOW | OPD | paid | consultation completed; discharge notes pending
+"70191 | patient=Kabir Sutar; age=84; city=Solapur | 2025-07-02 | ₹1,849.84 | Ophthalmology - Glaucoma Follow-up | REFERRED | OPD |  INSURANCE  | insurance approval pending"
+ 70192  | patient=Anaya Mane; age=61; city=Satara | 20/05/2026 | N/A |  Neurology  - Neurology Consultation | CANCELLED | Emergency |  INSURANCE  | no extra notes
+VIS-70193 | patient=Diya Chavan; age=11; city=Sangli | 23/07/2025 | 2869 |  Neurology  / mri review | REFERRED | Inpatient Review | pending | reschedule requested by family
+"VIS-70194 | patient=Riya Bhosale; age=58; city=Kolhapur | 2026/02/15 | INR 4,457.99 |  Dermatology  - Allergy Test | IN_PROGRESS | Follow-up | insurance | reschedule requested by family"
+70195 | patient=Aditya Sutar; city=Chennai | 2025/10/11 | N/A | orthopedics / joint consultation | CANCELLED | OPD | PAID | duplicate registration suspected
+ 70196  | patient=Aditya Sutar; age=8; city=Pune | 2026/04/05 | N/A | OPHTHALMOLOGY / retina review | IN_PROGRESS | Inpatient Review |  PAID  | follow-up advised in 2 weeks
+70197 | patient=Reyansh Iyer; age=87; city=Delhi | 2026-09-15 | 4862 | DERMATOLOGY - Skin Consultation | NO_SHOW | Teleconsultation | insurance | doctor requested additional review
+ 70198  | patient=Pooja Mane; age=18; city=Chennai | 08/07/2026 | N/A | pediatrics - Fever Consultation | NO_SHOW | OPD |  PARTIAL  | lab report not attached
+VIS-70199 | patient=Vivaan More; age=78; city=Nashik | 2026-02-05 | 3955 | dermatology - Biopsy Review | REFERRED | Follow-up | PENDING | insurance approval pending
+"70200 | patient=Aman More; age=83; city=Aurangabad | 2025-08-28 | ₹11,582.37 | ENT / ear infection review | COMPLETED | Emergency | PENDING | consultation completed; discharge notes pending"
+"VIS-70201 | patient=ANAYA SHARMA; age=unknown; city=SANGLI | 04-20-2025 | INR 8,523.07 |  Neurology  - Migraine Follow-up | in_progress | OPD |  WAIVED  | "
+"#70202 | patient=Saanvi Iyer; age=78; city=Indore | Mar 24 2026 | ₹11,665.02 | Ophthalmology - Eye Examination | NO_SHOW | Emergency | INSURANCE | patient arrived late"
+70203 | patient=Anaya Sharma; age=16; city=Indore | Feb 23 2026 | 8117 | orthopedics / x-ray | IN_PROGRESS | Teleconsultation |  INSURANCE  | no extra notes
+"VIS-70204 | patient=Kunal Joshi; age=55; city=Hyderabad | 09/01/2025 | ₹8,490.24 |  Ophthalmology  / glaucoma follow-up | NO_SHOW | Teleconsultation | paid | reschedule requested by family"
+70205 | patient=ISHAAN SUTAR; age=unknown; city=DELHI | 13/07/2025 | N/A | ophthalmology - Vision Test | COMPLETED | Inpatient Review | waived | follow-up advised in 2 weeks
+"VIS-70206 | patient=Kabir Jadhav; age=46; city=Thane | 13-Feb-2026 | ₹6,929.21 | CARDIOLOGY / echocardiogram | REFERRED | Emergency | INSURANCE | "
+#70207 | patient=Aman Joshi; city=Nagpur | 2025/10/06 | 8523 | ENT - Sinus Consultation | COMPLETED | OPD |  INSURANCE  | patient arrived late
+"70208 | patient=Kabir Shah; age=41; city=Indore | 11/11/2025 | ₹2,632.94 | PEDIATRICS / growth assessment | IN_PROGRESS | Inpatient Review | INSURANCE | "
+#70209 | patient=Vikram Sutar; age=66; city=Mumbai | 2025-02-20 | Rs.7473.11 | OPHTHALMOLOGY / eye examination | referred | Emergency | insurance | referral letter uploaded
+" 70210  | patient=Priya Mane; age=56; city=Thane | 18-Jun-2026 | INR 8,554.17 | Ophthalmology - Vision Test | SCHEDULED | Inpatient Review |  INSURANCE  | referral letter uploaded"
+ERR_VISIT_999999_IMPORT_FAILED |  |  |  |  |  |  |  | corrupt row from legacy export
+"70211 | patient=Om Desai; age=79; city=Nagpur | 2025/06/08 | INR 1,167.40 | Dermatology - Allergy Test | CANCELLED | OPD |  PARTIAL  | patient arrived late"
+" 70212  | patient=Meera Kulkarni; city=Hyderabad | 2025-06-11 | ₹6,957.91 | DERMATOLOGY / biopsy review | IN_PROGRESS | Emergency |  PARTIAL  | follow-up advised in 2 weeks"
+ 70213  | patient=Kunal More; age=21; city=Pune | 05-05-2026 | insurance pending | Ophthalmology - Vision Test | REFERRED | Follow-up | PARTIAL | patient arrived late
+"#70214 | patient=AARAV SHAH; age=unknown; city=HYDERABAD | Jul 03 2026 | ₹3,368.20 | pediatrics - Growth Assessment | REFERRED | Teleconsultation | paid | no extra notes"
+"VIS-70215 | patient=Rahul Gupta; age=36; city=Hyderabad | 08-17-2025 | INR 2,364.26 | GENERAL MEDICINE - Diabetes Follow-up | SCHEDULED | Follow-up | insurance | duplicate registration suspected"
+#70216 | patient=Rohan Mehta; age=69; city=Chennai | 10-05-2025 | N/A | ENT / sinus consultation | COMPLETED | Teleconsultation | PARTIAL | insurance approval pending
+"VIS-70217 | patient=Vikram Iyer; age=4; city=Satara | 05/03/2025 | ₹1,902.03 |  Ophthalmology  / retina review | COMPLETED | Inpatient Review | waived | billing details need verification"
+"70218 | patient=Ira Reddy; age=82; city=Solapur | Nov 29 2025 | ₹6,345.08 |  Cardiology  - ECG | SCHEDULED | Inpatient Review | PENDING | patient arrived late"
+#70219 | patient=Rohan Pawar; age=8; city=Mumbai | 2026/06/03 | N/A | NEUROLOGY / neurology consultation | REFERRED | Follow-up | INSURANCE | consultation completed; discharge notes pending
+"70220 | patient=Anaya Desai; city=Satara | 21/06/2026 | INR 7,583.63 |  ENT  / sinus consultation | IN_PROGRESS | Emergency |  PARTIAL  | billing details need verification"
+#70221 | patient=Priya Pawar; age=71; city=Indore | 2026/05/15 | insurance pending | ENT / hearing test | CANCELLED | OPD | pending | insurance approval pending
+"#70222 | patient=Om Reddy; age=52; city=Aurangabad | Oct 06 2026 | INR 2,932.36 | ORTHOPEDICS / physiotherapy | COMPLETED | Emergency | WAIVED | patient requested morning appointment"
+70223 | patient=Neel Pawar; age=5; city=Sangli | 29-Aug-2026 | 9934 |  Neurology  - Neurology Consultation | SCHEDULED | OPD |  WAIVED  | patient arrived late
+#70224 | patient=Priya Desai; age=6; city=Pune | 2025/09/24 | insurance pending | neurology - Migraine Follow-up | NO_SHOW | Teleconsultation | WAIVED | no extra notes
+"#70225 | patient=Dev More; age=18; city=Hyderabad | 2026-05-28 | ₹1,686.69 | ENT - Throat Examination | scheduled | Follow-up | PAID | consultation completed; discharge notes pending"
+"70226 | patient=Kavya Gaikwad; age=76; city=Mumbai | 05-06-2025 | ₹4,251.83 | Orthopedics / joint consultation | REFERRED | OPD |  WAIVED  | billing details need verification"
+ 70227  | patient=Nisha Gaikwad; age=65; city=Pune | 01-02-2026 |  | PEDIATRICS - Vaccination | CANCELLED | Inpatient Review | insurance | doctor requested additional review
+ 70228  | patient=Neel Sutar; age=1; city=Nagpur | 23/07/2025 |  | pediatrics - Vaccination | SCHEDULED | Emergency |  INSURANCE  | reschedule requested by family
+"70229 | patient=Pooja Reddy; age=24; city=Nagpur | 06-23-2025 | ₹5,104.84 | OPHTHALMOLOGY / glaucoma follow-up | CANCELLED | Teleconsultation |  INSURANCE  | referral letter uploaded"
+"VIS-70230 | patient=Dev Sharma; age=51; city=Sangli | 2025-07-20 | INR 10,485.77 | Neurology / mri review | IN_PROGRESS | Teleconsultation |  PENDING  | no extra notes"
+70231 | patient=Saanvi Jadhav; city=Sangli | 11-Apr-2026 | 7288 | Cardiology - Stress Test | COMPLETED | Inpatient Review | waived | reschedule requested by family
+"VIS-70232 | patient=Aditi Kulkarni; age=18; city=Mumbai | Mar 17 2025 | INR 8,606.10 | orthopedics - X-Ray | SCHEDULED | Emergency | waived | insurance approval pending"
+"#70233 | patient=Kabir Bhosale; age=32; city=Satara | Nov 27 2025 | INR 11,959.02 |  Dermatology  / biopsy review | CANCELLED | Follow-up | PARTIAL | "
+#70234 | patient=Aman Iyer; age=17; city=Satara | 2026-03-30 |  | CARDIOLOGY / ecg | SCHEDULED | OPD | pending | consultation completed; discharge notes pending
+70235 | patient=Rahul Patil; age=87; city=Thane | 08-Sep-2025 | ₹402.76 | orthopedics / physiotherapy | COMPLETED | Teleconsultation | pending | insurance approval pending
+ 70236  | patient=Kabir Gaikwad; age=68; city=Hyderabad | Apr 17 2026 | Rs.9591.06 | orthopedics / physiotherapy | REFERRED | Inpatient Review | partial | patient arrived late
+"#70237 | patient=SNEHA PATIL; age=unknown; city=INDORE | 15/02/2025 | INR 3,522.25 | NEUROLOGY - Migraine Follow-up | SCHEDULED | Inpatient Review |  PAID  | duplicate registration suspected"
+VIS-70238 | patient=Om Bhosale; age=20; city=Kolhapur | 06/05/2026 | Rs.2927.87 |  Pediatrics  - Growth Assessment | SCHEDULED | Emergency | WAIVED | referral letter uploaded
+VIS-70239 | patient=Kavya Mane; age=17; city=Kolhapur | 2025-02-02 | N/A |  Cardiology  - Echocardiogram | SCHEDULED | Follow-up | partial | lab report not attached
+"70240 | patient=Nisha Mehta; age=33; city=Indore | 2025/06/15 | INR 3,039.77 | general medicine / general checkup | IN_PROGRESS | Follow-up |  PAID  | lab report not attached"
+VIS-70241 | patient=Aditi Jadhav; age=18; city=Thane | Feb 09 2026 | N/A | Cardiology - Stress Test | SCHEDULED | Teleconsultation | pending | follow-up advised in 2 weeks
+"#70242 | patient=Aditi Kulkarni; age=7; city=Hyderabad | 02-05-2026 | ₹6,009.70 | Orthopedics / mri review | CANCELLED | Follow-up | INSURANCE | duplicate registration suspected"
+"#70243 | patient=Om Reddy; age=77; city=Aurangabad | 2026-01-18 | INR 11,402.47 | OPHTHALMOLOGY / glaucoma follow-up | COMPLETED | Emergency | WAIVED | lab report not attached"
+ 70244  | patient=Kavya Kadam; age=7; city=Kolhapur | Feb 15 2025 | ₹561.29 | Orthopedics / mri review | CANCELLED | Follow-up |  WAIVED  | consultation completed; discharge notes pending
+"70245 | patient=Sneha Mane; age=19; city=Indore | 2026-08-22 | INR 1,680.78 | ophthalmology / eye examination | COMPLETED | Inpatient Review | pending | doctor requested additional review"
+VIS-70246 | patient=Om Iyer; age=43; city=Sangli | 2026-06-22 | ₹359.66 | ORTHOPEDICS - MRI Review | REFERRED | Teleconsultation | INSURANCE | patient requested morning appointment
+70247 | patient=Om Patil; city=Delhi | 2025/10/15 | 8504 | ENT / hearing test | NO_SHOW | Inpatient Review | PAID | 
+"#70248 | patient=TARA IYER; age=unknown; city=SATARA | 06-Mar-2026 | ₹6,777.23 | ent - Ear Infection Review | REFERRED | OPD |  INSURANCE  | doctor requested additional review"
+" 70249  | patient=Reyansh Gupta; age=57; city=Indore | 2025/08/04 | ₹2,390.13 |  Neurology  - Neurology Consultation | NO_SHOW | Inpatient Review | PARTIAL | duplicate registration suspected"
+VIS-70250 | patient=Kabir Mehta; age=11; city=Mumbai | Mar 03 2026 | 10913 | Ophthalmology / eye examination | COMPLETED | OPD |  INSURANCE  | referral letter uploaded
+"VIS-70251 | patient=Pooja Desai; age=9; city=Solapur | 09-30-2025 | ₹4,243.94 |  Cardiology  - ECG | IN_PROGRESS | Emergency | PENDING | lab report not attached"
+" 70252  | patient=Anaya Bhosale; age=31; city=Delhi | 19/05/2026 | INR 8,167.39 | dermatology - Allergy Test | IN_PROGRESS | Follow-up | partial | patient requested morning appointment"
+"70253 | patient=RAHUL MANE; age=unknown; city=DELHI | 2026/02/13 | ₹1,808.06 | cardiology / cardiac consultation | CANCELLED | Follow-up |  INSURANCE  | duplicate registration suspected"
+VIS-70254 | patient=Ishaan Chavan; age=58; city=Sangli | 2025-04-17 | N/A | Orthopedics / joint consultation | REFERRED | Follow-up | pending | duplicate registration suspected
+70255 | patient=Dev More; city=Mumbai | 02-07-2025 | N/A |  ENT  / sinus consultation | NO_SHOW | Teleconsultation | INSURANCE | SYSTEM NOTE: record sync delayed
+ 70256  | patient=Arjun Reddy; age=85; city=Aurangabad | 2026/01/08 | N/A | DERMATOLOGY - Acne Follow-up | REFERRED | Teleconsultation | PARTIAL | referral letter uploaded
+70257 | patient=Vikram Mehta; age=68; city=Thane | Nov 22 2025 | 3259 |  Dermatology  - Acne Follow-up | COMPLETED | Follow-up | paid | doctor requested additional review
+ 70258  | patient=Kiara Desai; age=39; city=Mumbai | 26-Feb-2026 | Rs.7204.56 | dermatology - Allergy Test | CANCELLED | Inpatient Review | PAID | 
+70259 | patient=Riya Kadam; age=21; city=Chennai | 2026-06-01 | N/A | cardiology / ecg | REFERRED | Teleconsultation | PAID | duplicate registration suspected
+ 70260  | patient=Reyansh Gupta; age=54; city=Delhi | 08-Jan-2026 | Rs.10143.05 | GENERAL MEDICINE - Blood Test Review | CANCELLED | OPD | WAIVED | no extra notes
+"70261 | patient=Ira Nair; age=84; city=Solapur | 05-Jul-2025 | ₹9,523.04 |  Ophthalmology  / vision test | COMPLETED | Teleconsultation | paid | follow-up advised in 2 weeks"
+#70262 | patient=Rohan Iyer; age=29; city=Aurangabad | 29-Mar-2025 | 10288 | general medicine / blood test review | CANCELLED | Follow-up | paid | billing details need verification
+"VIS-70263 | patient=Myra More; age=67; city=Sangli | 28-Feb-2025 | ₹5,023.93 | cardiology - ECG | IN_PROGRESS | Emergency | PENDING | doctor requested additional review"
+"#70264 | patient=Meera Desai; age=66; city=Delhi | 08/10/2025 | ₹4,556.78 | ophthalmology / glaucoma follow-up | COMPLETED | Emergency | WAIVED | no extra notes"
+"VIS-70265 | patient=Aarav Joshi; age=11; city=Kolhapur | 07-27-2026 | ₹7,733.02 | Dermatology - Skin Consultation | SCHEDULED | Inpatient Review | paid | consultation completed; discharge notes pending"
+#70266 | patient=Aditya Gaikwad; age=24; city=Sangli | 01-09-2026 | N/A | cardiology - Echocardiogram | NO_SHOW | OPD |  INSURANCE  | insurance approval pending
+#70267 | patient=Diya Iyer; age=73; city=Delhi | 2025/01/13 | N/A |  Neurology  - Neurology Consultation | NO_SHOW | Follow-up |  PENDING  | insurance approval pending
+" 70268  | patient=Tara Gaikwad; age=19; city=Satara | Jul 29 2026 | ₹8,196.94 |  Ophthalmology  - Eye Examination | COMPLETED | Follow-up | pending | patient arrived late"
+70269 | patient=Pooja Joshi; city=Aurangabad | 22/09/2026 | 8200 | ent / sinus consultation | COMPLETED | Inpatient Review |  WAIVED  | referral letter uploaded
+VIS-70270 | patient=Tara Iyer; city=Satara | Oct 01 2025 | N/A | Cardiology - Echocardiogram | CANCELLED | Teleconsultation | PARTIAL | 
+ 70271  | patient=IRA GUPTA; age=unknown; city=INDORE | 06-25-2026 | Rs.9782.63 | Cardiology - ECG | referred | Emergency | paid | follow-up advised in 2 weeks
+"VIS-70272 | patient=Aditya Pawar; age=2; city=Sangli | 12-28-2025 | ₹6,652.46 | OPHTHALMOLOGY - Retina Review | SCHEDULED | Emergency | PENDING | referral letter uploaded"
+"70273 | patient=Reyansh Gupta; age=64; city=Pune | 31/01/2026 | ₹12,474.66 | General Medicine / general checkup | NO_SHOW | Teleconsultation | PARTIAL | duplicate registration suspected"
+ 70274  | patient=Aman Bhosale; age=40; city=Delhi | 05-12-2025 | 4420 | ent - Hearing Test | COMPLETED | Teleconsultation | PAID | referral letter uploaded
+"#70275 | patient=Saanvi Nair; age=56; city=Aurangabad | 26/08/2026 | ₹4,566.51 |  Dermatology  - Skin Consultation | REFERRED | Follow-up | insurance | patient requested morning appointment"
+VIS-70276 | patient=Diya Joshi; age=25; city=Indore | 11-11-2025 | N/A | ent - Sinus Consultation | CANCELLED | Follow-up | waived | patient requested morning appointment
+"#70277 | patient=Vivaan Kulkarni; age=45; city=Pune | 2026/06/04 | INR 4,465.17 |  Cardiology  / ecg | IN_PROGRESS | OPD | partial | referral letter uploaded"
+VIS-70278 | patient=Rahul Iyer; age=34; city=Hyderabad | 13/06/2025 | N/A | Orthopedics - Physiotherapy | NO_SHOW | Inpatient Review | INSURANCE | reschedule requested by family
+70279 | patient=Priya Mane; age=66; city=Nashik | 2025-03-26 | INR 552.69 | CARDIOLOGY / stress test | CANCELLED | Follow-up | INSURANCE | referral letter uploaded
+ 70280  | patient=Om Kadam; age=74; city=Nashik | 07/10/2025 |  | OPHTHALMOLOGY - Glaucoma Follow-up | REFERRED | Inpatient Review | paid | reschedule requested by family
+70281 | patient=Meera Gupta; age=32; city=Pune | Oct 09 2025 |  |  ENT  / hearing test | COMPLETED | Emergency | partial | patient requested morning appointment
+#70282 | patient=Om Joshi; age=28; city=Indore | 30-Apr-2025 | 7287 | pediatrics / vaccination | IN_PROGRESS | Teleconsultation | PENDING | referral letter uploaded
+#70283 | patient=Myra Iyer; age=80; city=Sangli | 2025-05-19 | Rs.10115.01 | General Medicine - General Checkup | COMPLETED | Follow-up | WAIVED | reschedule requested by family
+ 70284  | patient=Sneha Shah; age=39; city=Pune | 09-11-2026 | N/A | Cardiology - Stress Test | IN_PROGRESS | Follow-up | paid | 
+"70285 | patient=Nisha Sutar; age=33; city=Sangli | 2025/12/05 | INR 3,601.73 | Neurology / neurology consultation | IN_PROGRESS | Follow-up |  PAID  | insurance approval pending"
+ 70286  | patient=Reyansh Joshi; age=79; city=Hyderabad | 12/07/2026 | Rs.9769.42 | Neurology - MRI Review | REFERRED | Teleconsultation |  PARTIAL  | billing details need verification
+#70287 | patient=Riya Gupta; age=10; city=Nashik | 05/03/2025 | Rs.6326.19 | ENT / sinus consultation | REFERRED | Follow-up | waived | duplicate registration suspected
+"VIS-70288 | patient=Priya Jadhav; age=73; city=Nashik | 2025-06-14 | INR 5,074.62 | General Medicine - Fever Consultation | IN_PROGRESS | OPD | waived | lab report not attached"
+#70289 | patient=Rohan More; age=9; city=Hyderabad | 02-Feb-2025 | N/A | neurology / mri review | NO_SHOW | Inpatient Review |  INSURANCE  | reschedule requested by family
+ 70290  | patient=Nisha More; city=Nagpur | 2026-04-01 | N/A | Pediatrics - Fever Consultation | COMPLETED | Follow-up | partial | lab report not attached
+ 70291  | patient=Rahul More; age=62; city=Solapur | 2026/09/28 | ₹987.85 | DERMATOLOGY / biopsy review | SCHEDULED | OPD |  INSURANCE  | lab report not attached
+#70292 | patient=Dev Mane; city=Mumbai | 08-Dec-2025 | N/A | ENT / ear infection review | NO_SHOW | Emergency | partial | doctor requested additional review
+" 70293  | patient=Riya Desai; city=Nashik | 06/07/2026 | INR 6,043.13 | ent / sinus consultation | REFERRED | Inpatient Review | waived | patient arrived late"
+"VIS-70294 | patient=Dev Mehta; age=13; city=Bengaluru | 08-09-2025 | ₹3,271.45 | General Medicine - General Checkup | CANCELLED | Follow-up |  PARTIAL  | no extra notes"
+70295 | patient=Aarav Kulkarni; age=7; city=Satara | Dec 30 2025 | N/A | ent - Sinus Consultation | REFERRED | Follow-up |  PARTIAL  | 
+"#70296 | patient=Priya Patil; age=15; city=Kolhapur | 2026-03-29 | INR 6,150.42 |  Dermatology  - Allergy Test | COMPLETED | Follow-up | partial | billing details need verification"
+VIS-70297 | patient=Aditya Chavan; city=Bengaluru | 2025/02/11 | 571 | Neurology / migraine follow-up | SCHEDULED | Emergency | partial | SYSTEM NOTE: record sync delayed
+#70298 | patient=TARA SHAH; age=unknown; city=CHENNAI | 13-Sep-2025 |  | ENT / throat examination | COMPLETED | Emergency |  PAID  | no extra notes
+ 70299  | patient=Myra Mehta; age=30; city=Chennai | 2026/02/20 | insurance pending | dermatology - Allergy Test | IN_PROGRESS | OPD | partial | referral letter uploaded
+70300 | patient=Saanvi Nair; city=Indore | 05-13-2025 | Rs.5568.06 |  Pediatrics  - Growth Assessment | IN_PROGRESS | Follow-up | waived | follow-up advised in 2 weeks
+"VIS-70301 DUPLICATE? | patient=MYRA MORE; age=unknown; city=PUNE | 2025-10-01 | INR 5,624.15 | Dermatology - Skin Consultation | IN_PROGRESS | Inpatient Review |  PARTIAL  | billing details need verification"
+#70302 | patient=Aditya Kulkarni; age=18; city=Nagpur | 06/01/2025 | 11287 | General Medicine - Fever Consultation | COMPLETED | Teleconsultation | paid | no extra notes
+#70303 | patient=Aditya Gupta; age=53; city=Delhi | 12/11/2025 | 6835 | Ophthalmology - Vision Test | CANCELLED | Emergency | waived | insurance approval pending
+" 70304  | patient=Vikram Kadam; age=77; city=Chennai | 17-Aug-2025 | INR 10,006.27 | Cardiology / echocardiogram | NO_SHOW | OPD | INSURANCE | duplicate registration suspected"
+VIS-70305 | patient=Vikram Jadhav; age=35; city=Thane | 07-Mar-2025 |  | ent - Throat Examination | IN_PROGRESS | OPD | PENDING | lab report not attached
+VIS-70306 | patient=Rahul Iyer; age=65; city=Mumbai | 18-Nov-2025 | Rs.7020.16 | DERMATOLOGY / acne follow-up | COMPLETED | Follow-up | pending | 
+" 70307  | patient=KAVYA PATIL; age=unknown; city=BENGALURU | 01-28-2026 | ₹8,293.64 | dermatology / acne follow-up | COMPLETED | OPD | PAID | duplicate registration suspected"
+70308 | patient=Meera Desai; age=3; city=Solapur | Jun 21 2026 | Rs.10921.91 |  General Medicine  / diabetes follow-up | NO_SHOW | Teleconsultation |  PAID  | duplicate registration suspected
+" 70309  | patient=REYANSH KADAM; age=unknown; city=INDORE | 09-14-2026 | ₹5,977.91 | GENERAL MEDICINE - Diabetes Follow-up | SCHEDULED | Follow-up | pending | no extra notes"
+#70310 | patient=Aarav Pawar; age=42; city=Sangli | 21-Mar-2025 | 938 | Ophthalmology - Retina Review | NO_SHOW | Follow-up | WAIVED | patient requested morning appointment
+"70311 | patient=Pooja Mane; age=64; city=Hyderabad | 20/10/2025 | INR 5,240.44 | ent - Throat Examination | REFERRED | Teleconsultation | PAID | "
+" 70312  | patient=KUNAL PATIL; age=unknown; city=MUMBAI | 2026/07/31 | INR 4,341.33 |  Pediatrics  - Child Wellness Check | REFERRED | Inpatient Review | PARTIAL | billing details need verification"
+ 70313  | patient=Pooja Shah; age=13; city=Aurangabad | 14/06/2026 | N/A |  General Medicine  - Blood Test Review | CANCELLED | Inpatient Review | insurance | reschedule requested by family
+"#70314 | patient=Om Desai; age=55; city=Chennai | 01-22-2025 | INR 2,337.41 |  Cardiology  / ecg | NO_SHOW | Teleconsultation | insurance | reschedule requested by family"
+" 70315  | patient=Kiara Sutar; city=Nagpur | 2026/07/02 | ₹1,846.20 | ORTHOPEDICS / joint consultation | IN_PROGRESS | Emergency |  INSURANCE  | consultation completed; discharge notes pending"
+" 70316  | patient=Diya Kadam; age=55; city=Mumbai | Sep 14 2025 | INR 8,972.66 | Dermatology - Skin Consultation | NO_SHOW | Inpatient Review | INSURANCE | insurance approval pending"
+"#70317 | patient=Pooja Reddy; city=Aurangabad | 2025/06/23 | INR 5,931.76 | Ophthalmology - Retina Review | NO_SHOW | Inpatient Review | PAID | follow-up advised in 2 weeks"
+ 70318  | patient=Sneha Chavan; age=58; city=Mumbai | 11/01/2026 | 1330 | GENERAL MEDICINE - General Checkup | NO_SHOW | OPD | partial | lab report not attached
+#70319 | patient=Riya Shah; city=Solapur | Apr 29 2025 | N/A | Orthopedics - Joint Consultation | SCHEDULED | Emergency |  INSURANCE  | follow-up advised in 2 weeks
+#70320 | patient=Vikram Mehta; age=87; city=Nashik | Aug 18 2025 | N/A | Pediatrics / child wellness check | NO_SHOW | Teleconsultation |  PAID  | consultation completed; discharge notes pending
+"#70321 | patient=Priya Desai; age=44; city=Mumbai | 08/01/2025 | ₹2,901.03 | Neurology / neurology consultation | SCHEDULED | OPD | INSURANCE | patient arrived late"
+"#70322 | patient=Sneha Mane; age=15; city=Sangli | 2026/06/19 | INR 7,404.40 | Cardiology - ECG | CANCELLED | Emergency | waived | patient requested morning appointment"
+ 70323  | patient=Sneha Pawar; age=26; city=Kolhapur | 07-Feb-2025 | N/A |  Orthopedics  / x-ray | IN_PROGRESS | OPD |  WAIVED  | lab report not attached
+ 70324  | patient=DIYA MEHTA; age=unknown; city=NAGPUR | 2026/04/17 | 7096 | GENERAL MEDICINE / general checkup | SCHEDULED | OPD | waived | no extra notes
+ 70325  | patient=Dev Nair; age=23; city=Mumbai | 11-24-2025 | Rs.11821.22 | PEDIATRICS - Vaccination | NO_SHOW | Follow-up | PAID | no extra notes
+#70326 | patient=Pooja Gaikwad; city=Satara | 31-May-2025 | N/A |  Neurology  - MRI Review | IN_PROGRESS | Teleconsultation |  PENDING  | referral letter uploaded
+"70327 | patient=Priya Shah; age=18; city=Satara | Apr 09 2026 | ₹11,145.34 | Cardiology - Cardiac Consultation | IN_PROGRESS | Follow-up | PARTIAL | patient requested morning appointment"
+ 70328  | patient=Arjun Shah; city=Chennai | Jul 19 2026 | 5702 | cardiology / stress test | COMPLETED | Inpatient Review |  PAID  | consultation completed; discharge notes pending
+VIS-70329 | patient=Aarav Mane; age=25; city=Satara | Jul 26 2025 | 10118 |  Dermatology  - Biopsy Review | NO_SHOW | Emergency | partial | lab report not attached
+"70330 | patient=Anaya Jadhav; city=Thane | 2025/12/16 | ₹4,007.84 | ORTHOPEDICS - X-Ray | IN_PROGRESS | Emergency |  PAID  | lab report not attached"
+#70331 | patient=Kavya Bhosale; age=89; city=Sangli | 16-Sep-2025 | 2268 | Ophthalmology - Glaucoma Follow-up | COMPLETED | Emergency | PENDING | no extra notes
+70332 | patient=Meera Gupta; age=48; city=Nashik | 2025-10-28 | N/A |  Dermatology  - Acne Follow-up | NO_SHOW | OPD |  INSURANCE  | follow-up advised in 2 weeks
+VIS-70333 | patient=Ira Pawar; age=89; city=Chennai | 27-Mar-2026 |  | ENT - Throat Examination | SCHEDULED | Emergency | PENDING | 
+VIS-70334 | patient=Kabir Sutar; city=Indore | 2026-03-14 |  | GENERAL MEDICINE / general checkup | CANCELLED | Emergency | INSURANCE | billing details need verification
+70335 | patient=Ira Gupta; age=62; city=Indore | Jan 31 2025 | Rs.8652.39 |  Orthopedics  / mri review | CANCELLED | Follow-up | waived | referral letter uploaded
+70336 | patient=Diya Sutar; age=5; city=Sangli | 05-Jun-2026 | 10114 | cardiology - ECG | SCHEDULED | Follow-up | insurance | billing details need verification
+"70337 | patient=Pooja More; age=49; city=Solapur | 07-Jan-2026 | ₹6,498.96 | Dermatology - Biopsy Review | COMPLETED | Inpatient Review | WAIVED | duplicate registration suspected"
+"70338 | patient=Reyansh Kulkarni; age=71; city=Kolhapur | 2025-09-14 | ₹6,842.51 |  Ophthalmology  - Glaucoma Follow-up | IN_PROGRESS | Emergency |  PENDING  | patient arrived late"
+"VIS-70339 | patient=Kavya Kulkarni; city=Kolhapur | 18-Feb-2026 | INR 6,002.50 | NEUROLOGY / eeg | SCHEDULED | Emergency | PARTIAL | "
+VIS-70340 | patient=Riya Mane; age=59; city=Solapur | 2025-11-10 | Rs.1549.13 | PEDIATRICS / growth assessment | IN_PROGRESS | OPD | partial | insurance approval pending
+"70341 | patient=Arjun Pawar; age=45; city=Bengaluru | Sep 20 2025 | ₹5,902.90 | orthopedics - Joint Consultation | COMPLETED | Emergency | PAID | follow-up advised in 2 weeks"
+#70342 | patient=Ira Sharma; age=41; city=Delhi | 04/06/2026 | 2763 |  Ophthalmology  / eye examination | SCHEDULED | Inpatient Review | paid | 
+70343 | patient=Saanvi Chavan; age=31; city=Sangli | 02-17-2026 | 614 |  General Medicine  / blood test review | COMPLETED | Inpatient Review | INSURANCE | no extra notes
+VIS-70344 | patient=Kabir Reddy; age=77; city=Bengaluru | 29-Aug-2026 | 9034 | dermatology / allergy test | COMPLETED | Follow-up | waived | duplicate registration suspected
+ 70345  | patient=VIVAAN PAWAR; age=unknown; city=NAGPUR | 2025/11/17 | N/A | Pediatrics / vaccination | CANCELLED | Inpatient Review |  INSURANCE  | insurance approval pending
+ 70346  | patient=KAVYA REDDY; age=unknown; city=KOLHAPUR | 27-Dec-2025 | Rs.3920.95 | Neurology - EEG | IN_PROGRESS | Emergency | pending | doctor requested additional review
+#70347 | patient=Reyansh Kadam; city=Kolhapur | 2026/07/09 |  | orthopedics - Joint Consultation | COMPLETED | Teleconsultation | PENDING | doctor requested additional review
+"70348 | patient=Kavya Kulkarni; age=17; city=Delhi | 18/06/2026 | ₹7,986.41 | pediatrics - Growth Assessment | COMPLETED | Follow-up |  PENDING  | "
+VIS-70349 | patient=Dev Sharma; age=20; city=Nagpur | 13-Feb-2026 | N/A | Orthopedics - X-Ray | SCHEDULED | Emergency | waived | billing details need verification
+70350 | patient=Diya Patil; age=84; city=Solapur | 2025-04-05 | insurance pending | cardiology / cardiac consultation | SCHEDULED | Inpatient Review |  WAIVED  | reschedule requested by family
+#70351 | patient=Kunal Jadhav; age=90; city=Delhi | 06-Feb-2026 | Rs.11644.34 | Pediatrics / growth assessment | IN_PROGRESS | Inpatient Review | PAID | no extra notes
+"#70352 | patient=Arjun Gaikwad; age=47; city=Nashik | Mar 31 2025 | ₹1,937.75 |  Ophthalmology  - Eye Examination | COMPLETED | OPD | WAIVED | reschedule requested by family"
+70353 | patient=Priya Shah; age=26; city=Aurangabad | 11-Mar-2025 |  | Cardiology / cardiac consultation | CANCELLED | Teleconsultation | PAID | doctor requested additional review
+VIS-70354 | patient=Rohan Chavan; age=67; city=Bengaluru | Aug 08 2025 | 9127 | Pediatrics / child wellness check | CANCELLED | Inpatient Review | paid | patient arrived late
+70355 | patient=Riya Reddy; age=64; city=Thane | 2025/08/06 | insurance pending | Neurology / neurology consultation | NO_SHOW | Follow-up | partial | patient arrived late
+ 70356  | patient=Saanvi Gupta; city=Mumbai | 07/06/2025 |  | cardiology - Stress Test | COMPLETED | Follow-up | INSURANCE | patient requested morning appointment
+"VIS-70357 | patient=Tara Reddy; age=4; city=Nagpur | 09-11-2025 | INR 3,903.62 | dermatology / allergy test | NO_SHOW | OPD | PARTIAL | doctor requested additional review"
+"VIS-70358 | patient=Pooja Sharma; age=71; city=Aurangabad | Apr 22 2026 | INR 7,571.24 | pediatrics - Vaccination | NO_SHOW | Teleconsultation | WAIVED | referral letter uploaded"
+70359 | patient=Ishaan Mane; city=Satara | Jul 24 2026 | Rs.9371.55 | GENERAL MEDICINE / general checkup | CANCELLED | Inpatient Review | PAID | referral letter uploaded
+70360 | patient=Dev Shah; age=75; city=Sangli | 06-10-2025 | N/A |  Ophthalmology  - Retina Review | COMPLETED | Follow-up |  WAIVED  | follow-up advised in 2 weeks
+70361 | patient=Kavya Sutar; age=16; city=Bengaluru | 2025/03/23 | N/A | dermatology - Skin Consultation | COMPLETED | Emergency | pending | insurance approval pending
+70362 | patient=Reyansh Shah; age=23; city=Hyderabad | 04-04-2026 | 9957 |  Cardiology  - Cardiac Consultation | IN_PROGRESS | Inpatient Review |  PAID  | referral letter uploaded
+VIS-70363 | patient=Riya Patil; age=8; city=Aurangabad | Jul 11 2025 | Rs.5443.90 | NEUROLOGY / neurology consultation | CANCELLED | Emergency | INSURANCE | doctor requested additional review
+"VIS-70364 | patient=Kiara Kulkarni; age=40; city=Pune | 2025-08-11 | INR 2,531.88 | Pediatrics - Vaccination | REFERRED | OPD | insurance | reschedule requested by family"
+VIS-70365 | patient=Arjun Desai; city=Sangli | 04/01/2026 | N/A |  ENT  - Hearing Test | CANCELLED | Teleconsultation | waived | consultation completed; discharge notes pending
+VIS-70366 | patient=Kavya Reddy; age=12; city=Solapur | 07-09-2025 | 2361 | Neurology - MRI Review |  CANCELLED  | Follow-up | waived | SYSTEM NOTE: record sync delayed
+ 70367  | patient=Arjun Sharma; age=23; city=Mumbai | 10/09/2025 | Rs.2675.96 | PEDIATRICS - Child Wellness Check | IN_PROGRESS | OPD | INSURANCE | 
+VIS-70368 | patient=Aditi Chavan; age=84; city=Indore | 03-24-2026 | 8757 | general medicine / fever consultation | COMPLETED | Teleconsultation |  WAIVED  | billing details need verification
+70369 | patient=Rohan Gaikwad; age=8; city=Aurangabad | 12-Sep-2025 | 9653 | general medicine / diabetes follow-up | NO_SHOW | Inpatient Review | insurance | patient requested morning appointment
+"#70370 | patient=Neel Nair; age=79; city=Nashik | 2026/05/14 | ₹9,768.61 | Orthopedics - Physiotherapy | SCHEDULED | Teleconsultation | WAIVED | lab report not attached"
+"70371 | patient=Priya Gupta; age=77; city=Nagpur | 20-Apr-2025 | ₹4,923.24 | dermatology - Skin Consultation | COMPLETED | OPD | waived | patient requested morning appointment"
+"#70372 | patient=Ira Kulkarni; age=68; city=Nashik | 10-Aug-2025 | ₹5,616.80 | orthopedics / physiotherapy | SCHEDULED | Follow-up | PENDING | billing details need verification"
+#70373 | patient=Priya Kulkarni; age=44; city=Hyderabad | Dec 15 2025 | 12494 |  ENT  / sinus consultation | CANCELLED | OPD | insurance | consultation completed; discharge notes pending
+ 70374  | patient=Kunal Sutar; city=Aurangabad | May 14 2026 | Rs.9807.54 | dermatology / acne follow-up | COMPLETED | Teleconsultation | insurance | doctor requested additional review
+ 70375  | patient=Reyansh Bhosale; age=29; city=Sangli | Dec 17 2025 | Rs.12140.13 | Neurology / neurology consultation | REFERRED | Inpatient Review | partial | doctor requested additional review
+#70376 | patient=Vivaan Kadam; city=Nagpur | 25-Oct-2025 | 3587 | Ophthalmology - Glaucoma Follow-up | REFERRED | Teleconsultation | PAID | billing details need verification
+"70377 | patient=Kunal Desai; age=50; city=Thane | 29-Oct-2025 | ₹7,412.79 |  Neurology  - MRI Review | IN_PROGRESS | Inpatient Review | WAIVED | "
+70378 | patient=Diya More; city=Chennai | 07-Jun-2025 | 6050 | Pediatrics - Child Wellness Check | CANCELLED | Emergency | PARTIAL | duplicate registration suspected
+VIS-70379 | patient=Tara Kadam; age=46; city=Delhi | 02-09-2026 | N/A |  Cardiology  / cardiac consultation | CANCELLED | Teleconsultation | partial | lab report not attached
+VIS-70380 | patient=Priya Chavan; age=29; city=Indore | 2025/06/21 | Rs.3185.25 |  General Medicine  - Blood Test Review | NO_SHOW | Teleconsultation | partial | patient requested morning appointment
+VIS-70381 | patient=Dev Mehta; age=12; city=Mumbai | 01-22-2026 | 10256 | Orthopedics / x-ray | CANCELLED | OPD | pending | billing details need verification
+"#70382 | patient=Riya Jadhav; city=Chennai | 05/05/2025 | INR 11,822.10 |  Cardiology  - Echocardiogram | CANCELLED | Emergency | insurance | billing details need verification"
+ 70383  | patient=Diya Kadam; age=30; city=Indore | 2025-08-27 | N/A | Dermatology / acne follow-up | SCHEDULED | OPD |  INSURANCE  | insurance approval pending
+" 70384  | patient=Vikram Reddy; age=23; city=Chennai | 10-16-2025 | ₹6,101.83 |  Pediatrics  / child wellness check | SCHEDULED | OPD | PENDING | lab report not attached"
+#70385 | patient=Neel Desai; age=31; city=Aurangabad | 22/02/2026 | 4034 | Pediatrics - Child Wellness Check | NO_SHOW | Teleconsultation | pending | reschedule requested by family
+VIS-70386 | patient=POOJA DESAI; age=unknown; city=INDORE | 01-09-2025 | Rs.4089.60 | general medicine - Blood Test Review | CANCELLED | Follow-up |  WAIVED  | doctor requested additional review
+VIS-70387 | patient=Vikram Bhosale; age=28; city=Solapur | Dec 02 2025 | Rs.8952.86 | ENT - Hearing Test | IN_PROGRESS | Inpatient Review |  PENDING  | referral letter uploaded
+"70388 | patient=Kavya Desai; age=5; city=Nagpur | 09-29-2025 | INR 9,117.40 |  ENT  / ear infection review | IN_PROGRESS | Follow-up |  PARTIAL  | reschedule requested by family"
+#70389 | patient=Aditi Patil; age=34; city=Nagpur | 2026-07-28 | 5977 | NEUROLOGY / migraine follow-up | IN_PROGRESS | Follow-up | partial | lab report not attached
+ 70390  | patient=Arjun Kulkarni; age=77; city=Bengaluru | 2025/02/15 | Rs.11411.13 | general medicine / general checkup | SCHEDULED | Emergency | PENDING | 
+ 70391  | patient=Aditya Bhosale; age=1; city=Mumbai | 08-Mar-2026 | ₹674.94 |  Pediatrics  / child wellness check | CANCELLED | Follow-up |  PARTIAL  | 
+VIS-70392 | patient=Aman Nair; age=46; city=Sangli | Sep 01 2026 | Rs.10607.56 | Orthopedics - Physiotherapy | REFERRED | Emergency | PAID | no extra notes
+70393 | patient=Myra Patil; age=68; city=Pune | 2026/05/15 | Rs.12184.93 |  Orthopedics  - X-Ray | NO_SHOW | Follow-up | PARTIAL | patient requested morning appointment
+70394 | patient=Diya Kulkarni; age=86; city=Nashik | 2026/08/02 | Rs.1304.36 | Neurology / mri review | NO_SHOW | Teleconsultation | partial | 
+ 70395  | patient=Dev Joshi; age=33; city=Aurangabad | 12-29-2025 | 6634 | ORTHOPEDICS / x-ray | CANCELLED | Teleconsultation |  PENDING  | doctor requested additional review
+#70396 | patient=Vivaan Desai; age=66; city=Kolhapur | Mar 19 2026 | 11696 |  Cardiology  / echocardiogram | NO_SHOW | Inpatient Review |  INSURANCE  | duplicate registration suspected
+ 70397  | patient=Neel Sharma; age=2; city=Aurangabad | 25/08/2025 | N/A |  Cardiology  / cardiac consultation | IN_PROGRESS | Emergency |  PAID  | duplicate registration suspected
+"70398 | patient=Vikram Reddy; age=6; city=Pune | 09-20-2026 | INR 10,174.87 |  Neurology  / neurology consultation | SCHEDULED | Teleconsultation |  PAID  | follow-up advised in 2 weeks"
+#70399 | patient=Om More; age=56; city=Bengaluru | 2025-05-12 | N/A | GENERAL MEDICINE - Blood Test Review | COMPLETED | Teleconsultation | PENDING | patient arrived late
+70400 | patient=Sneha Shah; age=27; city=Satara | 02/10/2025 | ₹879.74 | GENERAL MEDICINE - General Checkup | NO_SHOW | Teleconsultation | PENDING | consultation completed; discharge notes pending
+VIS-70401 | patient=Saanvi Nair; age=18; city=Solapur | 2025/06/17 | N/A |  Neurology  / eeg | CANCELLED | Follow-up | paid | doctor requested additional review
+"#70402 | patient=Aditya Pawar; age=51; city=Kolhapur | 2025-06-13 | INR 10,487.15 | Dermatology - Biopsy Review | IN_PROGRESS | Follow-up | insurance | "
+#70403 | patient=Kabir Nair; city=Hyderabad | 02-Jun-2026 | Rs.9509.22 | neurology - EEG | COMPLETED | Teleconsultation | pending | reschedule requested by family
+70404 | patient=Dev Mane; age=22; city=Thane | May 20 2025 | 5407 | Orthopedics / joint consultation | IN_PROGRESS | OPD | partial | consultation completed; discharge notes pending
+" 70405  | patient=Rohan Gupta; age=23; city=Sangli | 20/01/2025 | INR 2,933.34 | cardiology - Echocardiogram | CANCELLED | Emergency | paid | no extra notes"
+ 70406  | patient=Arjun Reddy; age=25; city=Bengaluru | 2026/05/14 | INR 316.63 | general medicine / diabetes follow-up | SCHEDULED | OPD | PENDING | follow-up advised in 2 weeks
+70407 | patient=Om Sutar; age=5; city=Nashik | 2025-02-02 | Rs.12330.11 | Ophthalmology / retina review | COMPLETED | Inpatient Review |  PARTIAL  | billing details need verification
+70408 | patient=Kabir Nair; age=5; city=Nagpur | 2025/08/11 | insurance pending | NEUROLOGY - MRI Review | REFERRED | Teleconsultation |  WAIVED  | reschedule requested by family
+70409 | patient=Saanvi Kadam; age=64; city=Nagpur | Sep 07 2025 | Rs.10143.87 | General Medicine / fever consultation | SCHEDULED | Teleconsultation | PAID | lab report not attached
+#70410 | patient=Saanvi Sutar; age=50; city=Indore | 06-16-2025 | Rs.3885.19 |  Dermatology  / allergy test | COMPLETED | Inpatient Review | insurance | patient arrived late
+ 70411  | patient=Kavya Desai; age=72; city=Delhi | 28-Dec-2025 | 9471 | General Medicine / fever consultation | CANCELLED | Inpatient Review | PAID | duplicate registration suspected
+VIS-70412 | patient=Kabir Sutar; age=28; city=Pune | 26/08/2026 |  |  Pediatrics  / growth assessment | REFERRED | Emergency |  WAIVED  | doctor requested additional review
+#70413 | patient=RIYA MORE; age=unknown; city=DELHI | 03/10/2025 | Rs.5509.50 |  ENT  - Hearing Test | SCHEDULED | Emergency | paid | referral letter uploaded
+ 70414  | patient=Kiara Kadam; age=48; city=Solapur | Mar 26 2025 | 9353 | Ophthalmology - Retina Review | COMPLETED | Emergency |  PAID  | billing details need verification
+" 70415  | patient=Om Kadam; age=26; city=Kolhapur | 2026-07-04 | INR 4,822.09 | dermatology / biopsy review | REFERRED | OPD | partial | follow-up advised in 2 weeks"
+#70416 | patient=Nisha Desai; age=50; city=Chennai | May 14 2025 | N/A |  Pediatrics  - Fever Consultation | CANCELLED | OPD |  PARTIAL  | billing details need verification
+VIS-70417 | patient=Reyansh Kadam; age=49; city=Delhi | 16/09/2025 | 11263 |  General Medicine  - Blood Test Review | IN_PROGRESS | Inpatient Review | insurance | insurance approval pending
+"#70418 | patient=Tara Kulkarni; age=3; city=Sangli | 2025/09/06 | INR 11,957.72 |  Ophthalmology  / eye examination | IN_PROGRESS | OPD | paid | lab report not attached"
+70419 | patient=Neel Gaikwad; age=57; city=Nashik | Aug 07 2026 | N/A | orthopedics / physiotherapy | NO_SHOW | OPD |  PENDING  | 
+#70420 | patient=Aman Desai; age=62; city=Aurangabad | 03-01-2026 | Rs.3016.86 | Pediatrics - Child Wellness Check | COMPLETED | Teleconsultation | pending | 
+"70421 | patient=Aarav Gaikwad; city=Hyderabad | 2026/03/25 | INR 7,734.69 | neurology - Migraine Follow-up | IN_PROGRESS | Follow-up |  WAIVED  | follow-up advised in 2 weeks"
+VIS-70422 | patient=Diya More; age=51; city=Aurangabad | 2026/04/04 | N/A | ORTHOPEDICS / x-ray | NO_SHOW | Follow-up |  INSURANCE  | doctor requested additional review
+VIS-70423 | patient=Rahul Patil; age=65; city=Pune | Sep 01 2025 | Rs.3075.28 | neurology / eeg | COMPLETED | Inpatient Review | PAID | insurance approval pending
+"#70424 | patient=Kabir Reddy; age=59; city=Bengaluru | 09-22-2025 | INR 4,776.32 | general medicine / diabetes follow-up | NO_SHOW | OPD | paid | no extra notes"
+#70425 | patient=Rohan Iyer; age=73; city=Indore | Jan 27 2026 | 11110 | Neurology - Neurology Consultation | IN_PROGRESS | Teleconsultation | partial | duplicate registration suspected
+ 70426  | patient=Ira Joshi; age=84; city=Chennai | 06-Feb-2025 | N/A | Dermatology - Allergy Test | CANCELLED | Teleconsultation | insurance | reschedule requested by family
+" 70427  | patient=Kabir Gaikwad; age=86; city=Kolhapur | 08-14-2025 | ₹7,019.11 |  Neurology  / neurology consultation | SCHEDULED | Inpatient Review | paid | doctor requested additional review"
+#70428 | patient=Neel Mane; city=Satara | 2026/04/15 |  |  Pediatrics  / child wellness check | NO_SHOW | Inpatient Review | pending | patient requested morning appointment
+ 70429  | patient=Tara Gaikwad; age=57; city=Kolhapur | 2025/04/29 | Rs.6950.80 | Orthopedics / physiotherapy | REFERRED | OPD | partial | follow-up advised in 2 weeks
+"VIS-70430 | patient=Vikram Desai; age=5; city=Bengaluru | 02-Sep-2025 | INR 5,667.86 | general medicine / general checkup | REFERRED | Teleconsultation |  PAID  | follow-up advised in 2 weeks"
+ 70431  | patient=Ira Shah; age=69; city=Chennai | 07/04/2025 | 2951 | ENT / throat examination | COMPLETED | Emergency | WAIVED | consultation completed; discharge notes pending
+VIS-70432 | patient=Aman Gupta; age=3; city=Sangli | 30/03/2026 | Rs.10318.59 |  Neurology  / neurology consultation | CANCELLED | Emergency | PAID | billing details need verification
+VIS-70433 | patient=Nisha Reddy; city=Aurangabad | 06-Oct-2026 | N/A | NEUROLOGY - Migraine Follow-up | IN_PROGRESS | OPD | waived | billing details need verification
+"VIS-70434 | patient=Neel Patil; age=4; city=Bengaluru | 06-23-2026 | INR 3,091.03 | ent - Ear Infection Review | SCHEDULED | OPD | PENDING | lab report not attached"
+"70435 | patient=Tara Jadhav; age=68; city=Solapur | 2025/05/28 | ₹6,995.60 | Pediatrics - Vaccination | IN_PROGRESS | Emergency |  PENDING  | reschedule requested by family"
+70436 | patient=Sneha Patil; age=41; city=Nashik | 07/10/2026 |  | NEUROLOGY / migraine follow-up | SCHEDULED | Emergency | WAIVED | 
+VIS-70437 | patient=Om Reddy; age=86; city=Indore | 03-09-2025 | 5593 | OPHTHALMOLOGY - Vision Test | CANCELLED | Teleconsultation |  WAIVED  | patient requested morning appointment
+70438 | patient=Kunal Desai; city=Nagpur | 20-Oct-2025 | 594 | neurology / eeg | COMPLETED | Teleconsultation | PARTIAL | duplicate registration suspected
+#70439 | patient=IRA PATIL; age=unknown; city=AURANGABAD | 18/12/2025 | Rs.8377.94 | ORTHOPEDICS / joint consultation | SCHEDULED | Follow-up | WAIVED | 
+70440 | patient=Aditya Chavan; age=48; city=Satara | 25/09/2026 | 10281 | ophthalmology / retina review | SCHEDULED | Emergency |  PARTIAL  | 
+ 70441  | patient=Kabir Mane; age=23; city=Mumbai | 2025/09/12 | N/A | DERMATOLOGY / biopsy review | SCHEDULED | Teleconsultation |  PARTIAL  | billing details need verification
+ 70442  | patient=Pooja Gupta; age=38; city=Bengaluru | 2025/12/31 | Rs.3420.89 | ENT - Throat Examination | COMPLETED | Inpatient Review | INSURANCE | SYSTEM NOTE: record sync delayed
+#70443 | patient=Kiara Kulkarni; age=87; city=Bengaluru | 15/08/2026 | insurance pending |  Neurology  - Migraine Follow-up | COMPLETED | Follow-up | PARTIAL | billing details need verification
+ 70444  | patient=Nisha More; age=41; city=Hyderabad | 24/07/2025 | N/A | dermatology / skin consultation | CANCELLED | OPD | WAIVED | patient requested morning appointment
+VIS-70445 | patient=Aditi Reddy; age=65; city=Indore | 09-Feb-2026 | insurance pending |  General Medicine  - Blood Test Review | COMPLETED | OPD |  INSURANCE  | follow-up advised in 2 weeks
+"70446 | patient=Rohan Kadam; age=90; city=Nashik | Feb 02 2025 | INR 2,343.11 | Ophthalmology - Vision Test | SCHEDULED | Inpatient Review | paid | lab report not attached"
+#70447 | patient=Om Joshi; age=41; city=Thane | 04/09/2026 |  | ORTHOPEDICS - MRI Review | in_progress | Follow-up | pending | lab report not attached
+70448 | patient=Pooja Reddy; age=67; city=Delhi | 2026-10-11 | Rs.7886.73 | ent / sinus consultation | CANCELLED | Inpatient Review | PAID | insurance approval pending
+"#70449 | patient=Tara Mane; city=Chennai | 06-15-2026 | ₹5,592.46 | general medicine - Fever Consultation | NO_SHOW | Inpatient Review | PARTIAL | patient arrived late"
+ 70450  | patient=Meera Bhosale; age=57; city=Bengaluru | 2025/08/30 | N/A |  General Medicine  / fever consultation | REFERRED | Teleconsultation | insurance | patient requested morning appointment
+"70451 | patient=Nisha Reddy; age=38; city=Satara | 20/06/2025 | INR 11,156.98 | Pediatrics - Fever Consultation | COMPLETED | Inpatient Review | waived | lab report not attached"
+" 70452  | patient=Kavya Bhosale; age=70; city=Mumbai | 2026-06-17 | INR 3,225.22 | pediatrics / fever consultation | NO_SHOW | Inpatient Review | PAID | lab report not attached"
+#70453 | patient=Rohan Patil; age=78; city=Pune | Jun 18 2026 | 12451 | cardiology / stress test | CANCELLED | Teleconsultation | PENDING | insurance approval pending
+70454 | patient=Om Sharma; city=Nashik | Aug 25 2026 |  | Orthopedics - Joint Consultation | IN_PROGRESS | OPD | PAID | lab report not attached
+ 70455  | patient=Ishaan Iyer; age=51; city=Delhi | 09-Feb-2025 | Rs.7420.67 |  Orthopedics  / physiotherapy | NO_SHOW | Follow-up |  PARTIAL  | patient arrived late
+#70456 | patient=NISHA PAWAR; age=unknown; city=SOLAPUR | 16/03/2025 | N/A |  ENT  / hearing test | SCHEDULED | Follow-up | insurance | 
+VIS-70457 | patient=Riya Pawar; age=63; city=Aurangabad | 21/07/2026 | Rs.5151.40 |  Pediatrics  - Fever Consultation | REFERRED | Follow-up | waived | no extra notes
+ 70458  | patient=Rahul Kadam; age=82; city=Thane | 2026-01-18 | 4197 |  General Medicine  / general checkup | IN_PROGRESS | OPD | partial | reschedule requested by family
+VIS-70459 | patient=Ishaan Reddy; age=44; city=Sangli | 2026-04-15 | N/A | Ophthalmology / eye examination | NO_SHOW | Emergency |  PAID  | insurance approval pending
+SYSTEM ALERT: patient ID mismatch |  |  |  |  |  |  |  | manual review required
+"VIS-70460 | patient=Kavya Shah; age=12; city=Pune | 2026-07-18 | INR 8,256.67 |  General Medicine  / blood test review | SCHEDULED | OPD | paid | patient requested morning appointment"
+#70461 | patient=Kavya Joshi; age=46; city=Satara | 13/02/2026 | N/A | ophthalmology - Glaucoma Follow-up | CANCELLED | Inpatient Review | PARTIAL | 
+"VIS-70462 | patient=Kavya Desai; age=72; city=Mumbai | 08-11-2025 | ₹2,209.49 |  Cardiology  - Cardiac Consultation | CANCELLED | OPD | partial | SYSTEM NOTE: record sync delayed"
+ 70463  | patient=Om Reddy; age=78; city=Indore | 22-Jan-2026 | N/A | orthopedics / joint consultation | in_progress | Emergency | partial | no extra notes
+"70464 | patient=Vikram Shah; age=38; city=Chennai | 2026-10-12 | ₹2,926.13 | DERMATOLOGY - Acne Follow-up | NO_SHOW | OPD | PAID | patient requested morning appointment"
+#70465 | patient=Priya Joshi; age=73; city=Hyderabad | 25-Oct-2025 |  |  Orthopedics  - Physiotherapy | IN_PROGRESS | OPD | paid | patient arrived late
+"70466 | patient=Tara Sharma; age=78; city=Chennai | Jul 06 2025 | ₹4,115.23 |  General Medicine  / fever consultation | SCHEDULED | Teleconsultation | waived | consultation completed; discharge notes pending"
+#70467 | patient=Aman Mehta; age=67; city=Kolhapur | 2025-09-29 | Rs.3736.23 |  Dermatology  - Skin Consultation | IN_PROGRESS | Teleconsultation |  PAID  | SYSTEM NOTE: record sync delayed
+"#70468 | patient=Dev Nair; age=34; city=Hyderabad | 10/01/2025 | ₹11,400.70 | ENT / ear infection review | NO_SHOW | Inpatient Review |  PAID  | lab report not attached"
+70469 | patient=Rohan Kadam; age=43; city=Bengaluru | 15/07/2026 | N/A | CARDIOLOGY / stress test | in_progress | OPD | PENDING | consultation completed; discharge notes pending
+VIS-70470 | patient=Saanvi Sutar; age=64; city=Chennai | Mar 14 2026 | 965 | dermatology / allergy test | SCHEDULED | Inpatient Review | PARTIAL | doctor requested additional review
+#70471 | patient=Aditya Joshi; age=65; city=Nashik | 2026-03-07 | 9896 |  General Medicine  / fever consultation | CANCELLED | Emergency | partial | reschedule requested by family
+VIS-70472 | patient=Kiara Chavan; age=7; city=Delhi | Jun 21 2025 | 7477 |  General Medicine  / blood test review | SCHEDULED | Follow-up | PAID | follow-up advised in 2 weeks
+70473 | patient=Saanvi Joshi; age=81; city=Sangli | 03-19-2025 | ₹336.59 | Orthopedics - MRI Review | COMPLETED | Follow-up |  WAIVED  | patient arrived late
+70474 | patient=Rohan Pawar; age=63; city=Thane | 14-Nov-2025 | 1159 |  Neurology  - Migraine Follow-up | CANCELLED | Emergency | waived | billing details need verification
+ 70475  | patient=Priya Patil; city=Mumbai | 2025-12-08 | INR 539.43 | PEDIATRICS - Child Wellness Check | SCHEDULED | Follow-up |  PENDING  | lab report not attached
+ 70476  | patient=Tara Jadhav; age=19; city=Thane | 2026/08/29 | Rs.5357.46 | cardiology / cardiac consultation | COMPLETED | Emergency |  INSURANCE  | duplicate registration suspected
+70477 | patient=Kiara Pawar; age=52; city=Bengaluru | 12/10/2025 | N/A |  Pediatrics  - Growth Assessment | COMPLETED | OPD |  WAIVED  | duplicate registration suspected
+ 70478  | patient=Rohan Bhosale; age=56; city=Hyderabad | 02-05-2026 | N/A | Pediatrics - Fever Consultation | IN_PROGRESS | OPD | paid | SYSTEM NOTE: record sync delayed
+ 70479  | patient=Kiara Iyer; age=28; city=Hyderabad | 21-Feb-2026 | ₹365.03 |  Ophthalmology  - Eye Examination | REFERRED | Emergency | PARTIAL | follow-up advised in 2 weeks
+#70480 | patient=Ira More; age=88; city=Nagpur | 04-27-2026 | N/A |  Neurology  - Migraine Follow-up | CANCELLED | Emergency | waived | 
+" 70481  | patient=Reyansh Mane; age=33; city=Nagpur | 27-Jan-2026 | ₹4,387.09 | ORTHOPEDICS / x-ray | NO_SHOW | Inpatient Review | WAIVED | patient requested morning appointment"
+VIS-70482 | patient=Kunal Iyer; age=61; city=Pune | 2025/04/28 | insurance pending | ORTHOPEDICS - Joint Consultation | IN_PROGRESS | Emergency |  INSURANCE  | lab report not attached
+"VIS-70483 | patient=Myra Kulkarni; age=57; city=Nashik | 27-Feb-2026 | INR 5,059.39 | ophthalmology - Glaucoma Follow-up | REFERRED | Emergency | PENDING | "
+"#70484 | patient=Kabir Shah; age=38; city=Indore | 06-15-2025 | ₹6,570.24 | Neurology / migraine follow-up | COMPLETED | OPD |  PARTIAL  | doctor requested additional review"
+#70485 | patient=Sneha Kadam; age=61; city=Nagpur | 01-13-2026 | N/A | dermatology - Biopsy Review | IN_PROGRESS | Emergency | PAID | billing details need verification
+ 70486  | patient=Kavya Gaikwad; city=Delhi | Oct 10 2025 | 841 | CARDIOLOGY - ECG | IN_PROGRESS | OPD |  WAIVED  | doctor requested additional review
+ 70487  | patient=Vivaan Sutar; age=66; city=Pune | 2025-01-21 | insurance pending | Orthopedics / physiotherapy | CANCELLED | Follow-up | PARTIAL | follow-up advised in 2 weeks
+"VIS-70488 | patient=Myra Kadam; age=42; city=Sangli | 26/10/2025 | ₹3,137.39 | orthopedics - X-Ray | IN_PROGRESS | Follow-up | waived | follow-up advised in 2 weeks"
+ 70489  | patient=Ira Desai; age=8; city=Kolhapur | 2025-08-12 | 5096 | GENERAL MEDICINE - Fever Consultation | IN_PROGRESS | OPD | INSURANCE | no extra notes
+ 70490  | patient=Aman Gaikwad; age=23; city=Solapur | 2026/08/29 | Rs.9960.76 | PEDIATRICS - Growth Assessment | CANCELLED | Follow-up |  PAID  | consultation completed; discharge notes pending
+"VIS-70491 | patient=Vivaan Gupta; age=21; city=Mumbai | Aug 13 2026 | ₹2,973.38 | dermatology - Acne Follow-up | NO_SHOW | Emergency | waived | referral letter uploaded"
+ 70492  | patient=Aditi Pawar; age=87; city=Bengaluru | 2026-05-31 | 10721 | dermatology - Allergy Test | CANCELLED | OPD |  WAIVED  | billing details need verification
+70493 | patient=Dev Mehta; age=50; city=Aurangabad | 06-28-2026 | 2095 | PEDIATRICS - Child Wellness Check | COMPLETED | Follow-up | INSURANCE | billing details need verification
+#70494 | patient=Rahul Gupta; age=61; city=Hyderabad | 14/01/2026 | N/A |  Ophthalmology  / vision test | NO_SHOW | Follow-up |  PARTIAL  | duplicate registration suspected
+"VIS-70495 | patient=Vivaan Iyer; age=54; city=Mumbai | 29-Jun-2026 | INR 10,414.22 | DERMATOLOGY - Acne Follow-up | NO_SHOW | Inpatient Review |  PARTIAL  | "
+ 70496  | patient=Arjun Mane; city=Solapur | 26-Jun-2025 | Rs.9648.79 | GENERAL MEDICINE - Fever Consultation | SCHEDULED | Teleconsultation | pending | patient requested morning appointment
+VIS-70497 | patient=Ishaan Chavan; age=32; city=Bengaluru | 11-15-2025 | 6995 | Dermatology / acne follow-up | REFERRED | Emergency | waived | duplicate registration suspected
+ 70498  | patient=Diya Joshi; age=75; city=Nashik | 2026-09-24 | Rs.3608.02 | pediatrics / vaccination | SCHEDULED | Teleconsultation |  PAID  | 
+"70499 | patient=Aditi More; age=5; city=Indore | 05-21-2026 | INR 7,069.52 | Dermatology / skin consultation | NO_SHOW | Emergency | PAID | follow-up advised in 2 weeks"
+VIS-70500 | patient=Pooja Gaikwad; age=34; city=Nashik | 24-Sep-2025 | N/A | CARDIOLOGY / echocardiogram | REFERRED | Inpatient Review |  INSURANCE  | patient arrived late
+VIS-70501 | patient=Kunal Mehta; age=76; city=Hyderabad | 08-10-2026 | 5950 |  Cardiology  / stress test | SCHEDULED | Emergency |  INSURANCE  | no extra notes
+" 70502  | patient=Vivaan Iyer; age=44; city=Satara | 06-Jan-2026 | INR 9,987.74 |  ENT  / sinus consultation | COMPLETED | Inpatient Review | paid | patient arrived late"
+"VIS-70503 | patient=Riya Mane; age=23; city=Pune | 12/06/2025 | INR 4,674.69 |  Dermatology  / skin consultation | SCHEDULED | Inpatient Review |  PAID  | doctor requested additional review"
+70504 | patient=Kiara More; age=61; city=Bengaluru | 2026-09-05 | N/A | Dermatology / biopsy review | SCHEDULED | Teleconsultation | INSURANCE | patient arrived late
+70505 | patient=Ira Bhosale; age=18; city=Chennai | 10-Jul-2025 | N/A | Orthopedics / physiotherapy | CANCELLED | OPD | pending | lab report not attached
+70506 | patient=Anaya Mehta; age=14; city=Nagpur | 04-19-2026 | INR 682.63 | ENT / hearing test | CANCELLED | Follow-up |  WAIVED  | SYSTEM NOTE: record sync delayed
+VIS-70507 | patient=Kiara Kadam; age=75; city=Kolhapur | 16/07/2025 | 9119 |  Pediatrics  - Vaccination | REFERRED | Inpatient Review |  PARTIAL  | referral letter uploaded
+"70508 | patient=Arjun Kadam; age=90; city=Nagpur | 2026-05-14 | INR 3,764.05 | Orthopedics / joint consultation | SCHEDULED | Inpatient Review |  INSURANCE  | referral letter uploaded"
+#70509 | patient=Reyansh Mane; age=70; city=Bengaluru | 2026-08-26 | N/A | PEDIATRICS - Vaccination | CANCELLED | Teleconsultation | INSURANCE | reschedule requested by family
+" 70510  | patient=Aarav Sharma; age=39; city=Solapur | Jan 21 2026 | INR 5,223.89 | Cardiology - Echocardiogram | NO_SHOW | OPD |  INSURANCE  | patient requested morning appointment"
+"70511 | patient=Aman Sutar; age=81; city=Kolhapur | 2025/12/16 | INR 1,516.69 |  ENT  - Hearing Test | REFERRED | Follow-up | insurance | lab report not attached"
+VIS-70512 | patient=Rohan Nair; age=15; city=Mumbai | 02-Oct-2025 | N/A | pediatrics - Growth Assessment | IN_PROGRESS | Teleconsultation | insurance | duplicate registration suspected
+"#70513 | patient=Aditya Chavan; age=20; city=Delhi | 03-05-2025 | ₹11,689.03 | PEDIATRICS / vaccination | REFERRED | Teleconsultation |  INSURANCE  | SYSTEM NOTE: record sync delayed"
+ 70514  | patient=Dev Gupta; age=60; city=Bengaluru | 02/03/2026 | Rs.8926.41 |  Ophthalmology  - Retina Review | CANCELLED | Inpatient Review |  WAIVED  | insurance approval pending
+VIS-70515 | patient=Anaya Chavan; age=8; city=Satara | Aug 30 2025 | Rs.10831.01 | CARDIOLOGY / stress test | IN_PROGRESS | Emergency |  WAIVED  | billing details need verification
+VIS-70516 | patient=Riya Bhosale; age=57; city=Delhi | 28-Mar-2026 | Rs.2390.00 | pediatrics / growth assessment | COMPLETED | OPD | waived | follow-up advised in 2 weeks
+"VIS-70517 | patient=Ishaan Jadhav; age=12; city=Pune | 2026/09/17 | INR 10,560.63 | ENT / sinus consultation | NO_SHOW | Follow-up | WAIVED | insurance approval pending"
+ 70518  | patient=Neel Desai; city=Indore | 04-09-2026 | 8581 | Cardiology - Stress Test | IN_PROGRESS | Inpatient Review | PENDING | 
+#70519 | patient=Om Reddy; age=1; city=Bengaluru | 2025/07/03 | Rs.3396.71 |  Neurology  / mri review | SCHEDULED | Emergency | WAIVED | follow-up advised in 2 weeks
+#70520 | patient=Priya Jadhav; age=58; city=Delhi | 01-10-2025 | 11312 | OPHTHALMOLOGY - Glaucoma Follow-up | NO_SHOW | Inpatient Review | pending | no extra notes
+VIS-70521 | patient=Kavya Sutar; age=24; city=Kolhapur | 20/05/2026 | Rs.6798.92 | cardiology / stress test | NO_SHOW | OPD | PARTIAL | follow-up advised in 2 weeks
+"#70522 | patient=Meera Kadam; age=82; city=Solapur | 10/05/2026 | INR 2,448.28 |  Dermatology  / allergy test | IN_PROGRESS | Teleconsultation |  PENDING  | lab report not attached"
+70523 | patient=Anaya Kadam; age=17; city=Nagpur | 12-01-2025 | 10554 | CARDIOLOGY - ECG | REFERRED | OPD |  INSURANCE  | follow-up advised in 2 weeks
+"VIS-70524 | patient=Rahul Kulkarni; age=42; city=Solapur | 06-12-2026 | ₹8,972.25 | CARDIOLOGY - Echocardiogram | SCHEDULED | Teleconsultation |  PARTIAL  | consultation completed; discharge notes pending"
+70525 | patient=Reyansh Mehta; city=Pune | 08-27-2025 | N/A | ENT / ear infection review | COMPLETED | Emergency | partial | consultation completed; discharge notes pending
+#70526 | patient=Aman Pawar; age=36; city=Kolhapur | 13/07/2026 | 3443 |  Ophthalmology  - Glaucoma Follow-up | CANCELLED | Follow-up |  PENDING  | consultation completed; discharge notes pending
+ 70527  | patient=Diya Reddy; age=46; city=Indore | 05-29-2025 | 9449 | OPHTHALMOLOGY - Eye Examination | NO_SHOW | Emergency | partial | SYSTEM NOTE: record sync delayed
+"VIS-70528 | patient=Reyansh Bhosale; age=55; city=Indore | 08-25-2025 | ₹2,154.01 |  Dermatology  - Allergy Test | NO_SHOW | Teleconsultation | INSURANCE | follow-up advised in 2 weeks"
+#70529 | patient=Reyansh Reddy; city=Chennai | Apr 09 2026 | Rs.10366.48 | orthopedics / physiotherapy | IN_PROGRESS | Inpatient Review | pending | billing details need verification
+"#70530 | patient=Vivaan Mehta; age=17; city=Aurangabad | 08-12-2025 | ₹5,402.00 | NEUROLOGY / eeg | IN_PROGRESS | Follow-up | pending | "
+"VIS-70531 | patient=Aman Chavan; city=Hyderabad | 2025-06-06 | INR 5,790.81 | DERMATOLOGY - Acne Follow-up | IN_PROGRESS | Emergency | INSURANCE | reschedule requested by family"
+70532 | patient=Vikram Sharma; age=50; city=Chennai | Jun 23 2025 | Rs.8996.35 | Dermatology / biopsy review | IN_PROGRESS | Emergency | pending | consultation completed; discharge notes pending
+ 70533  | patient=Sneha Kadam; age=12; city=Nagpur | 16-Nov-2025 | 11207 |  Orthopedics  - MRI Review |  IN_PROGRESS  | Teleconsultation | insurance | 
+70534 | patient=Kavya Jadhav; city=Indore | 2025-08-09 | N/A | OPHTHALMOLOGY - Retina Review | NO_SHOW | Teleconsultation |  WAIVED  | patient arrived late
+"#70535 | patient=Om Gaikwad; age=31; city=Chennai | 08-Mar-2026 | INR 2,362.89 | general medicine / blood test review | CANCELLED | OPD |  PARTIAL  | patient arrived late"
+VIS-70536 | patient=Aman Iyer; age=59; city=Pune | 05-07-2025 | 2046 | NEUROLOGY - Neurology Consultation | IN_PROGRESS | OPD |  PARTIAL  | lab report not attached
+"70537 | patient=Kunal Desai; age=31; city=Indore | 05/03/2026 | INR 3,412.09 | Cardiology / cardiac consultation | IN_PROGRESS | OPD | INSURANCE | duplicate registration suspected"
+ 70538  | patient=Priya Mane; age=9; city=Chennai | 10/06/2025 | insurance pending | Ophthalmology - Retina Review | no_show | Inpatient Review | insurance | SYSTEM NOTE: record sync delayed
+#70539 | patient=Kavya Mane; age=4; city=Hyderabad | 06-08-2025 | N/A | DERMATOLOGY / skin consultation | COMPLETED | OPD |  PENDING  | no extra notes
+70540 | patient=Sneha Desai; age=4; city=Nashik | 05/11/2025 | Rs.7407.77 |  Ophthalmology  - Eye Examination | REFERRED | Teleconsultation | PARTIAL | follow-up advised in 2 weeks
+"#70541 | patient=Vikram Bhosale; city=Thane | 2025/03/12 | INR 9,663.83 |  Pediatrics  - Fever Consultation | SCHEDULED | Inpatient Review |  WAIVED  | duplicate registration suspected"
+" 70542  | patient=Aarav Joshi; age=59; city=Nagpur | Jan 15 2025 | ₹11,942.50 | pediatrics / fever consultation | COMPLETED | OPD | PARTIAL | no extra notes"
+" 70543  | patient=Kunal Mehta; age=81; city=Sangli | Apr 29 2026 | INR 2,872.00 | CARDIOLOGY - Stress Test | IN_PROGRESS | Follow-up | INSURANCE | insurance approval pending"
+#70544 | patient=Rohan Pawar; age=25; city=Satara | 16-Jul-2026 | Rs.8264.93 | cardiology - Cardiac Consultation | NO_SHOW | Emergency | PENDING | doctor requested additional review
+"VIS-70545 | patient=Aditi Nair; age=68; city=Pune | 2025-01-11 | ₹10,717.46 | PEDIATRICS - Fever Consultation | IN_PROGRESS | Inpatient Review | PENDING | duplicate registration suspected"
+70546 | patient=Aditya Chavan; age=79; city=Nagpur | Feb 16 2026 | N/A | pediatrics / child wellness check | NO_SHOW | Emergency | insurance | follow-up advised in 2 weeks
+ 70547  | patient=Rohan Pawar; age=89; city=Hyderabad | 2026/05/04 | N/A | pediatrics - Growth Assessment | REFERRED | Teleconsultation | partial | 
+" 70548  | patient=Sneha Sharma; age=2; city=Solapur | 22/07/2025 | ₹7,630.11 |  General Medicine  - Fever Consultation | REFERRED | Emergency | insurance | patient requested morning appointment"
+"VIS-70549 | patient=Sneha Reddy; age=25; city=Delhi | 03/10/2025 | INR 2,418.59 | general medicine / blood test review | IN_PROGRESS | OPD |  PARTIAL  | "
+#70550 | patient=Saanvi Patil; age=14; city=Chennai | 2025-11-30 | Rs.992.42 | GENERAL MEDICINE - General Checkup | COMPLETED | OPD |  PARTIAL  | duplicate registration suspected
+70551 | patient=Kavya Chavan; city=Nashik | 03-25-2025 | 11194 | orthopedics - X-Ray | NO_SHOW | Follow-up | pending | doctor requested additional review
+#70552 | patient=Neel Chavan; age=69; city=Chennai | 23/01/2026 |  | Dermatology / acne follow-up | CANCELLED | Teleconsultation | WAIVED | follow-up advised in 2 weeks
+"#70553 | patient=Meera Gaikwad; age=39; city=Delhi | 11/03/2025 | ₹9,389.81 | Orthopedics / mri review | COMPLETED | OPD | INSURANCE | referral letter uploaded"
+" 70554  | patient=Vikram Mehta; age=11; city=Kolhapur | 2026/01/03 | ₹8,158.00 |  Cardiology  - Stress Test | SCHEDULED | Inpatient Review |  PAID  | reschedule requested by family"
+70555 | patient=Myra Shah; age=39; city=Sangli | 02/04/2026 | N/A | ENT / hearing test | IN_PROGRESS | Inpatient Review |  PENDING  | no extra notes
+"#70556 | patient=Meera Iyer; age=84; city=Thane | 18-Apr-2026 | INR 8,411.78 | NEUROLOGY - EEG | COMPLETED | OPD |  PENDING  | "
+ 70557  | patient=Om Iyer; city=Kolhapur | Dec 03 2025 | N/A | neurology - EEG | NO_SHOW | Emergency | pending | referral letter uploaded
+"#70558 | patient=Saanvi Patil; age=74; city=Nagpur | Aug 29 2026 | INR 8,273.11 | cardiology / stress test | COMPLETED | Teleconsultation | WAIVED | consultation completed; discharge notes pending"
+ 70559  | patient=Rahul Shah; age=63; city=Thane | 20-May-2025 | 6922 | ORTHOPEDICS - Joint Consultation | IN_PROGRESS | Follow-up | PENDING | consultation completed; discharge notes pending
+ 70560  | patient=Nisha Bhosale; age=12; city=Pune | 2025-02-10 | Rs.500.73 | orthopedics - Joint Consultation | referred | Teleconsultation | WAIVED | consultation completed; discharge notes pending
+#70561 | patient=Riya Kadam; age=88; city=Mumbai | 2025/06/01 | 3753 | ENT - Throat Examination | IN_PROGRESS | Inpatient Review |  WAIVED  | lab report not attached
+"#70562 | patient=Vivaan Gaikwad; age=69; city=Thane | 2025-09-23 | ₹10,477.13 | Orthopedics - Joint Consultation | SCHEDULED | Emergency | waived | reschedule requested by family"
+70563 | patient=Saanvi Joshi; age=87; city=Sangli | 2025/07/18 | 11931 | cardiology / stress test | SCHEDULED | Teleconsultation | PARTIAL | lab report not attached
+ 70564  | patient=Rohan Desai; city=Chennai | 12/03/2026 | N/A | ENT / hearing test | CANCELLED | Emergency |  WAIVED  | consultation completed; discharge notes pending
+VIS-70565 | patient=Rahul Reddy; age=56; city=Satara | 2026/04/19 | N/A | OPHTHALMOLOGY - Eye Examination | CANCELLED | Follow-up | paid | reschedule requested by family
+"70566 | patient=Myra Kulkarni; age=40; city=Delhi | 15-Apr-2025 | ₹5,052.77 |  Pediatrics  - Growth Assessment | SCHEDULED | Inpatient Review | PAID | reschedule requested by family"
+"70567 | patient=Aditi Sharma; age=14; city=Mumbai | Jun 13 2025 | INR 10,501.52 |  Cardiology  - Echocardiogram | COMPLETED | Emergency | partial | "
+ 70568  | patient=Rahul Mane; city=Thane | Feb 10 2025 | Rs.4369.86 |  Pediatrics  / child wellness check | IN_PROGRESS | Inpatient Review | WAIVED | reschedule requested by family
+"70569 | patient=Vikram Iyer; age=41; city=Chennai | 07-05-2026 | INR 3,263.85 | ENT / hearing test | COMPLETED | Inpatient Review |  PARTIAL  | duplicate registration suspected"
+" 70570  | patient=Nisha Nair; city=Chennai | Aug 02 2025 | INR 3,409.27 | pediatrics / vaccination | IN_PROGRESS | Inpatient Review |  PAID  | no extra notes"
+"70571 | patient=Rohan Pawar; age=9; city=Satara | 2026-06-29 | ₹4,147.21 | neurology - Migraine Follow-up | NO_SHOW | Inpatient Review |  PENDING  | reschedule requested by family"
+" 70572  | patient=Diya Reddy; city=Nagpur | 02-24-2025 | ₹10,199.23 | Pediatrics - Child Wellness Check | NO_SHOW | Follow-up | WAIVED | referral letter uploaded"
+70573 | patient=Myra Patil; age=63; city=Solapur | Aug 01 2025 | N/A | DERMATOLOGY - Biopsy Review | CANCELLED | Follow-up |  PAID  | patient arrived late
+70574 | patient=Sneha Iyer; age=34; city=Thane | 20/05/2026 | 3511 | NEUROLOGY - Migraine Follow-up | SCHEDULED | Teleconsultation |  PENDING  | lab report not attached
+#70575 | patient=Reyansh Kulkarni; age=50; city=Indore | Oct 23 2025 | 2277 | General Medicine - Blood Test Review | NO_SHOW | OPD | PENDING | duplicate registration suspected
+"VIS-70576 | patient=MYRA PAWAR; age=unknown; city=KOLHAPUR | 05-May-2025 | INR 11,642.18 |  Dermatology  - Biopsy Review | CANCELLED | Emergency | insurance | follow-up advised in 2 weeks"
+"70577 | patient=Pooja Sharma; age=13; city=Indore | 2025/12/17 | INR 2,968.91 | Pediatrics / growth assessment | IN_PROGRESS | Follow-up |  PAID  | reschedule requested by family"
+70578 | patient=Neel Pawar; age=74; city=Hyderabad | 12-05-2025 | Rs.9601.35 | ORTHOPEDICS - X-Ray | no_show | Teleconsultation |  WAIVED  | consultation completed; discharge notes pending
+ 70579  | patient=Om Sharma; city=Satara | 19-Apr-2025 | 11517 |  Neurology  / migraine follow-up | SCHEDULED | Teleconsultation |  PARTIAL  | patient requested morning appointment
+70580 | patient=Kavya Desai; age=51; city=Hyderabad | 08-Feb-2025 | INR 867.41 | cardiology - Echocardiogram | IN_PROGRESS | OPD | partial | patient requested morning appointment
+70581 | patient=Neel Sutar; age=50; city=Delhi | 10-Jun-2025 | 2310 | general medicine / diabetes follow-up | NO_SHOW | Teleconsultation | PARTIAL | follow-up advised in 2 weeks
+70582 | patient=Kiara More; age=88; city=Nashik | 21/08/2026 | Rs.5747.33 |  Dermatology  - Skin Consultation | IN_PROGRESS | OPD |  INSURANCE  | referral letter uploaded
+ 70583  | patient=Saanvi Reddy; age=78; city=Mumbai | Feb 04 2026 | 1183 |  Pediatrics  / child wellness check | COMPLETED | Emergency | partial | follow-up advised in 2 weeks
+"#70584 | patient=Pooja Sharma; age=16; city=Aurangabad | 2026-04-01 | INR 8,252.17 | ENT / sinus consultation | COMPLETED | Teleconsultation |  INSURANCE  | SYSTEM NOTE: record sync delayed"
+"#70585 | patient=Rahul Kulkarni; age=65; city=Satara | 07/04/2026 | ₹5,419.83 |  Neurology  - MRI Review | IN_PROGRESS | Teleconsultation | PENDING | patient requested morning appointment"
+ 70586  | patient=Priya Chavan; age=65; city=Chennai | 26-Aug-2026 | Rs.3211.44 | NEUROLOGY / migraine follow-up | IN_PROGRESS | OPD |  WAIVED  | consultation completed; discharge notes pending
+"#70587 | patient=Vikram Patil; age=24; city=Solapur | 05-07-2026 | INR 4,253.70 | ENT / throat examination | CANCELLED | Teleconsultation | partial | lab report not attached"
+VIS-70588 | patient=Riya Joshi; age=78; city=Sangli | 06-Jun-2026 | 8660 | Orthopedics / physiotherapy | NO_SHOW | Follow-up | PARTIAL | no extra notes
+70589 | patient=Diya Gaikwad; age=42; city=Bengaluru | Jan 28 2026 | Rs.7543.19 |  Pediatrics  / fever consultation | IN_PROGRESS | Emergency | waived | no extra notes
+"#70590 | patient=Ira Sutar; age=23; city=Pune | 2026/08/06 | ₹11,043.94 | GENERAL MEDICINE / diabetes follow-up | NO_SHOW | Inpatient Review |  PARTIAL  | insurance approval pending"
+#70591 | patient=Anaya Pawar; age=30; city=Pune | 2025/09/26 | N/A |  Dermatology  - Acne Follow-up | REFERRED | OPD |  PAID  | reschedule requested by family
+70592 | patient=Aditya Iyer; age=7; city=Bengaluru | 08-27-2026 | N/A | NEUROLOGY / migraine follow-up | SCHEDULED | Emergency | PAID | SYSTEM NOTE: record sync delayed
+"VIS-70593 | patient=Kavya Mehta; age=30; city=Mumbai | 03-10-2026 | ₹7,772.69 | General Medicine - Fever Consultation | CANCELLED | OPD |  PARTIAL  | SYSTEM NOTE: record sync delayed"
+ 70594  | patient=Pooja Joshi; age=74; city=Satara | Jun 14 2026 | Rs.8192.46 | neurology / eeg |  REFERRED  | Inpatient Review | WAIVED | doctor requested additional review
+"VIS-70595 | patient=ISHAAN GAIKWAD; age=unknown; city=BENGALURU | 2025/02/26 | ₹5,427.05 | cardiology - Echocardiogram | REFERRED | Inpatient Review | PENDING | doctor requested additional review"
+ 70596  | patient=Ishaan Mehta; age=15; city=Satara | 04/05/2025 | Rs.7370.39 | Ophthalmology / glaucoma follow-up | REFERRED | Emergency | PAID | doctor requested additional review
+70597 | patient=Pooja Chavan; city=Delhi | 2026/07/30 | Rs.8536.00 | orthopedics / mri review | IN_PROGRESS | Teleconsultation | paid | patient arrived late
+"VIS-70598 | patient=Aman Joshi; age=9; city=Satara | Dec 22 2025 | INR 10,361.79 | pediatrics - Fever Consultation | NO_SHOW | Emergency | insurance | follow-up advised in 2 weeks"
+ 70599  | patient=Aarav Gaikwad; age=70; city=Nashik | 2025-11-26 | 5916 | ENT - Hearing Test | SCHEDULED | Teleconsultation | INSURANCE | no extra notes
+"#70600 | patient=Aarav Mehta; age=18; city=Bengaluru | 2025-01-31 | INR 10,963.99 | Pediatrics - Growth Assessment | COMPLETED | Teleconsultation |  PENDING  | no extra notes"
+" 70601  | patient=Neel Chavan; age=10; city=Thane | 10-Oct-2026 | INR 4,630.83 | ophthalmology - Eye Examination | IN_PROGRESS | OPD | partial | patient requested morning appointment"
+#70602 | patient=Aditi Sharma; age=45; city=Hyderabad | 23-Aug-2026 | 2295 | Neurology / mri review | CANCELLED | Emergency | pending | SYSTEM NOTE: record sync delayed
+#70603 | patient=Aman Nair; age=67; city=Delhi | 13-Jul-2025 | N/A |  Dermatology  - Skin Consultation | NO_SHOW | Inpatient Review | WAIVED | 
+70604 | patient=Diya Mane; age=4; city=Indore | 19/02/2026 | 4385 | Pediatrics - Fever Consultation | NO_SHOW | Emergency | partial | doctor requested additional review
+ 70605  | patient=Om Mehta; age=81; city=Satara | 2025/05/19 | N/A |  Neurology  - Migraine Follow-up | NO_SHOW | Emergency |  PARTIAL  | no extra notes
+" 70606  | patient=Ishaan Iyer; age=3; city=Aurangabad | 03-Jan-2025 | INR 2,751.58 | GENERAL MEDICINE / blood test review | REFERRED | Follow-up |  PENDING  | duplicate registration suspected"
+#70607 | patient=Rohan Bhosale; age=48; city=Sangli | 09/05/2025 | N/A | PEDIATRICS / vaccination | COMPLETED | Emergency | WAIVED | patient arrived late
+" 70608  | patient=Diya Mehta; age=69; city=Nagpur | 03-28-2025 | INR 11,910.65 | Pediatrics / vaccination | REFERRED | OPD | paid | lab report not attached"
+"#70609 | patient=Kavya Kadam; age=82; city=Pune | Apr 03 2025 | ₹3,179.08 | ophthalmology - Eye Examination | SCHEDULED | Inpatient Review | insurance | billing details need verification"
+"70610 | patient=Rahul Kulkarni; age=70; city=Sangli | 28/08/2025 | ₹1,809.63 | Ophthalmology - Vision Test | NO_SHOW | OPD |  INSURANCE  | lab report not attached"
+"#70611 | patient=Neel Mane; age=60; city=Thane | 07-01-2026 | INR 4,831.88 | Cardiology / echocardiogram | SCHEDULED | OPD | PARTIAL | follow-up advised in 2 weeks"
+ 70612  | patient=Anaya More; age=18; city=Sangli | 30/04/2026 | 6543 | ophthalmology / vision test | SCHEDULED | Emergency |  PAID  | lab report not attached
+VIS-70613 | patient=Diya Bhosale; age=12; city=Hyderabad | 03-29-2026 | Rs.11920.87 | pediatrics - Growth Assessment | SCHEDULED | Teleconsultation | waived | insurance approval pending
+#70614 | patient=Arjun Desai; age=59; city=Delhi | 2025-02-27 | Rs.10313.77 | General Medicine - Diabetes Follow-up | COMPLETED | Emergency |  PARTIAL  | patient arrived late
+VIS-70615 | patient=Sneha Reddy; age=83; city=Solapur | 26-Nov-2025 | 1537 | NEUROLOGY - MRI Review | IN_PROGRESS | Emergency | partial | billing details need verification
+" 70616  | patient=Reyansh Mane; age=72; city=Hyderabad | 02-12-2026 | INR 9,193.12 | pediatrics / child wellness check | COMPLETED | Teleconsultation |  PENDING  | consultation completed; discharge notes pending"
+" 70617  | patient=RIYA JADHAV; age=unknown; city=HYDERABAD | 2025/11/29 | ₹1,630.30 | Dermatology - Biopsy Review | CANCELLED | Inpatient Review | insurance | no extra notes"
+"70618 | patient=Kunal Reddy; age=11; city=Chennai | 2026/04/23 | ₹6,402.05 |  Neurology  - EEG | cancelled | Teleconsultation |  WAIVED  | duplicate registration suspected"
+"VIS-70619 | patient=Myra Shah; age=81; city=Kolhapur | 2026-10-05 | ₹6,753.25 | general medicine - Blood Test Review | NO_SHOW | OPD | PAID | duplicate registration suspected"
+ 70620  | patient=Vikram Shah; age=13; city=Pune | Sep 27 2025 | N/A |  Ophthalmology  - Vision Test | IN_PROGRESS | Follow-up | pending | referral letter uploaded
+" 70621  | patient=Neel Mane; city=Delhi | 28/08/2026 | INR 9,459.15 | DERMATOLOGY / allergy test | REFERRED | Teleconsultation | PAID | no extra notes"
+70622 | patient=Diya Kadam; age=30; city=Thane | Nov 16 2025 | 1488 | ORTHOPEDICS - X-Ray | COMPLETED | Follow-up |  PENDING  | billing details need verification
+"VIS-70623 | patient=Reyansh More; age=18; city=Satara | 06-18-2025 | ₹7,580.43 | ent / sinus consultation | NO_SHOW | Teleconsultation | paid | SYSTEM NOTE: record sync delayed"
+70624 | patient=Rahul Jadhav; age=76; city=Hyderabad | 17-Nov-2025 | Rs.3843.53 | Pediatrics - Fever Consultation | CANCELLED | Inpatient Review | WAIVED | no extra notes
+" 70625  | patient=Pooja Bhosale; city=Nashik | 2025-07-09 | INR 4,706.32 | general medicine - Fever Consultation | NO_SHOW | Inpatient Review |  INSURANCE  | reschedule requested by family"
+ 70626  | patient=Meera Mehta; age=31; city=Nagpur | 2025-03-30 | INR 511.22 | pediatrics / child wellness check | NO_SHOW | Teleconsultation |  PARTIAL  | follow-up advised in 2 weeks
+#70627 | patient=Neel Nair; age=4; city=Aurangabad | 2026-01-15 | 1351 | GENERAL MEDICINE / blood test review | COMPLETED | Teleconsultation | waived | doctor requested additional review
+ 70628  | patient=Myra Gupta; age=4; city=Aurangabad | 03-12-2025 | insurance pending | general medicine - Diabetes Follow-up | SCHEDULED | Inpatient Review |  PAID  | billing details need verification
+#70629 | patient=Aditi Gupta; age=48; city=Chennai | 19-Feb-2025 | N/A | general medicine - Diabetes Follow-up | CANCELLED | Inpatient Review |  PENDING  | consultation completed; discharge notes pending
+VIS-70630 | patient=Arjun Desai; age=27; city=Thane | 13/04/2026 | Rs.4169.25 | ophthalmology / eye examination | IN_PROGRESS | Follow-up | WAIVED | consultation completed; discharge notes pending
+"70631 | patient=Dev Nair; age=77; city=Pune | Jan 17 2026 | INR 5,328.24 | dermatology - Skin Consultation | NO_SHOW | Emergency | INSURANCE | duplicate registration suspected"
+#70632 | patient=Anaya More; city=Satara | 2025/12/05 | N/A | orthopedics / x-ray | SCHEDULED | Teleconsultation | waived | reschedule requested by family
+" 70633  | patient=Pooja Iyer; age=24; city=Chennai | 01-06-2025 | INR 10,629.23 | GENERAL MEDICINE / general checkup | REFERRED | Follow-up | waived | patient arrived late"
+"VIS-70634 | patient=Aman Gupta; age=13; city=Kolhapur | 05-08-2026 | INR 8,727.28 |  General Medicine  - General Checkup | COMPLETED | OPD |  PENDING  | lab report not attached"
+ 70635  | patient=Priya Shah; age=65; city=Bengaluru | 14-Mar-2025 | Rs.8957.92 | General Medicine - Diabetes Follow-up | IN_PROGRESS | Inpatient Review | WAIVED | patient arrived late
+"70636 | patient=Pooja Mane; age=65; city=Pune | 09-24-2025 | INR 3,157.85 |  General Medicine  - Diabetes Follow-up | REFERRED | OPD |  PAID  | reschedule requested by family"
+" 70637  | patient=Kavya Mehta; age=11; city=Nashik | 2026-07-19 | INR 10,854.65 | Neurology - MRI Review | SCHEDULED | Teleconsultation |  INSURANCE  | lab report not attached"
+ 70638  | patient=Om Patil; age=62; city=Thane | 08-03-2026 | 3638 | Cardiology / stress test | NO_SHOW | Inpatient Review | insurance | SYSTEM NOTE: record sync delayed
+VIS-70639 | patient=Pooja Gaikwad; age=50; city=Thane | 12-26-2025 | Rs.7756.91 | neurology / migraine follow-up | REFERRED | Follow-up | WAIVED | referral letter uploaded
+VIS-70640 | patient=Vikram Mehta; age=68; city=Nashik | 30-Aug-2025 | N/A | DERMATOLOGY / acne follow-up | COMPLETED | OPD | PENDING | billing details need verification
+#70641 | patient=Nisha Iyer; age=79; city=Aurangabad | Apr 08 2026 | insurance pending | orthopedics / mri review | CANCELLED | Emergency | PARTIAL | billing details need verification
+"#70642 | patient=Arjun Patil; age=62; city=Mumbai | 2026/03/23 | INR 8,620.62 | ORTHOPEDICS / mri review | CANCELLED | Emergency | PAID | reschedule requested by family"
+#70643 | patient=Meera Mane; age=77; city=Kolhapur | 01/01/2026 | Rs.2202.28 | ORTHOPEDICS - Joint Consultation | COMPLETED | OPD | PARTIAL | billing details need verification
+70644 | patient=Diya Desai; age=62; city=Satara | Jun 24 2025 | N/A | PEDIATRICS - Child Wellness Check | COMPLETED | Follow-up |  WAIVED  | follow-up advised in 2 weeks
+#70645 | patient=Saanvi Nair; age=89; city=Pune | Jun 09 2025 | 12012 | dermatology - Skin Consultation | IN_PROGRESS | Teleconsultation | paid | reschedule requested by family
+70646 | patient=Aman Kulkarni; age=25; city=Mumbai | 08/05/2025 | Rs.8503.17 | Ophthalmology - Eye Examination | IN_PROGRESS | Teleconsultation | paid | patient requested morning appointment
+"70647 | patient=Sneha Patil; age=29; city=Thane | 10-16-2025 | ₹1,419.62 |  Neurology  - Migraine Follow-up | IN_PROGRESS | Inpatient Review | PARTIAL | patient arrived late"
+#70648 | patient=Kavya Sharma; age=26; city=Solapur | 2025-12-26 | N/A | ORTHOPEDICS - Physiotherapy | CANCELLED | Emergency |  PENDING  | duplicate registration suspected
+VIS-70649 | patient=Anaya Shah; age=76; city=Mumbai | Jun 20 2025 | Rs.3365.03 |  Neurology  - Migraine Follow-up | CANCELLED | Teleconsultation | PAID | billing details need verification
+"#70650 | patient=Arjun Nair; age=39; city=Delhi | 03-15-2025 | ₹7,476.17 | neurology / migraine follow-up | IN_PROGRESS | Inpatient Review | paid | referral letter uploaded"
+"70651 | patient=Tara Reddy; age=41; city=Chennai | 19/06/2026 | ₹5,555.64 | pediatrics / child wellness check | REFERRED | Teleconsultation | PARTIAL | "
+ 70652  | patient=Rahul Joshi; age=89; city=Kolhapur | 2026/03/05 | N/A | dermatology - Biopsy Review | CANCELLED | Emergency |  PAID  | doctor requested additional review
+"#70653 | patient=Anaya Bhosale; age=10; city=Kolhapur | 09/10/2025 | INR 2,012.31 | Neurology - MRI Review | IN_PROGRESS | Inpatient Review | PARTIAL | patient requested morning appointment"
+ 70654  | patient=Kabir Mane; age=56; city=Hyderabad | 02-28-2025 | N/A |  General Medicine  - Fever Consultation | IN_PROGRESS | Follow-up | waived | consultation completed; discharge notes pending
+ 70655  | patient=Neel Chavan; city=Hyderabad | 06-07-2025 | N/A | Cardiology - Cardiac Consultation | IN_PROGRESS | OPD | PARTIAL | follow-up advised in 2 weeks
+VIS-70656 | patient=Rohan Chavan; age=26; city=Delhi | 2025/06/14 | 5578 | Orthopedics - Joint Consultation | SCHEDULED | Inpatient Review |  PARTIAL  | billing details need verification
+"70657 | patient=Ira Kadam; age=79; city=Aurangabad | Feb 05 2025 | ₹7,559.06 | cardiology - ECG | REFERRED | Emergency |  INSURANCE  | follow-up advised in 2 weeks"
+VIS-70658 | patient=Diya Chavan; age=4; city=Indore | 29/07/2026 | ₹558.88 | Dermatology - Biopsy Review | IN_PROGRESS | Follow-up | paid | referral letter uploaded
+"VIS-70659 | patient=Nisha Patil; age=20; city=Delhi | 21-Jan-2026 | ₹4,722.09 | DERMATOLOGY - Biopsy Review | CANCELLED | Teleconsultation | PAID | insurance approval pending"
+ 70660  | patient=REYANSH NAIR; age=unknown; city=SOLAPUR | 2025-12-05 | N/A | Cardiology - Echocardiogram | NO_SHOW | Teleconsultation | PARTIAL | patient arrived late
+ 70661  | patient=Pooja Iyer; age=85; city=Bengaluru | 12-15-2025 | 7029 | GENERAL MEDICINE / fever consultation | NO_SHOW | OPD |  PARTIAL  | insurance approval pending
+#70662 | patient=Arjun Pawar; city=Aurangabad | 29-Oct-2025 | N/A | General Medicine / general checkup | REFERRED | Emergency | insurance | consultation completed; discharge notes pending
+ 70663  | patient=Diya Sharma; age=55; city=Chennai | 01-22-2026 | 5664 | ent - Hearing Test |  COMPLETED  | Teleconsultation |  WAIVED  | patient arrived late
+" 70664  | patient=Rahul Nair; city=Solapur | 2026-02-25 | INR 2,888.33 | Ophthalmology - Glaucoma Follow-up | COMPLETED | Follow-up | pending | reschedule requested by family"
+" 70665  | patient=Kabir Gupta; city=Nagpur | 05-14-2025 | ₹6,035.92 | ent / throat examination | CANCELLED | OPD | WAIVED | reschedule requested by family"
+70666 | patient=Tara Pawar; age=76; city=Bengaluru | 2025/08/16 | 3914 | dermatology - Acne Follow-up | SCHEDULED | OPD | pending | lab report not attached
+"VIS-70667 | patient=Kabir Kadam; age=40; city=Hyderabad | 19-Jan-2025 | ₹4,028.51 | general medicine / diabetes follow-up | IN_PROGRESS | Inpatient Review |  PENDING  | consultation completed; discharge notes pending"
+70668 | patient=Saanvi Iyer; age=73; city=Aurangabad | 2026/05/31 | N/A |  Cardiology  - Echocardiogram | IN_PROGRESS | Follow-up | waived | insurance approval pending
+#70669 | patient=Aditi Joshi; age=76; city=Indore | 02-04-2025 | N/A | ophthalmology / retina review | SCHEDULED | Follow-up |  WAIVED  | no extra notes
+ 70670  | patient=Priya Gupta; age=29; city=Indore | Jan 04 2025 | Rs.2835.79 | NEUROLOGY - Neurology Consultation | IN_PROGRESS | OPD | PARTIAL | patient arrived late
+"#70671 | patient=Kiara Gupta; age=87; city=Bengaluru | 13-Jan-2026 | INR 1,313.60 |  Dermatology  / allergy test | REFERRED | OPD |  WAIVED  | billing details need verification"
+ 70672  | patient=Aarav Kulkarni; city=Pune | 2026/08/18 | Rs.1193.53 | ophthalmology / eye examination | COMPLETED | Emergency | partial | reschedule requested by family
+70673 | patient=Ira Mehta; age=71; city=Indore | 08/08/2026 | 3194 |  Orthopedics  / mri review | IN_PROGRESS | Inpatient Review | pending | 
+" 70674  | patient=Priya Mane; age=36; city=Nagpur | 12/01/2025 | ₹8,796.67 |  Neurology  - Neurology Consultation | completed | Follow-up | waived | SYSTEM NOTE: record sync delayed"
+"VIS-70675 | patient=Kabir Sutar; city=Aurangabad | 2025/10/31 | INR 4,496.66 | PEDIATRICS / fever consultation | NO_SHOW | Follow-up | pending | insurance approval pending"
+VIS-70676 | patient=Aditya Reddy; age=68; city=Indore | 12-Apr-2026 | Rs.5050.71 | DERMATOLOGY / biopsy review | SCHEDULED | Emergency | PAID | referral letter uploaded
+ 70677  | patient=Kabir Shah; age=53; city=Solapur | 2026/06/01 | Rs.3744.46 | ent / ear infection review | NO_SHOW | Emergency | WAIVED | duplicate registration suspected
+"70678 | patient=Riya Sharma; age=77; city=Sangli | 24/10/2025 | ₹2,326.31 |  Dermatology  - Skin Consultation | COMPLETED | Emergency |  PENDING  | follow-up advised in 2 weeks"
+ 70679  | patient=Kiara Mehta; age=49; city=Hyderabad | 16-Nov-2025 |  | OPHTHALMOLOGY - Glaucoma Follow-up | SCHEDULED | Emergency | paid | insurance approval pending
+ 70680  | patient=REYANSH CHAVAN; age=unknown; city=SANGLI | Feb 07 2025 | N/A | ORTHOPEDICS / joint consultation | REFERRED | OPD | partial | 
+"VIS-70681 | patient=Ira Sharma; city=Chennai | Jul 13 2025 | INR 10,539.28 | General Medicine / fever consultation | SCHEDULED | Inpatient Review | waived | duplicate registration suspected"
+#70682 | patient=Aman Joshi; age=8; city=Sangli | 10-03-2026 | N/A |  Cardiology  / cardiac consultation | SCHEDULED | OPD | PARTIAL | patient requested morning appointment
+"VIS-70683 | patient=Kabir Jadhav; age=28; city=Nashik | Sep 02 2025 | INR 7,302.58 | GENERAL MEDICINE - Diabetes Follow-up | COMPLETED | Follow-up | PARTIAL | lab report not attached"
+70684 | patient=Riya Shah; city=Pune | Apr 23 2026 | 8393 |  Ophthalmology  / glaucoma follow-up | REFERRED | OPD |  PAID  | doctor requested additional review
+" 70685  | patient=Tara Mehta; city=Delhi | 20-Aug-2026 | INR 12,292.43 | ORTHOPEDICS - MRI Review | NO_SHOW | Teleconsultation |  PAID  | lab report not attached"
+#70686 | patient=Neel Sharma; age=40; city=Nagpur | 2025/02/03 | N/A | ORTHOPEDICS - Joint Consultation | REFERRED | Follow-up |  PAID  | reschedule requested by family
+" 70687  | patient=Vivaan Sharma; age=47; city=Aurangabad | Oct 02 2026 | ₹11,252.41 |  ENT  / sinus consultation | NO_SHOW | Follow-up | pending | follow-up advised in 2 weeks"
+#70688 | patient=Rohan Jadhav; age=36; city=Kolhapur | 2026-03-14 | N/A | GENERAL MEDICINE / general checkup | REFERRED | Teleconsultation | PARTIAL | referral letter uploaded
+70689 | patient=Reyansh Bhosale; age=8; city=Nagpur | 02-Jun-2025 | Rs.3781.38 |  ENT  - Hearing Test | SCHEDULED | OPD | PENDING | lab report not attached
+VIS-70690 | patient=Riya Pawar; age=79; city=Solapur | 19/10/2025 | N/A | ENT - Throat Examination | SCHEDULED | OPD | paid | referral letter uploaded
+VIS-70691 | patient=Arjun Bhosale; city=Sangli | 2026-06-26 | N/A | General Medicine / fever consultation | NO_SHOW | OPD |  PENDING  | reschedule requested by family
+" 70692  | patient=Ira Bhosale; age=27; city=Sangli | Jul 17 2026 | ₹6,085.80 |  General Medicine  - General Checkup | NO_SHOW | OPD |  WAIVED  | referral letter uploaded"
+"VIS-70693 | patient=Aditya Mehta; age=27; city=Mumbai | 2026/03/01 | ₹7,124.77 | ORTHOPEDICS - MRI Review | SCHEDULED | Teleconsultation | insurance | follow-up advised in 2 weeks"
+VIS-70694 | patient=Vikram Gupta; age=84; city=Mumbai | 2026/05/13 | N/A | Orthopedics / mri review | CANCELLED | Inpatient Review |  PAID  | follow-up advised in 2 weeks
+VIS-70695 | patient=Riya Reddy; age=62; city=Bengaluru | 04-12-2025 | Rs.3919.56 | NEUROLOGY - Migraine Follow-up | SCHEDULED | OPD | WAIVED | follow-up advised in 2 weeks
+#70696 | patient=Myra Kulkarni; age=9; city=Hyderabad | 12/10/2025 | 2759 | Orthopedics - X-Ray | NO_SHOW | Emergency | PARTIAL | duplicate registration suspected
+"VIS-70697 | patient=Pooja Kulkarni; age=43; city=Thane | Jul 31 2025 | ₹3,810.73 | dermatology - Allergy Test | IN_PROGRESS | Emergency |  INSURANCE  | patient arrived late"
+"VIS-70698 | patient=Kavya More; city=Thane | 22-Apr-2026 | INR 3,469.73 | OPHTHALMOLOGY / glaucoma follow-up | SCHEDULED | Inpatient Review | waived | doctor requested additional review"
+"VIS-70699 | patient=Myra Desai; age=61; city=Pune | 31/03/2025 | INR 6,926.79 | general medicine - Fever Consultation | IN_PROGRESS | Emergency | partial | consultation completed; discharge notes pending"
+" 70700  | patient=Vikram Iyer; city=Indore | 28-Nov-2025 | ₹9,350.74 |  Ophthalmology  - Retina Review | COMPLETED | OPD |  WAIVED  | reschedule requested by family"
+VIS-70701 | patient=Kavya Iyer; age=54; city=Nagpur | 2025-12-01 | 6628 | dermatology - Allergy Test | CANCELLED | Inpatient Review |  WAIVED  | insurance approval pending
+ 70702  | patient=Saanvi Desai; city=Nagpur | Jan 02 2025 | 8471 | ORTHOPEDICS / physiotherapy | COMPLETED | Teleconsultation | INSURANCE | consultation completed; discharge notes pending
+"70703 | patient=Kabir Shah; age=24; city=Hyderabad | 2025-03-27 | ₹5,449.65 | CARDIOLOGY / stress test | SCHEDULED | Emergency | PENDING | doctor requested additional review"
+70704 | patient=Arjun Shah; age=31; city=Delhi | 10-27-2025 | 11782 |  Orthopedics  - MRI Review | COMPLETED | Inpatient Review | PARTIAL | billing details need verification
+"#70705 | patient=Aditi Joshi; age=89; city=Hyderabad | 2025-01-29 | INR 4,892.47 |  Cardiology  / cardiac consultation | SCHEDULED | Inpatient Review | PARTIAL | patient arrived late"
+#70706 | patient=Kabir Gupta; city=Kolhapur | 2025/12/08 | insurance pending | pediatrics - Fever Consultation | COMPLETED | OPD | insurance | billing details need verification
+#70707 | patient=Pooja Pawar; city=Chennai | 07-22-2026 | 7895 | Ophthalmology - Retina Review | IN_PROGRESS | Teleconsultation | PENDING | reschedule requested by family
+"VIS-70708 | patient=Vivaan Bhosale; age=14; city=Kolhapur | 23-Dec-2025 | ₹6,679.86 | PEDIATRICS / fever consultation | NO_SHOW | Emergency | partial | consultation completed; discharge notes pending"
+ |  |  |  |  |  |  |  | 
+70709 | patient=KIARA BHOSALE; age=unknown; city=DELHI | 2026-05-21 | Rs.10948.21 | PEDIATRICS - Growth Assessment | IN_PROGRESS | OPD |  PARTIAL  | billing details need verification
+70710 | patient=Neel Iyer; city=Hyderabad | 2025-12-18 | 6150 | neurology - Migraine Follow-up |  REFERRED  | Follow-up |  PENDING  | follow-up advised in 2 weeks
+#70711 | patient=Kabir Kadam; age=37; city=Solapur | 05-Jul-2025 | N/A | Neurology / neurology consultation | IN_PROGRESS | OPD |  PARTIAL  | patient arrived late
+VIS-70712 | patient=Neel More; age=3; city=Aurangabad | 2026-01-10 | 6324 | dermatology - Acne Follow-up | CANCELLED | OPD |  PAID  | referral letter uploaded
+VIS-70713 | patient=Kabir Nair; age=38; city=Delhi | 2026-09-08 | 8063 | ENT / ear infection review | CANCELLED | Emergency | pending | consultation completed; discharge notes pending
+ 70714  | patient=Kunal Sutar; age=42; city=Thane | 04-20-2026 | 6436 | GENERAL MEDICINE - Fever Consultation | REFERRED | Inpatient Review | PARTIAL | consultation completed; discharge notes pending
+70715 | patient=Myra Kulkarni; age=28; city=Nagpur | 24-May-2025 | 1092 |  Pediatrics  - Fever Consultation | SCHEDULED | Teleconsultation |  PAID  | no extra notes
+"#70716 | patient=Tara Chavan; age=80; city=Nagpur | Jan 23 2025 | ₹2,263.16 |  Ophthalmology  / eye examination | NO_SHOW | OPD | PARTIAL | "
+VIS-70717 | patient=Reyansh Nair; age=66; city=Chennai | Jan 23 2026 | Rs.8363.39 |  ENT  - Ear Infection Review | IN_PROGRESS | Teleconsultation | PENDING | consultation completed; discharge notes pending
+"VIS-70718 | patient=Pooja Patil; age=40; city=Mumbai | 2025/02/03 | INR 5,796.56 | ENT / sinus consultation | CANCELLED | Follow-up |  INSURANCE  | referral letter uploaded"
+#70719 | patient=Aditi More; age=2; city=Mumbai | 02-20-2026 | N/A |  Neurology  - MRI Review | NO_SHOW | Emergency | insurance | reschedule requested by family
+#70720 | patient=Meera Jadhav; city=Nashik | 2025/01/08 | N/A | ORTHOPEDICS / joint consultation | REFERRED | Teleconsultation | waived | patient arrived late
+"70721 | patient=Rahul Shah; age=40; city=Pune | 23/11/2025 | ₹11,554.60 | OPHTHALMOLOGY / eye examination | IN_PROGRESS | Follow-up |  INSURANCE  | follow-up advised in 2 weeks"
+"#70722 | patient=Vikram Sharma; age=58; city=Aurangabad | 05-Sep-2025 | ₹1,432.12 |  ENT  / ear infection review | SCHEDULED | Emergency |  PENDING  | patient requested morning appointment"
+ 70723  | patient=Kiara Iyer; age=28; city=Nashik | 26/06/2026 | Rs.1009.42 |  Orthopedics  - Joint Consultation | IN_PROGRESS | Inpatient Review | partial | insurance approval pending
+ 70724  | patient=Diya Sutar; age=26; city=Thane | 2026/07/29 | Rs.12371.58 | NEUROLOGY / mri review | IN_PROGRESS | Follow-up | waived | 
+#70725 | patient=Neel Kadam; age=15; city=Aurangabad | 12/04/2025 |  | ORTHOPEDICS / x-ray | REFERRED | Teleconsultation | waived | consultation completed; discharge notes pending
+#70726 | patient=Arjun Sharma; city=Nagpur | 15-Aug-2025 | N/A | OPHTHALMOLOGY / retina review | REFERRED | OPD | WAIVED | referral letter uploaded
+"VIS-70727 | patient=Pooja Chavan; age=16; city=Chennai | 2025-04-25 | INR 7,446.97 | PEDIATRICS - Child Wellness Check | REFERRED | Follow-up | PARTIAL | "
+70728 | patient=Aditya Reddy; age=10; city=Satara | 06/10/2026 | N/A | Cardiology - Stress Test | IN_PROGRESS | Emergency | partial | SYSTEM NOTE: record sync delayed
+" 70729  | patient=Kiara Nair; age=32; city=Nagpur | 13/12/2025 | INR 10,193.90 | General Medicine - Blood Test Review | NO_SHOW | Follow-up | PARTIAL | insurance approval pending"
+"70730 | patient=Nisha Iyer; age=51; city=Kolhapur | 15/02/2026 | ₹1,138.61 |  Pediatrics  / growth assessment | NO_SHOW | Emergency | paid | insurance approval pending"
+"VIS-70731 | patient=Aman Reddy; age=13; city=Mumbai | 10-Aug-2026 | ₹5,733.71 | PEDIATRICS / vaccination | CANCELLED | OPD |  PENDING  | lab report not attached"
+#70732 | patient=Rohan Kulkarni; age=38; city=Hyderabad | 2025/07/11 | N/A |  Cardiology  - Echocardiogram | REFERRED | Inpatient Review |  WAIVED  | doctor requested additional review
+70733 | patient=Vikram Gaikwad; age=24; city=Aurangabad | Jan 26 2025 | Rs.990.29 |  General Medicine  / general checkup | CANCELLED | Follow-up |  PAID  | patient requested morning appointment
+VIS-70734 | patient=Kiara Kadam; age=46; city=Pune | 06-13-2026 | ₹908.77 |  Orthopedics  / joint consultation | REFERRED | Inpatient Review | PARTIAL | lab report not attached
+#70735 | patient=Riya Kadam; age=86; city=Nashik | 06/09/2026 |  | GENERAL MEDICINE - General Checkup | IN_PROGRESS | Emergency | INSURANCE | no extra notes
+70736 | patient=Aditi Mane; age=2; city=Satara | 07-Mar-2025 | N/A | CARDIOLOGY / ecg | REFERRED | Inpatient Review | INSURANCE | 
+70737 | patient=Nisha Gaikwad; age=43; city=Kolhapur | 2025/01/07 | Rs.10414.75 | NEUROLOGY - Migraine Follow-up | COMPLETED | OPD | waived | doctor requested additional review
+ 70738  | patient=KAVYA JADHAV; age=unknown; city=NASHIK | 14-Feb-2025 | insurance pending | general medicine - Diabetes Follow-up | NO_SHOW | Inpatient Review | PAID | lab report not attached
+"VIS-70739 | patient=Ira Chavan; city=Aurangabad | 2025-02-22 | INR 2,124.35 | ophthalmology - Retina Review | SCHEDULED | Teleconsultation |  INSURANCE  | billing details need verification"
+VIS-70740 | patient=Myra Mehta; city=Pune | 2026-07-12 | Rs.5906.36 | OPHTHALMOLOGY - Retina Review | IN_PROGRESS | Follow-up | WAIVED | referral letter uploaded
+70741 | patient=RAHUL MORE; age=unknown; city=INDORE | 2025/06/24 | N/A | OPHTHALMOLOGY / retina review | REFERRED | Inpatient Review | insurance | lab report not attached
+#70742 | patient=REYANSH NAIR; age=unknown; city=THANE | 05-Jan-2025 | Rs.9479.24 | DERMATOLOGY - Acne Follow-up | SCHEDULED | Inpatient Review | insurance | reschedule requested by family
+70743 | patient=Tara Reddy; city=Aurangabad | 2026/09/15 | N/A | PEDIATRICS - Vaccination | REFERRED | Inpatient Review | paid | duplicate registration suspected
+ 70744  | patient=Pooja Sharma; age=13; city=Aurangabad | 09-14-2026 | 2894 |  Cardiology  / cardiac consultation | REFERRED | OPD | partial | reschedule requested by family
+"70745 | patient=Kavya Iyer; age=87; city=Mumbai | 2026-01-25 | ₹10,366.11 | dermatology / allergy test | SCHEDULED | Emergency |  PARTIAL  | "
+70746 | patient=Dev Bhosale; age=5; city=Kolhapur | Oct 17 2025 | 11476 |  Cardiology  - Cardiac Consultation | REFERRED | OPD | PARTIAL | billing details need verification
+" 70747  | patient=Pooja Patil; age=89; city=Solapur | 26/09/2025 | ₹12,188.05 | dermatology / skin consultation | CANCELLED | OPD |  PARTIAL  | billing details need verification"
+"70748 | patient=Meera Chavan; city=Satara | 2025-07-27 | INR 1,987.49 | General Medicine / blood test review | COMPLETED | Teleconsultation | pending | patient requested morning appointment"
+VIS-70749 | patient=Meera Bhosale; age=88; city=Thane | 10-Jun-2025 | 5405 |  ENT  / sinus consultation | COMPLETED | Emergency | PARTIAL | doctor requested additional review
+VIS-70750 | patient=Pooja Iyer; age=17; city=Hyderabad | 11/11/2025 | 1567 | pediatrics / child wellness check | REFERRED | Follow-up | paid | follow-up advised in 2 weeks
+#70751 | patient=RAHUL REDDY; age=unknown; city=BENGALURU | 2026-02-01 | Rs.2970.04 | Ophthalmology / eye examination | COMPLETED | OPD | PAID | doctor requested additional review
+VIS-70752 | patient=Reyansh Sutar; city=Kolhapur | 18/02/2025 | N/A |  Pediatrics  - Growth Assessment | CANCELLED | Teleconsultation | WAIVED | no extra notes
+"70753 | patient=Aditi Bhosale; age=61; city=Sangli | 05/05/2025 | INR 2,686.65 | DERMATOLOGY / allergy test | SCHEDULED | Inpatient Review | PAID | lab report not attached"
+#70754 | patient=Priya Patil; city=Solapur | Mar 30 2026 | 4087 | General Medicine - General Checkup | CANCELLED | OPD | waived | referral letter uploaded
+#70755 | patient=Anaya Sharma; age=2; city=Sangli | Mar 09 2025 | 8224 | Dermatology - Biopsy Review | SCHEDULED | Inpatient Review | insurance | 
+70756 | patient=Aditya Pawar; age=90; city=Satara | 06-10-2025 | 9191 | Dermatology - Biopsy Review | CANCELLED | Emergency |  PENDING  | referral letter uploaded
+#70757 | patient=Kiara Mehta; age=15; city=Chennai | 2026-02-23 | 9817 |  Ophthalmology  - Glaucoma Follow-up | REFERRED | Follow-up | waived | no extra notes
+VIS-70758 | patient=NEEL BHOSALE; age=unknown; city=CHENNAI | 12-Feb-2025 | N/A | CARDIOLOGY - Cardiac Consultation | REFERRED | Follow-up | pending | patient requested morning appointment
+ 70759  | patient=Ishaan Sutar; age=88; city=Delhi | Jun 13 2026 | N/A | neurology - EEG | REFERRED | Follow-up | paid | 
+#70760 | patient=Pooja Pawar; age=13; city=Thane | 29-Jun-2026 | Rs.8117.57 |  ENT  / sinus consultation | COMPLETED | Teleconsultation | paid | lab report not attached
+70761 | patient=Om Mehta; age=90; city=Sangli | 25-Feb-2025 | 3381 | neurology / mri review | SCHEDULED | Inpatient Review | PARTIAL | patient requested morning appointment
+#70762 | patient=Rahul Pawar; city=Delhi | 2026-04-10 | Rs.3042.27 |  Dermatology  / allergy test | CANCELLED | Follow-up |  PAID  | patient requested morning appointment
+ 70763  | patient=Rahul More; city=Pune | 13/07/2025 | Rs.2671.23 | dermatology - Allergy Test | CANCELLED | Inpatient Review | WAIVED | patient arrived late
+ 70764  | patient=Sneha Mane; age=51; city=Mumbai | 02-04-2025 | insurance pending |  Dermatology  / allergy test | SCHEDULED | Inpatient Review | pending | insurance approval pending
+VIS-70765 | patient=Riya Reddy; age=39; city=Pune | 2026-04-10 | 6861 |  Cardiology  - Cardiac Consultation | SCHEDULED | Teleconsultation | WAIVED | consultation completed; discharge notes pending
+VIS-70766 | patient=Aarav Patil; age=25; city=Mumbai | 04-23-2026 | Rs.3941.77 | CARDIOLOGY / echocardiogram | SCHEDULED | Emergency |  PENDING  | referral letter uploaded
+#70767 | patient=Priya Patil; age=73; city=Chennai | 2025-01-17 | Rs.7947.14 |  ENT  - Hearing Test | REFERRED | Teleconsultation | INSURANCE | billing details need verification
+ 70768  | patient=Saanvi Patil; age=17; city=Bengaluru | 2025/04/13 | Rs.10677.64 | Pediatrics / fever consultation | IN_PROGRESS | OPD | paid | reschedule requested by family
+" 70769  | patient=Reyansh Desai; city=Aurangabad | 2026/07/11 | INR 3,158.24 | cardiology / ecg | REFERRED | Teleconsultation | PARTIAL | consultation completed; discharge notes pending"
+"VIS-70770 | patient=Nisha Desai; city=Thane | 13/12/2025 | ₹9,178.60 | Pediatrics / growth assessment | COMPLETED | Inpatient Review | pending | "
+"VIS-70771 | patient=Riya More; city=Sangli | 2026-08-10 | ₹5,501.40 | ent - Hearing Test | CANCELLED | OPD | pending | patient requested morning appointment"
+"VIS-70772 | patient=NISHA NAIR; age=unknown; city=INDORE | Apr 04 2026 | ₹8,170.78 | ENT - Hearing Test | NO_SHOW | Teleconsultation | paid | "
+VIS-70773 | patient=Nisha Desai; age=40; city=Hyderabad | 2025-05-30 | N/A | ORTHOPEDICS / physiotherapy | IN_PROGRESS | OPD |  PENDING  | doctor requested additional review
+" 70774  | patient=Arjun Kulkarni; age=77; city=Aurangabad | Sep 10 2025 | ₹3,321.16 |  Cardiology  - ECG | NO_SHOW | Emergency | waived | patient arrived late"
+"#70775 | patient=Rahul Kadam; age=88; city=Pune | 2025/12/17 | ₹11,535.20 | general medicine / diabetes follow-up | IN_PROGRESS | Follow-up |  WAIVED  | "
+ 70776  | patient=Saanvi Sutar; age=38; city=Kolhapur | 23-Aug-2025 | insurance pending |  Dermatology  / acne follow-up | CANCELLED | OPD |  PARTIAL  | lab report not attached
+70777 | patient=Tara Shah; age=20; city=Nagpur | 29-Sep-2025 | Rs.9522.37 | Cardiology - Stress Test | REFERRED | OPD | PENDING | patient arrived late
+" 70778  | patient=Vikram Sutar; age=41; city=Nagpur | 2025/05/22 | INR 9,675.06 | CARDIOLOGY - ECG | NO_SHOW | Emergency |  PAID  | lab report not attached"
+VIS-70779 | patient=Dev Mehta; age=66; city=Chennai | 05/08/2025 | INR 699.42 |  Orthopedics  / joint consultation | CANCELLED | OPD | paid | patient requested morning appointment
+"#70780 | patient=Aarav Patil; city=Mumbai | 2025-09-17 | ₹7,659.49 | pediatrics / fever consultation | REFERRED | OPD |  INSURANCE  | billing details need verification"
+"VIS-70781 | patient=Aarav Sutar; age=15; city=Aurangabad | 11-12-2025 | INR 9,618.47 | Cardiology / stress test | REFERRED | Teleconsultation | insurance | follow-up advised in 2 weeks"
+"#70782 | patient=Aman Sharma; age=9; city=Kolhapur | 06/12/2025 | ₹6,515.69 | ophthalmology - Retina Review |  CANCELLED  | Inpatient Review | insurance | insurance approval pending"
+ 70783  | patient=Kabir Gupta; age=78; city=Hyderabad | 08-04-2026 |  | Orthopedics / joint consultation | COMPLETED | Follow-up | INSURANCE | patient arrived late
+"#70784 | patient=Aditya Gupta; age=2; city=Thane | 2025-10-21 | ₹3,973.63 | cardiology / stress test | IN_PROGRESS | Emergency | partial | "
+"70785 | patient=Aman Kulkarni; city=Mumbai | 07/05/2026 | INR 10,396.96 |  Neurology  - EEG | REFERRED | Follow-up |  PAID  | duplicate registration suspected"
+70786 | patient=Anaya Kulkarni; age=20; city=Kolhapur | 2026-08-15 | 967 | general medicine - Diabetes Follow-up | IN_PROGRESS | OPD |  INSURANCE  | reschedule requested by family
+"70787 | patient=Dev Shah; age=46; city=Kolhapur | 30/05/2026 | INR 4,658.04 |  Orthopedics  - MRI Review | SCHEDULED | Inpatient Review |  PENDING  | billing details need verification"
+" 70788  | patient=Kavya Bhosale; age=90; city=Nashik | 2025-12-03 | ₹11,503.77 | Neurology - Migraine Follow-up | COMPLETED | Teleconsultation |  PAID  | insurance approval pending"
+70789 | patient=Om Nair; city=Thane | 13/03/2025 | 6856 | general medicine / blood test review | REFERRED | Inpatient Review | waived | patient arrived late
+#70790 | patient=Rahul Sharma; age=38; city=Aurangabad | 26-Oct-2025 | 7618 | PEDIATRICS / growth assessment | NO_SHOW | Emergency |  PENDING  | 
+ 70791  | patient=Sneha Sharma; age=60; city=Satara | 2026/09/09 | 6052 |  Pediatrics  / growth assessment | IN_PROGRESS | Inpatient Review | PARTIAL | lab report not attached
+#70792 | patient=Kiara Sutar; city=Mumbai | 03-Apr-2025 | 10685 | ophthalmology - Vision Test | CANCELLED | Teleconsultation |  WAIVED  | patient requested morning appointment
+ 70793  | patient=Kabir Shah; age=90; city=Aurangabad | 2025/10/13 |  | ENT / sinus consultation | IN_PROGRESS | Teleconsultation | partial | consultation completed; discharge notes pending
+#70794 | patient=Anaya Gupta; age=40; city=Pune | 2025/04/07 | 4935 | General Medicine / fever consultation | SCHEDULED | Teleconsultation |  WAIVED  | patient arrived late
+"#70795 | patient=Meera Joshi; age=70; city=Pune | 11-26-2025 | INR 11,490.28 |  General Medicine  / blood test review | REFERRED | Follow-up | PAID | referral letter uploaded"
+"70796 | patient=Riya Gupta; age=77; city=Pune | Oct 11 2025 | ₹3,124.11 | PEDIATRICS - Vaccination | CANCELLED | Inpatient Review |  WAIVED  | consultation completed; discharge notes pending"
+" 70797  | patient=Aarav More; age=11; city=Mumbai | 2025-03-01 | INR 5,976.36 | dermatology - Skin Consultation | SCHEDULED | Emergency | WAIVED | "
+ 70798  | patient=Kabir Sutar; age=39; city=Solapur | 2025/09/22 | 9434 | ophthalmology - Retina Review | IN_PROGRESS | Inpatient Review | INSURANCE | no extra notes
+#70799 | patient=Aarav Bhosale; age=87; city=Solapur | 2025/04/09 | ₹855.89 | neurology - MRI Review | COMPLETED | Inpatient Review | PENDING | consultation completed; discharge notes pending
+#70800 | patient=Aditi More; age=28; city=Aurangabad | Aug 29 2026 | N/A |  General Medicine  - Fever Consultation | SCHEDULED | Teleconsultation |  PENDING  | reschedule requested by family
+#70801 | patient=Rahul Chavan; age=67; city=Indore | 23/11/2025 | 3595 | ENT - Sinus Consultation | COMPLETED | Follow-up |  INSURANCE  | patient requested morning appointment
+70802 | patient=Ishaan Gaikwad; age=75; city=Delhi | 11/01/2025 | N/A | Neurology - MRI Review | REFERRED | Emergency | PARTIAL | doctor requested additional review
+VIS-70803 | patient=Aarav Kadam; age=77; city=Sangli | 10-Jul-2025 | 3780 |  Cardiology  / ecg | COMPLETED | Emergency | partial | lab report not attached
+VIS-70804 | patient=Ira Chavan; age=23; city=Thane | 02-23-2026 | Rs.9974.35 | NEUROLOGY / migraine follow-up | IN_PROGRESS | Follow-up | waived | lab report not attached
+70805 | patient=Arjun Gaikwad; age=59; city=Sangli | 27/04/2026 | Rs.8662.16 | pediatrics / vaccination | cancelled | Emergency | paid | doctor requested additional review
+#70806 | patient=Anaya Desai; age=6; city=Solapur | 25/08/2026 | N/A | Dermatology - Skin Consultation | IN_PROGRESS | Inpatient Review | PENDING | consultation completed; discharge notes pending
+ 70807  | patient=Kunal Gupta; age=87; city=Hyderabad | 2025/11/10 | N/A |  Cardiology  / echocardiogram | IN_PROGRESS | OPD | PENDING | insurance approval pending
+VIS-70808 | patient=Kabir Bhosale; age=67; city=Indore | 02-22-2026 | Rs.11734.94 | PEDIATRICS - Child Wellness Check | COMPLETED | Teleconsultation | PENDING | billing details need verification
+VIS-70809 | patient=Vikram Jadhav; age=10; city=Sangli | 2026-04-13 | insurance pending | orthopedics / physiotherapy | REFERRED | Teleconsultation |  WAIVED  | 
+#70810 | patient=Tara Jadhav; age=64; city=Delhi | 2026/01/15 | N/A | ent - Ear Infection Review | no_show | Follow-up | waived | follow-up advised in 2 weeks
+VIS-70811 | patient=Sneha Chavan; age=63; city=Solapur | 17/08/2026 | 12388 | NEUROLOGY - EEG | NO_SHOW | Inpatient Review | PAID | referral letter uploaded
+70812 | patient=Kavya Mane; city=Mumbai | 15-Dec-2025 | insurance pending |  Cardiology  - Echocardiogram | IN_PROGRESS | Inpatient Review |  PAID  | reschedule requested by family
+VIS-70813 | patient=Kabir Sutar; age=76; city=Delhi | 23-Jun-2025 | insurance pending | DERMATOLOGY - Skin Consultation | NO_SHOW | Inpatient Review | pending | consultation completed; discharge notes pending
+VIS-70814 | patient=Ishaan Kadam; age=79; city=Solapur | 17-Jan-2026 |  |  General Medicine  / general checkup | IN_PROGRESS | Follow-up | PAID | no extra notes
+70815 | patient=Meera Iyer; age=31; city=Chennai | Aug 06 2026 | Rs.5676.66 |  Pediatrics  / vaccination | SCHEDULED | OPD | waived | insurance approval pending
+#70816 | patient=Rahul Kulkarni; age=44; city=Satara | 09-08-2025 | 528 | ent / ear infection review | COMPLETED | OPD | pending | follow-up advised in 2 weeks
+#70817 | patient=Om Kulkarni; age=69; city=Bengaluru | 2025-07-21 | 3451 |  Dermatology  - Allergy Test | SCHEDULED | Inpatient Review | waived | referral letter uploaded
+"70818 | patient=Rohan More; city=Satara | 23/09/2025 | ₹8,447.56 | PEDIATRICS - Fever Consultation | REFERRED | Teleconsultation | insurance | billing details need verification"
+"#70819 | patient=Vivaan Shah; age=12; city=Delhi | 21-Aug-2025 | INR 3,961.86 |  Neurology  / eeg | NO_SHOW | Emergency | INSURANCE | billing details need verification"
+"#70820 | patient=Riya Reddy; age=35; city=Solapur | 2025/03/18 | INR 7,422.37 | neurology / eeg | SCHEDULED | Follow-up |  PARTIAL  | duplicate registration suspected"
+70821 | patient=Aman Iyer; age=86; city=Sangli | 24/10/2025 | N/A | DERMATOLOGY / skin consultation | NO_SHOW | OPD | pending | no extra notes
+#70822 | patient=Arjun Gaikwad; age=65; city=Kolhapur | 23-Feb-2025 | N/A |  Cardiology  - Echocardiogram | COMPLETED | Follow-up | waived | duplicate registration suspected
+ 70823  | patient=Ishaan Chavan; age=71; city=Nashik | 2026/02/20 | 6992 | Dermatology / acne follow-up | SCHEDULED | Follow-up |  PAID  | duplicate registration suspected
+"#70824 | patient=Om Patil; age=89; city=Aurangabad | 21-May-2025 | INR 3,404.33 |  ENT  / hearing test | SCHEDULED | Follow-up | PAID | follow-up advised in 2 weeks"
+#70825 | patient=Kabir Chavan; age=76; city=Bengaluru | 15-Sep-2025 | Rs.3438.58 | Dermatology / acne follow-up | IN_PROGRESS | OPD | waived | 
+70826 | patient=Dev Sharma; age=68; city=Mumbai | 19-Aug-2025 | 6862 |  Pediatrics  - Child Wellness Check | IN_PROGRESS | Teleconsultation | partial | billing details need verification
+VIS-70827 | patient=Dev Pawar; age=36; city=Nagpur | 06-29-2026 | 9860 |  Pediatrics  - Child Wellness Check | CANCELLED | OPD | PAID | lab report not attached
+" 70828  | patient=Kabir Gupta; age=21; city=Sangli | Nov 20 2025 | INR 1,123.36 | CARDIOLOGY / echocardiogram | SCHEDULED | Emergency | insurance | no extra notes"
+"70829 | patient=Rohan Patil; age=44; city=Indore | 2025/02/07 | INR 3,703.56 | orthopedics - Joint Consultation | IN_PROGRESS | Emergency | PENDING | referral letter uploaded"
+ 70830  | patient=VIVAAN SHARMA; age=unknown; city=KOLHAPUR | 05-Dec-2025 | N/A | orthopedics - Physiotherapy | IN_PROGRESS | Emergency |  PENDING  | patient arrived late
+"70831 | patient=Kavya Iyer; age=76; city=Indore | 2025/11/10 | ₹2,149.14 | Dermatology / allergy test | NO_SHOW | Teleconsultation | waived | "
+"VIS-70832 | patient=Myra Bhosale; age=16; city=Delhi | 2026-01-08 | INR 10,839.96 | Orthopedics - Joint Consultation | IN_PROGRESS | Inpatient Review | partial | duplicate registration suspected"
+VIS-70833 | patient=Kiara Chavan; age=16; city=Delhi | 2025-10-30 | 10149 | Ophthalmology - Eye Examination | IN_PROGRESS | OPD | pending | patient arrived late
+"VIS-70834 | patient=Rohan Kulkarni; age=76; city=Chennai | Jul 19 2025 | ₹3,318.84 |  Ophthalmology  - Glaucoma Follow-up | COMPLETED | Teleconsultation |  INSURANCE  | duplicate registration suspected"
+#70835 | patient=Anaya Kulkarni; age=32; city=Nagpur | Jul 07 2025 | N/A | ent - Throat Examination | SCHEDULED | Emergency | paid | referral letter uploaded
+70836 | patient=Saanvi Kulkarni; age=23; city=Delhi | 07-19-2025 | N/A |  Cardiology  / stress test | SCHEDULED | Follow-up | partial | patient arrived late
+70837 | patient=Kiara Sharma; age=42; city=Kolhapur | 06-20-2025 | insurance pending | General Medicine - Fever Consultation | REFERRED | Follow-up |  INSURANCE  | consultation completed; discharge notes pending
+"#70838 | patient=Rohan Kulkarni; age=24; city=Solapur | 2026/09/05 | INR 10,811.29 | ENT / throat examination | REFERRED | Follow-up | WAIVED | insurance approval pending"
+"#70839 | patient=Aarav More; city=Hyderabad | 01-03-2026 | INR 4,258.43 |  Pediatrics  / fever consultation | COMPLETED | Follow-up |  INSURANCE  | reschedule requested by family"
+#70840 | patient=Priya Shah; age=51; city=Indore | 2025-06-01 | 1340 | Ophthalmology - Retina Review | REFERRED | OPD | PARTIAL | lab report not attached
+"#70841 | patient=Ishaan Patil; age=80; city=Kolhapur | 02/05/2025 | ₹4,257.02 |  Dermatology  / biopsy review | SCHEDULED | Follow-up | waived | patient requested morning appointment"
+#70842 | patient=Diya Joshi; age=46; city=Bengaluru | 21-Jan-2025 | Rs.1122.95 | OPHTHALMOLOGY - Retina Review | IN_PROGRESS | Teleconsultation | PAID | lab report not attached
+ 70843  | patient=Nisha More; age=26; city=Nagpur | 2026-06-07 | 11196 |  Ophthalmology  / vision test | NO_SHOW | Emergency | pending | insurance approval pending
+ 70844  | patient=Aman More; age=18; city=Aurangabad | 04-19-2026 | 3275 | general medicine - Diabetes Follow-up |  NO_SHOW  | OPD |  PAID  | no extra notes
+70845 | patient=Aditi Desai; age=34; city=Chennai | Jul 04 2026 | Rs.1905.09 | PEDIATRICS / child wellness check | SCHEDULED | Inpatient Review | PARTIAL | reschedule requested by family
+70846 | patient=Arjun Mane; age=59; city=Satara | 17/07/2025 | N/A | General Medicine - Fever Consultation | SCHEDULED | Follow-up | PENDING | 
+"VIS-70847 | patient=Rohan Iyer; city=Satara | 2026/04/19 | INR 10,564.30 | Dermatology - Acne Follow-up | COMPLETED | Teleconsultation | waived | follow-up advised in 2 weeks"
+"70848 | patient=Diya Shah; age=76; city=Pune | 03/12/2025 | ₹8,139.28 | Pediatrics - Child Wellness Check | COMPLETED | OPD | WAIVED | duplicate registration suspected"
+70849 | patient=Anaya Gaikwad; age=16; city=Aurangabad | 11-29-2025 | 4407 | PEDIATRICS - Vaccination | IN_PROGRESS | Inpatient Review |  WAIVED  | reschedule requested by family
+70850 | patient=Kabir Pawar; age=10; city=Mumbai | 08-05-2025 | Rs.10566.36 | ORTHOPEDICS - X-Ray | NO_SHOW | Teleconsultation |  PENDING  | patient arrived late
+VIS-70851 | patient=Neel Sutar; city=Hyderabad | Aug 01 2025 | Rs.1192.07 | Ophthalmology - Retina Review | COMPLETED | Teleconsultation |  PENDING  | doctor requested additional review
+VIS-70852 | patient=KABIR IYER; age=unknown; city=MUMBAI | Jan 24 2025 | Rs.11228.19 |  Dermatology  / skin consultation | CANCELLED | Emergency | PARTIAL | no extra notes
+70853 | patient=Aditi More; age=13; city=Hyderabad | 16-May-2026 | Rs.11582.11 | Cardiology / stress test | REFERRED | Follow-up | WAIVED | 
+ 70854  | patient=Dev Mane; age=57; city=Solapur | Jan 25 2026 | Rs.5056.31 |  ENT  - Throat Examination | IN_PROGRESS | Teleconsultation | pending | doctor requested additional review
+#70855 | patient=Kiara Patil; age=82; city=Mumbai | 2025/03/18 | N/A |  Pediatrics  / vaccination | COMPLETED | Teleconsultation | partial | patient arrived late
+"70856 | patient=Reyansh Nair; age=71; city=Solapur | 05-31-2026 | INR 6,728.93 |  Neurology  - Neurology Consultation | CANCELLED | OPD | pending | reschedule requested by family"
+#70857 | patient=Kunal Gaikwad; age=6; city=Satara | Jul 12 2026 | 5217 |  Pediatrics  / vaccination | IN_PROGRESS | OPD |  PENDING  | duplicate registration suspected
+ 70858  | patient=Aditi Bhosale; age=58; city=Satara | May 10 2025 | Rs.6360.35 | orthopedics / mri review | cancelled | Emergency | PAID | patient requested morning appointment
+70859 | patient=Pooja Chavan; city=Nagpur | 08-24-2025 | Rs.12216.33 | PEDIATRICS / child wellness check | REFERRED | Inpatient Review | insurance | patient requested morning appointment
+#70860 | patient=Kunal Sutar; age=29; city=Bengaluru | 06/09/2025 | N/A | Ophthalmology - Vision Test | COMPLETED | Inpatient Review | insurance | follow-up advised in 2 weeks
+VIS-70861 | patient=Aarav Iyer; city=Nagpur | 12-Jan-2026 | N/A |  Cardiology  - ECG | COMPLETED | OPD | waived | SYSTEM NOTE: record sync delayed
+ 70862  | patient=Tara Nair; age=11; city=Solapur | 2026/04/23 | N/A | orthopedics / physiotherapy |  REFERRED  | OPD | INSURANCE | consultation completed; discharge notes pending
+ 70863  | patient=Reyansh Shah; age=82; city=Mumbai | 2026/05/06 | Rs.1015.20 | Neurology - MRI Review | NO_SHOW | OPD | WAIVED | duplicate registration suspected
+#70864 | patient=Tara Joshi; age=48; city=Delhi | 2025-08-29 | 3153 | Orthopedics - X-Ray | REFERRED | OPD | PENDING | patient requested morning appointment
+VIS-70865 | patient=Aarav Joshi; age=56; city=Kolhapur | 18-Jul-2026 | N/A | ophthalmology - Vision Test | NO_SHOW | Emergency |  PAID  | follow-up advised in 2 weeks
+70866 | patient=Anaya Nair; city=Delhi | 06-Mar-2025 | 9647 |  General Medicine  - Fever Consultation | NO_SHOW | Teleconsultation | partial | no extra notes
+#70867 | patient=Riya Iyer; age=21; city=Kolhapur | Jun 25 2025 | Rs.6026.98 | Pediatrics / child wellness check | COMPLETED | Emergency |  WAIVED  | patient requested morning appointment
+ 70868  | patient=Aditya Sutar; age=75; city=Kolhapur | 20/05/2026 |  |  Cardiology  / echocardiogram | IN_PROGRESS | Teleconsultation | insurance | SYSTEM NOTE: record sync delayed
+VIS-70869 | patient=Nisha More; age=88; city=Aurangabad | Jul 31 2026 | Rs.7538.21 | General Medicine / general checkup | NO_SHOW | Inpatient Review | paid | consultation completed; discharge notes pending
+"70870 | patient=Neel Gaikwad; age=90; city=Nagpur | 02/06/2025 | ₹5,815.09 |  Pediatrics  - Vaccination | COMPLETED | Follow-up |  PAID  | "
+"#70871 | patient=Aarav More; age=47; city=Aurangabad | Oct 16 2025 | ₹8,379.93 | neurology / eeg | NO_SHOW | Follow-up |  PENDING  | no extra notes"
+ 70872  | patient=Nisha Mane; city=Bengaluru | 11-May-2025 | N/A | dermatology - Allergy Test | CANCELLED | Follow-up |  PAID  | no extra notes
+ 70873  | patient=Kavya Jadhav; age=60; city=Sangli | 08-25-2026 | 10690 | ent / sinus consultation | CANCELLED | OPD |  WAIVED  | follow-up advised in 2 weeks
+VIS-70874 | patient=Kiara Bhosale; age=7; city=Nashik | 10-Oct-2026 | 6319 | Neurology / neurology consultation | IN_PROGRESS | Follow-up | waived | follow-up advised in 2 weeks
+ 70875  | patient=Neel Desai; age=4; city=Nashik | 2025/08/16 | ₹323.22 | pediatrics / growth assessment | NO_SHOW | Follow-up | PARTIAL | 
+#70876 | patient=Vikram Chavan; age=62; city=Bengaluru | Aug 01 2025 | N/A |  Neurology  - Neurology Consultation | COMPLETED | Emergency | PENDING | billing details need verification
+VIS-70877 | patient=Priya Pawar; age=43; city=Thane | 2025/01/18 | Rs.5996.92 | orthopedics / joint consultation |  IN_PROGRESS  | Inpatient Review |  INSURANCE  | reschedule requested by family
+ 70878  | patient=Kabir Joshi; city=Kolhapur | 2025/07/09 | Rs.1975.08 | Pediatrics / growth assessment | CANCELLED | Emergency |  PAID  | SYSTEM NOTE: record sync delayed
+ 70879  | patient=Kabir Mane; age=19; city=Nashik | 26/04/2025 | Rs.7031.28 | dermatology / skin consultation | CANCELLED | OPD | partial | billing details need verification
+ 70880  | patient=Aman Bhosale; age=52; city=Kolhapur | 2025-01-17 | 1154 |  Cardiology  / echocardiogram | SCHEDULED | Follow-up | waived | 
+#70881 | patient=Reyansh Nair; age=3; city=Hyderabad | 2025/08/20 | Rs.2887.70 |  Orthopedics  / physiotherapy | IN_PROGRESS | Teleconsultation | partial | consultation completed; discharge notes pending
+ 70882  | patient=Kabir Sutar; age=78; city=Aurangabad | 09-22-2025 | Rs.9847.60 |  Ophthalmology  / vision test | IN_PROGRESS | OPD | paid | doctor requested additional review
+#70883 | patient=Saanvi Mane; age=59; city=Chennai | 23-Mar-2025 | N/A |  Pediatrics  / vaccination | COMPLETED | Emergency | partial | consultation completed; discharge notes pending
+VIS-70884 | patient=Priya Jadhav; age=56; city=Bengaluru | 27/07/2026 | insurance pending | ophthalmology / vision test | CANCELLED | Inpatient Review | PENDING | follow-up advised in 2 weeks
+" 70885  | patient=Saanvi Reddy; age=11; city=Bengaluru | 01-10-2025 | ₹3,417.75 | ENT / ear infection review | IN_PROGRESS | OPD |  PENDING  | reschedule requested by family"
+ 70886  | patient=Kunal Desai; age=87; city=Satara | Jun 06 2025 | ₹860.65 | orthopedics / physiotherapy | cancelled | OPD | insurance | patient arrived late
+#70887 | patient=Riya More; age=71; city=Mumbai | 03/09/2026 | 1971 | Neurology - MRI Review | IN_PROGRESS | Teleconsultation | PENDING | insurance approval pending
+#70888 | patient=Kunal Nair; age=77; city=Aurangabad | 27/01/2026 | N/A | Dermatology - Allergy Test | NO_SHOW | Follow-up | PARTIAL | patient arrived late
+"#70889 | patient=Riya Reddy; city=Sangli | 2026-08-02 | ₹1,437.96 | PEDIATRICS / fever consultation | IN_PROGRESS | Follow-up |  INSURANCE  | lab report not attached"
+ 70890  | patient=Aditya Mehta; age=47; city=Chennai | 17/05/2026 | insurance pending |  Neurology  / neurology consultation | COMPLETED | Inpatient Review | PARTIAL | patient requested morning appointment
+ 70891  | patient=Sneha Jadhav; age=54; city=Nagpur | 09/06/2025 | 7384 |  Orthopedics  / physiotherapy | CANCELLED | Teleconsultation | paid | billing details need verification
+70892 | patient=Kunal Kulkarni; age=38; city=Kolhapur | Oct 13 2026 | Rs.12405.97 | ENT - Sinus Consultation | CANCELLED | OPD | paid | patient requested morning appointment
+ 70893  | patient=Meera Pawar; age=4; city=Satara | 12-23-2025 | N/A | Dermatology / skin consultation | SCHEDULED | Follow-up | PARTIAL | SYSTEM NOTE: record sync delayed
+"70894 | patient=Om Gaikwad; age=50; city=Kolhapur | 2025/11/08 | ₹10,604.13 | GENERAL MEDICINE - General Checkup | IN_PROGRESS | Inpatient Review |  PARTIAL  | "
+VIS-70895 | patient=Anaya More; age=31; city=Bengaluru | 14/04/2025 | Rs.9919.04 | general medicine - Fever Consultation | IN_PROGRESS | Inpatient Review |  PARTIAL  | patient requested morning appointment
+" 70896  | patient=Meera Gaikwad; age=62; city=Mumbai | 20-Nov-2025 | ₹2,908.79 | orthopedics / mri review | IN_PROGRESS | Follow-up | PENDING | lab report not attached"
+#70897 | patient=Aditi Gupta; age=56; city=Hyderabad | 2025/02/01 | N/A | ORTHOPEDICS - X-Ray | REFERRED | Inpatient Review | paid | consultation completed; discharge notes pending
+"70898 | patient=Rahul Shah; age=24; city=Mumbai | Mar 13 2025 | INR 3,180.61 | General Medicine - Fever Consultation | CANCELLED | Inpatient Review | insurance | consultation completed; discharge notes pending"
+ 70899  | patient=Myra Chavan; age=73; city=Nagpur | Dec 21 2025 | 3326 | ophthalmology / eye examination | NO_SHOW | Emergency | partial | billing details need verification
+VIS-70900 | patient=Arjun Bhosale; city=Delhi | 2026/06/01 | Rs.2518.13 |  Neurology  - EEG | REFERRED | Emergency |  PAID  | patient arrived late
+ 70901  | patient=Vikram Sutar; age=60; city=Chennai | 2026-06-06 | 8468 |  General Medicine  - Diabetes Follow-up | NO_SHOW | Emergency | INSURANCE | insurance approval pending
+#70902 | patient=Myra Sharma; age=69; city=Kolhapur | 07-18-2025 | N/A | Orthopedics / mri review | SCHEDULED | Follow-up |  PENDING  | patient arrived late
+ 70903  | patient=Ishaan Kulkarni; age=26; city=Aurangabad | 07-18-2025 | N/A | OPHTHALMOLOGY / eye examination | NO_SHOW | OPD |  INSURANCE  | insurance approval pending
+" 70904  | patient=Aarav Bhosale; age=78; city=Bengaluru | 04-15-2026 | ₹9,398.74 |  Dermatology  / skin consultation | REFERRED | Inpatient Review | PENDING | patient requested morning appointment"
+"70905 | patient=Rohan Shah; city=Solapur | 2025/04/29 | INR 4,821.39 | ophthalmology - Eye Examination | REFERRED | Teleconsultation | WAIVED | reschedule requested by family"
+" 70906  | patient=Myra More; age=18; city=Thane | 27/01/2025 | ₹1,963.50 |  Orthopedics  - Physiotherapy | SCHEDULED | Teleconsultation |  PARTIAL  | reschedule requested by family"
+70907 | patient=Neel Reddy; age=52; city=Chennai | Feb 13 2026 | N/A | Ophthalmology / eye examination | COMPLETED | Inpatient Review | PAID | doctor requested additional review
+"70908 | patient=Rohan Desai; age=68; city=Delhi | 2025-12-09 | ₹5,853.11 | DERMATOLOGY - Skin Consultation | COMPLETED | Emergency | insurance | consultation completed; discharge notes pending"
+ 70909  | patient=Meera Bhosale; age=64; city=Satara | 14-Feb-2026 | Rs.8495.89 | DERMATOLOGY - Acne Follow-up |  IN_PROGRESS  | Teleconsultation | INSURANCE | insurance approval pending
+70910 | patient=Ishaan Shah; age=70; city=Bengaluru | 08/05/2026 | Rs.11106.58 |  Orthopedics  - Joint Consultation | SCHEDULED | Follow-up | waived | consultation completed; discharge notes pending
+VIS-70911 | patient=Riya More; age=29; city=Nashik | 2025-07-12 | Rs.10671.82 | PEDIATRICS / fever consultation | REFERRED | Emergency | PENDING | consultation completed; discharge notes pending
+ 70912  | patient=Reyansh Gupta; age=54; city=Solapur | 23/06/2026 | N/A | general medicine - Diabetes Follow-up | SCHEDULED | Inpatient Review |  WAIVED  | 
+#70913 | patient=Kavya Shah; city=Nagpur | 2025-11-25 | N/A | Ophthalmology - Vision Test | CANCELLED | OPD |  PENDING  | insurance approval pending
+"#70914 | patient=Aman Nair; age=26; city=Solapur | Jan 03 2025 | ₹10,689.20 | Dermatology / acne follow-up | SCHEDULED | OPD | partial | consultation completed; discharge notes pending"
+70915 | patient=Ira Reddy; age=64; city=Bengaluru | 2026/03/30 | ₹707.08 |  General Medicine  - Fever Consultation | COMPLETED | Inpatient Review | PENDING | referral letter uploaded
+70916 | patient=Aditi Sharma; age=73; city=Kolhapur | 2025-05-25 | Rs.10225.01 | ENT - Hearing Test | REFERRED | Follow-up | pending | duplicate registration suspected
+70917 | patient=Ira Joshi; age=7; city=Hyderabad | Mar 03 2025 |  | ent - Ear Infection Review | REFERRED | Follow-up |  PENDING  | billing details need verification
+70918 | patient=Pooja Desai; age=44; city=Bengaluru | 03-26-2026 | 7306 |  Neurology  / migraine follow-up | COMPLETED | Inpatient Review |  PARTIAL  | follow-up advised in 2 weeks
+70919 | patient=Neel Joshi; age=86; city=Bengaluru | 12/08/2025 | N/A | ent - Ear Infection Review | COMPLETED | Inpatient Review | waived | duplicate registration suspected
+ 70920  | patient=Meera More; age=23; city=Delhi | 2026-07-03 | N/A | Cardiology - Cardiac Consultation | IN_PROGRESS | Inpatient Review | PAID | reschedule requested by family
+"VIS-70921 | patient=Aditi Nair; age=1; city=Pune | 2025-09-02 | ₹10,353.40 |  Pediatrics  / child wellness check | COMPLETED | OPD |  INSURANCE  | consultation completed; discharge notes pending"
+VIS-70922 | patient=Ishaan Gaikwad; age=33; city=Thane | 25-Jul-2025 | Rs.5420.11 | NEUROLOGY - Neurology Consultation | SCHEDULED | Follow-up |  PARTIAL  | billing details need verification
+#70923 | patient=Neel Pawar; age=90; city=Sangli | 2026/03/12 | 1533 |  Pediatrics  / growth assessment | CANCELLED | Follow-up |  PAID  | consultation completed; discharge notes pending
+#70924 | patient=Diya More; age=54; city=Aurangabad | 10/10/2026 | Rs.2625.29 | Cardiology - Stress Test | CANCELLED | Inpatient Review | insurance | insurance approval pending
+VIS-70925 | patient=Aman Kulkarni; age=52; city=Nagpur | Mar 04 2026 | N/A |  Ophthalmology  / glaucoma follow-up | IN_PROGRESS | OPD | PENDING | insurance approval pending
+VIS-70926 | patient=Rahul Joshi; age=68; city=Kolhapur | 06-24-2026 | Rs.3481.65 |  Ophthalmology  / vision test | IN_PROGRESS | Emergency | paid | lab report not attached
+#70927 | patient=Neel Desai; age=9; city=Pune | 06-06-2025 | 8575 |  ENT  - Ear Infection Review | IN_PROGRESS | Inpatient Review |  INSURANCE  | duplicate registration suspected
+"70928 | patient=Arjun Joshi; age=85; city=Indore | Jun 16 2026 | ₹3,976.25 | Ophthalmology - Glaucoma Follow-up | CANCELLED | OPD | PENDING | patient arrived late"
+VIS-70929 | patient=Ira Sharma; age=29; city=Bengaluru | 24/08/2025 | Rs.9205.42 |  General Medicine  - Fever Consultation | REFERRED | Follow-up | PARTIAL | billing details need verification
+ 70930  | patient=Rahul Joshi; age=28; city=Bengaluru | 2025/09/24 | N/A | General Medicine / general checkup | COMPLETED | OPD | WAIVED | consultation completed; discharge notes pending
+ 70931  | patient=Aarav Mane; age=21; city=Nashik | Oct 04 2026 | Rs.5767.05 |  Dermatology  - Biopsy Review | IN_PROGRESS | Inpatient Review | waived | patient arrived late
+"#70932 | patient=Kunal Kadam; age=11; city=Satara | 07-03-2026 | ₹2,726.39 | NEUROLOGY / neurology consultation | REFERRED | Inpatient Review | WAIVED | patient requested morning appointment"
+"#70933 | patient=Tara Kulkarni; age=11; city=Aurangabad | 2026/05/15 | ₹6,935.69 |  Pediatrics  / fever consultation | IN_PROGRESS | OPD | pending | SYSTEM NOTE: record sync delayed"
+" 70934  | patient=Meera Kulkarni; age=90; city=Nagpur | 2025/01/04 | ₹2,768.22 | PEDIATRICS - Vaccination | REFERRED | Teleconsultation |  PARTIAL  | "
+"70935 | patient=Rohan Kadam; age=64; city=Aurangabad | 11-Oct-2025 | INR 4,289.28 | ophthalmology - Glaucoma Follow-up | SCHEDULED | OPD | paid | "
+"70936 | patient=Anaya Iyer; city=Solapur | 2025-06-25 | INR 8,392.28 |  ENT  / ear infection review | IN_PROGRESS | Emergency | pending | patient requested morning appointment"
+ 70937  | patient=Myra Patil; age=20; city=Bengaluru | 2026/05/23 | Rs.8982.13 |  Pediatrics  / vaccination | NO_SHOW | OPD | pending | patient arrived late
+VIS-70938 | patient=Anaya Kulkarni; age=17; city=Delhi | 20-Mar-2026 | N/A |  Pediatrics  / child wellness check | COMPLETED | Teleconsultation |  INSURANCE  | patient arrived late
+VIS-70939 | patient=Sneha Shah; age=62; city=Indore | 2025/10/02 | 9555 | ORTHOPEDICS - Joint Consultation | NO_SHOW | Teleconsultation | WAIVED | lab report not attached
+"#70940 | patient=Kavya Kulkarni; city=Delhi | 2025-06-25 | ₹12,385.09 | dermatology - Acne Follow-up | SCHEDULED | Teleconsultation | PENDING | referral letter uploaded"
+#70941 | patient=Neel Bhosale; city=Sangli | 2025-01-02 | N/A |  Pediatrics  / vaccination | IN_PROGRESS | Follow-up |  PARTIAL  | reschedule requested by family
+"VIS-70942 | patient=KIARA JADHAV; age=unknown; city=CHENNAI | Oct 05 2025 | ₹7,367.35 |  General Medicine  / general checkup | REFERRED | OPD |  WAIVED  | insurance approval pending"
+70943 | patient=Ishaan Kulkarni; age=90; city=Delhi | 03-23-2025 | 6318 | Dermatology - Allergy Test | COMPLETED | Follow-up |  WAIVED  | billing details need verification
+"#70944 | patient=Reyansh Mane; age=72; city=Sangli | 13/09/2026 | INR 2,202.48 | dermatology / biopsy review | SCHEDULED | OPD | PARTIAL | consultation completed; discharge notes pending"
+ 70945  | patient=Anaya Gaikwad; age=60; city=Indore | 2025/03/15 | 2594 | ENT - Hearing Test | NO_SHOW | Emergency | partial | follow-up advised in 2 weeks
+70946 | patient=Priya Bhosale; age=72; city=Aurangabad | 2025/08/15 | 4140 | ent - Ear Infection Review | CANCELLED | Follow-up | insurance | 
+ 70947  | patient=Aditya Reddy; age=16; city=Sangli | 13-Aug-2025 | 4823 |  Dermatology  / allergy test | CANCELLED | Teleconsultation | WAIVED | duplicate registration suspected
+ 70948  | patient=Myra Kulkarni; age=45; city=Pune | 2025-11-24 | N/A |  Ophthalmology  - Glaucoma Follow-up | REFERRED | Follow-up |  PENDING  | duplicate registration suspected
+#70949 | patient=Pooja Reddy; city=Thane | Oct 29 2025 | 6094 | OPHTHALMOLOGY - Eye Examination | IN_PROGRESS | Inpatient Review |  PENDING  | SYSTEM NOTE: record sync delayed
+"VIS-70950 | patient=Meera Jadhav; city=Nashik | 03-05-2025 | INR 5,519.42 | general medicine - General Checkup | CANCELLED | Follow-up | PARTIAL | no extra notes"
+ 70951  | patient=Ira Reddy; age=39; city=Indore | 07-03-2026 |  |  Pediatrics  / fever consultation | NO_SHOW | Follow-up | insurance | patient requested morning appointment
+#70952 | patient=Rohan Mehta; age=1; city=Pune | 12/03/2025 | Rs.7097.04 | dermatology - Biopsy Review | SCHEDULED | Teleconsultation | insurance | reschedule requested by family
+"70953 | patient=Kunal Mane; age=77; city=Solapur | 2025-07-30 | INR 9,764.66 | CARDIOLOGY - Stress Test | IN_PROGRESS | Follow-up |  WAIVED  | patient requested morning appointment"
+VIS-70954 | patient=ARJUN MEHTA; age=unknown; city=KOLHAPUR | 2025-10-19 | N/A | NEUROLOGY / eeg | COMPLETED | Teleconsultation |  PARTIAL  | follow-up advised in 2 weeks
+ 70955  | patient=Meera Iyer; age=26; city=Thane | Mar 23 2026 | Rs.6389.67 |  General Medicine  / blood test review | CANCELLED | Emergency | WAIVED | referral letter uploaded
+VIS-70956 | patient=Aditya Bhosale; age=77; city=Pune | 28/12/2025 | Rs.591.73 | Pediatrics / fever consultation | referred | Emergency | paid | doctor requested additional review
+VIS-70957 | patient=Neel Nair; age=58; city=Nashik | 2025/06/17 | Rs.5300.96 |  ENT  - Ear Infection Review |  SCHEDULED  | OPD |  INSURANCE  | insurance approval pending
+VIS-70958 | patient=Neel Jadhav; age=63; city=Aurangabad | 15-Sep-2026 | Rs.9112.91 | Orthopedics - X-Ray | COMPLETED | Inpatient Review |  INSURANCE  | consultation completed; discharge notes pending
+" 70959  | patient=Vivaan Nair; age=64; city=Pune | 30/04/2025 | ₹4,645.98 |  Orthopedics  / physiotherapy | REFERRED | Emergency | insurance | doctor requested additional review"
+#70960 | patient=Aman Pawar; age=55; city=Thane | 2026-03-31 | Rs.11850.35 |  Dermatology  - Allergy Test | NO_SHOW | Follow-up | pending | insurance approval pending
+#70961 | patient=Vikram Gaikwad; age=37; city=Delhi | 2025/02/25 | N/A | NEUROLOGY / neurology consultation | NO_SHOW | Emergency | WAIVED | doctor requested additional review
+"70962 | patient=SAANVI BHOSALE; age=unknown; city=NASHIK | Nov 02 2025 | ₹3,067.70 |  Orthopedics  / x-ray | NO_SHOW | Inpatient Review | pending | SYSTEM NOTE: record sync delayed"
+VIS-70963 | patient=Tara Sharma; age=31; city=Satara | 16/12/2025 | 351 | Neurology / mri review | CANCELLED | Inpatient Review | PARTIAL | consultation completed; discharge notes pending
+#70964 | patient=Diya Iyer; age=69; city=Indore | 2025/10/23 | 4038 | CARDIOLOGY / cardiac consultation | REFERRED | Follow-up |  PARTIAL  | billing details need verification
+VIS-70965 | patient=Aditya Reddy; age=61; city=Chennai | 19/03/2026 | N/A | PEDIATRICS / child wellness check | IN_PROGRESS | OPD | PARTIAL | insurance approval pending
+"70966 | patient=Ishaan Sharma; age=12; city=Indore | 2025-01-03 | INR 5,052.21 | ENT - Throat Examination | SCHEDULED | Follow-up | insurance | no extra notes"
+"#70967 | patient=Aditya Chavan; age=69; city=Indore | 2025/05/13 | INR 10,081.27 |  General Medicine  / fever consultation | NO_SHOW | Emergency |  PAID  | patient requested morning appointment"
+" 70968  | patient=Reyansh Kadam; age=85; city=Nagpur | 2025/07/09 | ₹11,494.02 |  Cardiology  - Cardiac Consultation | COMPLETED | Follow-up | insurance | "
+VIS-70969 | patient=Kavya Joshi; age=12; city=Indore | 02-16-2025 | N/A | Orthopedics / joint consultation | IN_PROGRESS | Teleconsultation |  PARTIAL  | patient requested morning appointment
+#70970 | patient=Neel Mane; city=Pune | 2025-06-12 | 10760 | neurology - Migraine Follow-up | COMPLETED | Teleconsultation | WAIVED | referral letter uploaded
+70971 | patient=Sneha More; age=84; city=Nashik | 15/07/2025 | INR 332.81 |  Cardiology  / stress test | REFERRED | Inpatient Review |  PENDING  | patient requested morning appointment
+VIS-70972 | patient=Arjun Gaikwad; age=18; city=Nagpur | 2026/05/17 | Rs.9944.62 | Cardiology - Cardiac Consultation | COMPLETED | OPD | INSURANCE | patient arrived late
+#70973 | patient=MYRA IYER; age=unknown; city=SOLAPUR | 2026/06/24 | 5501 | Ophthalmology - Retina Review | SCHEDULED | Teleconsultation | pending | patient requested morning appointment
+70974 | patient=Rahul Nair; age=23; city=Nashik | 14/02/2026 | N/A | pediatrics - Vaccination | NO_SHOW | Inpatient Review | insurance | no extra notes
+"VIS-70975 | patient=Nisha Mehta; city=Chennai | 26/08/2025 | INR 3,937.87 | Orthopedics - Joint Consultation | CANCELLED | Teleconsultation | PENDING | doctor requested additional review"
+70976 | patient=Kabir Gupta; age=23; city=Aurangabad | 28-Jul-2025 | 6877 | CARDIOLOGY - ECG | REFERRED | Inpatient Review |  PENDING  | 
+70977 | patient=Neel Gupta; age=90; city=Nashik | 31-Mar-2025 | 2959 | Dermatology - Acne Follow-up | REFERRED | Teleconsultation | partial | billing details need verification
+70978 | patient=Ira Pawar; age=8; city=Delhi | 2026-03-01 | Rs.2719.74 | OPHTHALMOLOGY - Vision Test | SCHEDULED | OPD | waived | 
+VIS-70979 | patient=Om More; city=Nashik | 2025/02/06 | 9570 | DERMATOLOGY / acne follow-up | CANCELLED | Teleconsultation | PENDING | patient requested morning appointment
+VIS-70980 | patient=Diya Chavan; age=27; city=Satara | Aug 26 2025 | 5945 | Ophthalmology / retina review | NO_SHOW | OPD | insurance | follow-up advised in 2 weeks
+"70981 | patient=Arjun Mane; age=10; city=Solapur | 09/08/2025 | ₹9,919.46 |  Ophthalmology  - Retina Review | SCHEDULED | OPD |  PAID  | no extra notes"
+ 70982  | patient=Neel Bhosale; age=31; city=Pune | 25/12/2025 | Rs.6070.43 | DERMATOLOGY / allergy test | IN_PROGRESS | Follow-up |  WAIVED  | consultation completed; discharge notes pending
+"70983 | patient=Meera More; age=10; city=Sangli | 24/12/2025 | INR 4,034.06 | NEUROLOGY - Migraine Follow-up | IN_PROGRESS | Emergency |  INSURANCE  | reschedule requested by family"
+ 70984  | patient=Kabir Shah; age=29; city=Satara | 2026-07-01 | Rs.7091.99 |  General Medicine  / diabetes follow-up | CANCELLED | Emergency |  PENDING  | SYSTEM NOTE: record sync delayed
+" 70985  | patient=Saanvi Pawar; age=22; city=Aurangabad | Sep 10 2025 | INR 2,549.95 |  ENT  / ear infection review | CANCELLED | Teleconsultation |  WAIVED  | duplicate registration suspected"
+"#70986 | patient=Sneha Sharma; age=5; city=Pune | 2025/08/17 | INR 4,942.43 | General Medicine - Blood Test Review | SCHEDULED | Teleconsultation | partial | doctor requested additional review"
+#70987 | patient=Aarav Kadam; age=30; city=Aurangabad | 15/07/2026 | Rs.2268.98 | GENERAL MEDICINE - Blood Test Review | IN_PROGRESS | Teleconsultation | INSURANCE | lab report not attached
+#70988 | patient=Riya More; age=7; city=Solapur | 01-27-2026 | insurance pending | orthopedics / x-ray | NO_SHOW | Teleconsultation | WAIVED | reschedule requested by family
+"VIS-70989 | patient=Vivaan More; age=34; city=Indore | 03-15-2026 | ₹7,826.19 | ophthalmology - Retina Review | IN_PROGRESS | Follow-up |  WAIVED  | insurance approval pending"
+#70990 | patient=Neel Gupta; age=56; city=Nashik | 01-23-2026 | N/A | pediatrics / vaccination | CANCELLED | Emergency |  WAIVED  | 
+#70991 | patient=Arjun Reddy; city=Thane | 20/11/2025 | Rs.2557.29 | cardiology / echocardiogram | NO_SHOW | Teleconsultation | insurance | 
+"70992 | patient=Anaya Jadhav; age=35; city=Sangli | Mar 13 2025 | ₹1,477.48 | NEUROLOGY / migraine follow-up | IN_PROGRESS | Follow-up | waived | lab report not attached"
+ 70993  | patient=Aarav Bhosale; age=72; city=Thane | Apr 10 2026 | Rs.12063.87 | ENT / sinus consultation | IN_PROGRESS | Emergency |  PAID  | reschedule requested by family
+70994 | patient=Arjun Gaikwad; age=29; city=Mumbai | 2026/07/10 | Rs.7365.02 | OPHTHALMOLOGY / glaucoma follow-up | IN_PROGRESS | Follow-up |  WAIVED  | lab report not attached
+70995 | patient=Aarav Reddy; city=Pune | 10-06-2026 | Rs.1986.43 | Cardiology / cardiac consultation | IN_PROGRESS | Inpatient Review | insurance | lab report not attached
+70996 | patient=Ishaan Gaikwad; city=Sangli | Nov 19 2025 | N/A |  General Medicine  - Fever Consultation | SCHEDULED | Emergency |  PENDING  | follow-up advised in 2 weeks
+VIS-70997 | patient=Kunal Chavan; city=Pune | 08-02-2026 | 4033 | Cardiology - Cardiac Consultation | COMPLETED | OPD | PENDING | no extra notes
+"70998 | patient=Anaya Kadam; age=70; city=Indore | Jan 16 2025 | ₹3,502.03 | Cardiology - Stress Test | REFERRED | OPD |  PENDING  | "
+#70999 | patient=Kavya Desai; age=27; city=Chennai | 18-Jun-2025 |  | OPHTHALMOLOGY - Retina Review | NO_SHOW | Follow-up |  PARTIAL  | billing details need verification
+71000 | patient=Ishaan Jadhav; age=41; city=Satara | 2025-09-02 | 1561 | OPHTHALMOLOGY - Eye Examination | REFERRED | OPD | insurance | patient requested morning appointment
+VIS-70026 | patient=Myra Bhosale; city=Chennai | Mar 28 2026 | 1753 |  Neurology  - EEG | CANCELLED | Emergency | waived | referral letter uploaded
+"TOTAL VISIT FEES REPORTED: ₹ 42,87,650.00 |  |  |  |  |  |  |  | legacy system summary"
+Export generated: 2026-10-27 13:00 IST |  |  |  |  |  |  |  | unvalidated raw dump

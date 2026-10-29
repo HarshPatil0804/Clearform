@@ -1,14 +1,16 @@
 import { useMemo, useState } from 'react';
 import type { Dataset } from '../types';
 import type { ResultItem } from '../App';
+import type { DayMonthOrder } from '../lib/dates';
 import { datasetToSheets, downloadCSV, downloadJSON, downloadXLSX, downloadText, qualityToCSV } from '../lib/export';
 import { computePivot, suggestPivot } from '../lib/pivot';
 import { displayCell } from '../lib/strings';
 import TabularView from './TabularView';
 import PivotView from './PivotView';
 import QualityPanel from './QualityPanel';
+import NeedsReview from './NeedsReview';
 
-type Mode = 'preview' | 'tabular' | 'pivot';
+type Mode = 'preview' | 'tabular' | 'pivot' | 'review';
 
 export interface ChoiceScreenProps {
   results: ResultItem[];
@@ -16,6 +18,10 @@ export interface ChoiceScreenProps {
   onSelectFile: (index: number) => void;
   onDownloaded: () => void;
   onRestart: () => void;
+  /** R3 – current day/month fallback for unproven date patterns. */
+  dateOrder: DayMonthOrder;
+  /** R3 – flipping it re-runs the pipeline on the loaded files. */
+  onDateOrderChange: (order: DayMonthOrder) => void;
 }
 
 function shortName(name: string): string {
@@ -30,6 +36,8 @@ export default function ChoiceScreen({
   onSelectFile,
   onDownloaded,
   onRestart,
+  dateOrder,
+  onDateOrderChange,
 }: ChoiceScreenProps) {
   const [mode, setMode] = useState<Mode>('preview');
   const active: Dataset = results[activeIndex]?.dataset ?? results[0].dataset;
@@ -87,7 +95,21 @@ export default function ChoiceScreen({
               {active.rows.length.toLocaleString()} rows × {active.columns.length} columns
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap items-center">
+            <button
+              className="btn btn-secondary"
+              onClick={() => onDateOrderChange(dateOrder === 'DM' ? 'MD' : 'DM')}
+              title="R3 – for date patterns the file never proves, ambiguous values are read with this order. Changing it re-runs the pipeline."
+            >
+              Dates: {dateOrder === 'DM' ? 'DD-MM' : 'MM-DD'}
+            </button>
+            <button
+              className={`btn ${mode === 'review' ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setMode(mode === 'review' ? 'preview' : 'review')}
+              title="Rows flagged for review: ambiguous dates, future dates, id conflicts, logic flags"
+            >
+              Needs review{active.flagColumns.length > 0 ? ` (${active.flagColumns.length} flags)` : ''}
+            </button>
             <button className="btn btn-secondary" onClick={downloadQuality}>
               Download quality report
             </button>
@@ -178,6 +200,19 @@ export default function ChoiceScreen({
             </button>
           </div>
           <TabularView dataset={active} />
+        </div>
+      )}
+
+      {/* --------------------------------------------------- review ------ */}
+      {mode === 'review' && (
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <span className="muted text-xs">Flagged rows only — the clean data itself is unchanged.</span>
+            <button className="btn btn-ghost" onClick={() => setMode('preview')}>
+              ← Back to preview
+            </button>
+          </div>
+          <NeedsReview dataset={active} />
         </div>
       )}
 

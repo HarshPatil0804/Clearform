@@ -11,7 +11,7 @@ import {
   workbookFromSheets,
 } from '../src/lib/export';
 import { computePivot } from '../src/lib/pivot';
-import { runSample } from './helpers';
+import { runSample, runText } from './helpers';
 
 /** Client-side downloads: CSV / JSON / XLSX round-trip through real parsers. */
 
@@ -42,16 +42,23 @@ describe('tabular export', () => {
     expect(records[0].customer).toBe(ds.rows[0][ds.columns.indexOf('customer')]);
   });
 
-  it('writes an XLSX workbook that SheetJS reads back', async () => {
+  it('writes a multi-sheet workbook (clean, rejected, report, mappings)', async () => {
     const [ds] = await runSample('products.xlsx');
     const bytes = workbookFromSheets(datasetToSheets(ds));
 
     const workbook = XLSX.read(bytes, { type: 'array' });
-    expect(workbook.SheetNames).toEqual(['data']);
-    const rows = XLSX.utils.sheet_to_json<unknown[]>(workbook.Sheets.data, { header: 1 });
+    // P8 – tabular XLSX always carries the four audit sheets.
+    expect(workbook.SheetNames).toEqual(['Clean data', 'Rejected rows', 'Quality report', 'Value mappings']);
+    const rows = XLSX.utils.sheet_to_json<unknown[]>(workbook.Sheets['Clean data'], { header: 1 });
     expect(rows[0]).toEqual(ds.columns);
     expect(rows.length).toBe(ds.rows.length + 1);
     expect(rows[1][0]).toBe(ds.rows[0][0]);
+
+    const quality = XLSX.utils.sheet_to_json<unknown[]>(workbook.Sheets['Quality report'], { header: 1 });
+    expect(quality[0]).toEqual(['section', 'key', 'value']);
+    expect(quality.flat()).toContain('rows_out');
+    const mappings = XLSX.utils.sheet_to_json<unknown[]>(workbook.Sheets['Value mappings'], { header: 1 });
+    expect(mappings[0]).toEqual(['column', 'from', 'to', 'count']);
   });
 });
 
@@ -67,14 +74,47 @@ describe('pivot export', () => {
     const { columns, rows } = pivotToMatrix(pivot);
 
     expect(columns[0]).toBe('product');
-    expect(columns).toContain('grand_total');
+    // P5 – one label, "Total", for the total row AND the total column.
+    expect(columns[columns.length - 1]).toBe('Total');
     expect(columns.length).toBe(1 + pivot.columns.length + 1);
 
     // Last row is the totals row and its grand total matches the pivot.
     const totalRow = rows[rows.length - 1];
-    expect(totalRow[0]).toBe('total');
+    expect(totalRow[0]).toBe('Total');
     expect(totalRow[totalRow.length - 1]).toBe(pivot.grandTotal);
     expect(rows.length).toBe(pivot.rowLabels.length + 1);
+  });
+
+  it('honours the include-totals option (default on)', async () => {
+    const [ds] = await runSample('messy_sales.csv');
+    const pivot = computePivot(ds, { rows: ['product'], cols: [], value: 'units', agg: 'sum' });
+
+    const withTotals = pivotToMatrix(pivot);
+    expect(withTotals.columns.at(-1)).toBe('Total');
+    expect(withTotals.rows.at(-1)?.[0]).toBe('Total');
+
+    const without = pivotToMatrix(pivot, { includeTotals: false });
+    expect(without.columns.at(-1)).toBe('units');
+    expect(without.columns).not.toContain('Total');
+    expect(without.rows.length).toBe(pivot.rowLabels.length);
+    expect(without.rows.some((row) => row[0] === 'Total')).toBe(false);
+  });
+
+  it('keeps empty cells empty unless showZero is set (P3)', async () => {
+    const [ds] = await runText(
+      'sparse.csv',
+      'team,region,amount\nAlpha,North,\nAlpha,South,0\nBeta,North,20\n',
+    );
+    const pivot = computePivot(ds, { rows: ['team'], cols: ['region'], value: 'amount', agg: 'sum' });
+    const empty = pivotToMatrix(pivot, { includeTotals: false });
+    // North has no usable value for Alpha → empty; South has a record that
+    // sums to 0 → a real 0. The two must never look the same.
+    expect(empty.rows[0]).toEqual(['Alpha', null, 0]);
+    expect(empty.rows[1]).toEqual(['Beta', 20, null]);
+
+    const zeros = pivotToMatrix(pivot, { includeTotals: false, showZero: true });
+    expect(zeros.rows[0]).toEqual(['Alpha', 0, 0]);
+    expect(zeros.rows[1]).toEqual(['Beta', 20, 0]);
   });
 
   it('writes the pivoted view to XLSX', async () => {

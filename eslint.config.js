@@ -4,7 +4,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'legacy/**', 'node_modules/**', 'samples/**', 'public/**', 'coverage/**'],
+    ignores: [
+      'dist/**',
+      'legacy/**',
+      'node_modules/**',
+      'samples/**',
+      'public/**',
+      'coverage/**',
+      // Nested foreign clone sitting in this folder – not part of this project.
+      'RowData-Converter/**',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

@@ -36,6 +36,43 @@ export type Extraction =
   | { kind: 'records'; source: string; records: Record<string, Cell>[]; strategy: string; notes: string[] }
   | { kind: 'text'; source: string; text: string; strategy: string; notes: string[] };
 
+/**
+ * R1 – a row pulled out of the data before cleaning, kept with the reason it
+ * was rejected. Rejected rows are never deleted silently: they are shown in
+ * the "Rejected rows" table and exported with the workbook.
+ */
+export interface RejectedRow {
+  /** Machine readable reason, e.g. "error row", "summary/total line". */
+  reason: string;
+  /** The row exactly as it was parsed. */
+  values: Cell[];
+}
+
+/** R6 – one before → after value normalisation, kept for the report. */
+export interface ValueMapping {
+  column: string;
+  from: string;
+  to: string;
+  /** How many cells carried `from`. */
+  count: number;
+}
+
+/** R10 – the parsed total compared with the total reported in the file. */
+export interface Reconciliation {
+  /** Column whose values were summed. */
+  column: string;
+  /** Sum of the parsed column. */
+  parsed: number;
+  /** Total read from the file's summary/total line, when there is one. */
+  reported: number | null;
+  /** parsed − reported (null when there is nothing to compare). */
+  difference: number | null;
+  /** The raw summary line the reported total came from. */
+  source: string | null;
+  /** true when the two agree within a cent, null when unverifiable. */
+  matches: boolean | null;
+}
+
 export interface ColumnMeta {
   name: string;
   type: ColumnType;
@@ -46,6 +83,8 @@ export interface ColumnMeta {
   unique: number;
   /** IQR outliers that were flagged but never removed. */
   outliers: number;
+  /** Values converted into the column type (dates → ISO, numbers, categories). */
+  conversions: number;
   examples: Cell[];
 }
 
@@ -67,6 +106,20 @@ export interface FileReport {
   outliersFlagged: number;
   headerDetected: boolean;
   generatedHeaders: string[];
+  /** R1 – rows moved to the "Rejected rows" table. */
+  rejectedCount: number;
+  /** R1 – rejection reasons with their counts. */
+  rejectedReasons: { reason: string; count: number }[];
+  /** R3 – number of date values whose day/month order could not be proven. */
+  ambiguousDates: number;
+  /** R9/R7 – flag columns with the number of rows they flag. */
+  flagCounts: { name: string; count: number }[];
+  /** R6 – before → after value normalisations. */
+  mappings: ValueMapping[];
+  /** R10 – parsed vs reported total. */
+  reconciliation: Reconciliation | null;
+  /** Date found in the file's export/generated metadata line. */
+  exportDate: string | null;
   notes: string[];
 }
 
@@ -81,6 +134,10 @@ export interface Dataset {
   columns: string[];
   types: ColumnType[];
   rows: Cell[][];
+  /** R1 – rows set aside with the reason they were rejected. */
+  rejected: RejectedRow[];
+  /** Names of the flag columns present (R7 system flag + R9 logic flags). */
+  flagColumns: string[];
   report: QualityReport;
 }
 

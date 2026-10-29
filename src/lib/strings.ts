@@ -1,6 +1,10 @@
 import type { Cell } from '../types';
 
-/** Values that mean "missing" in messy data. Compared after trim + lowercase. */
+/**
+ * Values that mean "missing" in messy data. Compared after trim + lowercase.
+ * R7 adds the placeholder phrases people type instead of leaving a cell blank:
+ * "no extra notes", "unknown", "tbd" …
+ */
 const NULL_SENTINELS = new Set([
   '',
   'null',
@@ -17,6 +21,19 @@ const NULL_SENTINELS = new Set([
   '#value!',
   '#div/0!',
   '#name?',
+  // R7 placeholders
+  'unknown',
+  'unk',
+  'tbd',
+  '?',
+  'no extra notes',
+  'no notes',
+  'no comments',
+  'no remarks',
+  'no extra comments',
+  'no additional information',
+  'no info',
+  'nothing',
 ]);
 
 /** Unicode-normalise, strip BOM/zero-width chars, unify quotes/dashes/nbsp. */

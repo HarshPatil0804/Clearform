@@ -1,4 +1,5 @@
 import { processBytes } from '../pipeline/index';
+import type { DayMonthOrder } from '../lib/dates';
 import type { Dataset, ProgressUpdate } from '../types';
 
 interface WorkerRequest {
@@ -6,6 +7,8 @@ interface WorkerRequest {
   name: string;
   mime: string;
   buffer: ArrayBuffer;
+  /** R3 – day/month fallback for patterns the file never proves. */
+  dateOrder?: DayMonthOrder;
 }
 
 type WorkerResponse =
@@ -19,9 +22,10 @@ const ctx = self as unknown as {
 };
 
 ctx.addEventListener('message', async (event) => {
-  const { id, name, mime, buffer } = event.data;
+  const { id, name, mime, buffer, dateOrder } = event.data;
   try {
     const datasets = await processBytes(name, mime, new Uint8Array(buffer), {
+      dateOrder,
       onProgress: (progress) => ctx.postMessage({ type: 'progress', id, progress }),
     });
     ctx.postMessage({ type: 'result', id, datasets });

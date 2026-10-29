@@ -4,12 +4,19 @@ import Dropzone from './components/Dropzone';
 import ProcessingView from './components/ProcessingView';
 import ChoiceScreen from './components/ChoiceScreen';
 import { PipelineClient } from './worker/client';
+import type { DayMonthOrder } from './lib/dates';
 import type { Dataset } from './types';
 
 export interface ResultItem {
   id: string;
   fileName: string;
   dataset: Dataset;
+}
+
+interface Source {
+  name: string;
+  mime: string;
+  bytes: ArrayBuffer;
 }
 
 type Stage = 'upload' | 'processing' | 'choose';
@@ -34,7 +41,11 @@ export default function App() {
   const [errors, setErrors] = useState<FileError[]>([]);
   const [downloaded, setDownloaded] = useState(false);
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
+  /** R3 – the day/month order used for date patterns the file never proves. */
+  const [dateOrder, setDateOrder] = useState<DayMonthOrder>('DM');
   const clientRef = useRef<PipelineClient | null>(null);
+  /** Kept so the R3 toggle can re-run the pipeline without a re-upload. */
+  const sourcesRef = useRef<Source[]>([]);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
@@ -57,6 +68,7 @@ export default function App() {
     const client = clientRef.current ?? (clientRef.current = new PipelineClient());
     const collected: ResultItem[] = [];
     const failed: FileError[] = [];
+    const sources: Source[] = [];
 
     for (let index = 0; index < files.length; index += 1) {
       const file = files[index];
@@ -68,8 +80,11 @@ export default function App() {
       });
       try {
         const buffer = await file.arrayBuffer();
+        // The worker transfer detaches the buffer, so keep a private copy for
+        // the R3 re-run toggle.
+        sources.push({ name: file.name, mime: file.type || 'application/octet-stream', bytes: buffer.slice(0) });
         const datasets = await client.process(
-          { name: file.name, mime: file.type || 'application/octet-stream', buffer },
+          { name: file.name, mime: file.type || 'application/octet-stream', buffer, dateOrder },
           (update) =>
             setProgress({
               pct: ((index + update.pct / 100) / files.length) * 100,
@@ -92,6 +107,7 @@ export default function App() {
 
     setProgress(null);
     setErrors(failed);
+    sourcesRef.current = sources;
     if (collected.length > 0) {
       setResults(collected);
       setActiveIndex(0);
@@ -99,7 +115,62 @@ export default function App() {
     } else {
       setStage('upload');
     }
-  }, []);
+  }, [dateOrder]);
+
+  /**
+   * R3 – flipping the date toggle re-runs the whole pipeline on the already
+   * loaded sources; no re-upload, no manual steps.
+   */
+  const handleDateOrder = useCallback(
+    async (order: DayMonthOrder) => {
+      const sources = sourcesRef.current;
+      setDateOrder(order);
+      if (sources.length === 0) return;
+
+      setStage('processing');
+      setErrors([]);
+      setProgress({ pct: 0, message: 'Re-running with new date order…', current: 1, total: sources.length });
+      const client = clientRef.current ?? (clientRef.current = new PipelineClient());
+      const collected: ResultItem[] = [];
+      const failed: FileError[] = [];
+
+      for (let index = 0; index < sources.length; index += 1) {
+        const source = sources[index];
+        try {
+          const datasets = await client.process(
+            { name: source.name, mime: source.mime, buffer: source.bytes.slice(0), dateOrder: order },
+            (update) =>
+              setProgress({
+                pct: ((index + update.pct / 100) / sources.length) * 100,
+                message: update.message,
+                current: index + 1,
+                total: sources.length,
+              }),
+          );
+          datasets.forEach((dataset, position) => {
+            collected.push({
+              id: `${index}-${position}-${dataset.report.fileName}`,
+              fileName: dataset.report.fileName,
+              dataset,
+            });
+          });
+        } catch (error) {
+          failed.push({ name: source.name, message: error instanceof Error ? error.message : String(error) });
+        }
+      }
+
+      setProgress(null);
+      setErrors(failed);
+      if (collected.length > 0) {
+        setResults(collected);
+        setActiveIndex(0);
+        setStage('choose');
+      } else {
+        setStage('upload');
+      }
+    },
+    [],
+  );
 
   const restart = useCallback(() => {
     setStage('upload');
@@ -195,6 +266,8 @@ export default function App() {
               onSelectFile={setActiveIndex}
               onDownloaded={() => setDownloaded(true)}
               onRestart={restart}
+              dateOrder={dateOrder}
+              onDateOrderChange={handleDateOrder}
             />
             {errors.length > 0 && (
               <div className="card border-amber-300 dark:border-amber-900 p-4" role="alert">

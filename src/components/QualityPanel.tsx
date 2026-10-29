@@ -18,9 +18,19 @@ export default function QualityPanel({ dataset, onDownloaded }: QualityPanelProp
   const report = dataset.report;
 
   const summary: { label: string; value: string; hint?: string }[] = [
-    { label: 'Rows in → out', value: `${report.rowsIn.toLocaleString()} → ${report.rowsOut.toLocaleString()}` },
+    { label: 'Rows in → clean', value: `${report.rowsIn.toLocaleString()} → ${report.rowsOut.toLocaleString()}` },
+    {
+      label: 'Rejected rows',
+      value: report.rejectedCount.toLocaleString(),
+      hint: 'title, export-date, error, alert, summary/total and system lines moved aside with a reason (R1)',
+    },
+    { label: 'Duplicates removed', value: report.duplicatesRemoved.toLocaleString(), hint: 'exact duplicate rows after ID cleaning (R8)' },
     { label: 'Columns', value: `${report.columnsIn} → ${report.columnsOut}` },
-    { label: 'Duplicates removed', value: report.duplicatesRemoved.toLocaleString() },
+    {
+      label: 'Ambiguous dates',
+      value: report.ambiguousDates.toLocaleString(),
+      hint: 'day/month order unproven for their pattern — flip the date toggle to re-read them (R3)',
+    },
     {
       label: 'Nulls fixed',
       value: report.nullsFixed.toLocaleString(),
@@ -28,8 +38,6 @@ export default function QualityPanel({ dataset, onDownloaded }: QualityPanelProp
     },
     { label: 'Values filled', value: report.valuesFilled.toLocaleString(), hint: 'text gaps filled with the column mode' },
     { label: 'Outliers flagged', value: report.outliersFlagged.toLocaleString(), hint: 'IQR flags – never removed' },
-    { label: 'Empty rows dropped', value: report.emptyRowsDropped.toLocaleString() },
-    { label: 'Empty cols dropped', value: report.emptyColumnsDropped.toLocaleString() },
   ];
 
   return (
@@ -64,6 +72,60 @@ export default function QualityPanel({ dataset, onDownloaded }: QualityPanelProp
         </div>
       </div>
 
+      {/* R10 – parsed vs reported total */}
+      {report.reconciliation && (
+        <div
+          className={`rounded-xl border px-3 py-2 text-xs ${
+            report.reconciliation.matches === false
+              ? 'border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200'
+              : 'border-[var(--u2s-border)] muted'
+          }`}
+          role="status"
+        >
+          <span className="font-semibold">Reconciliation ({report.reconciliation.column}):</span> parsed{' '}
+          <span className="mono-num">{report.reconciliation.parsed.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
+          {report.reconciliation.reported !== null ? (
+            <>
+              {' '}vs reported{' '}
+              <span className="mono-num">
+                {report.reconciliation.reported.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+              </span>{' '}
+              → difference{' '}
+              <span className="mono-num">
+                {(report.reconciliation.difference ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+              </span>
+              {' '}({report.reconciliation.matches ? 'matches' : 'does not match'})
+            </>
+          ) : (
+            <span> — the file declares no total line.</span>
+          )}
+        </div>
+      )}
+
+      {/* R9/R7 – flag counts */}
+      {report.flagCounts.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <span className="muted font-semibold">Flags:</span>
+          {report.flagCounts.map((flag) => (
+            <span key={flag.name} className="badge badge-boolean" title={`rows flagged: ${flag.name}`}>
+              {flag.name} · {flag.count.toLocaleString()}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* R1 – rejection reasons */}
+      {report.rejectedReasons.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <span className="muted font-semibold">Rejected:</span>
+          {report.rejectedReasons.map((reason) => (
+            <span key={reason.reason} className="badge badge-text" title={`rows rejected: ${reason.reason}`}>
+              {reason.reason} · {reason.count.toLocaleString()}
+            </span>
+          ))}
+        </div>
+      )}
+
       <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {summary.map((item) => (
           <div key={item.label} className="rounded-xl border border-[var(--u2s-border)] p-3" title={item.hint}>
@@ -80,6 +142,7 @@ export default function QualityPanel({ dataset, onDownloaded }: QualityPanelProp
               <th>Column</th>
               <th>Type</th>
               <th>Nulls</th>
+              <th>Conversions</th>
               <th>Filled</th>
               <th>Unique</th>
               <th>Outliers</th>
@@ -93,7 +156,10 @@ export default function QualityPanel({ dataset, onDownloaded }: QualityPanelProp
                 <td>
                   <span className={TYPE_CLASS[column.type] ?? 'badge badge-text'}>{column.type}</span>
                 </td>
-                <td className="mono-num">{column.nulls}</td>
+                <td className="mono-num">{column.nulls.toLocaleString()}</td>
+                <td className="mono-num" title="values converted into the column type (R3/R4/R6)">
+                  {column.conversions.toLocaleString()}
+                </td>
                 <td className="mono-num">{column.filled}</td>
                 <td className="mono-num">{column.unique.toLocaleString()}</td>
                 <td className="mono-num">{column.outliers > 0 ? <span className="text-amber-600 dark:text-amber-400">{column.outliers}</span> : 0}</td>

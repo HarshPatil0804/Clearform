@@ -109,35 +109,20 @@ export function parseDelimited(text: string, delimiter?: string): DelimitedResul
 
   // "A | B | C" pipe tables need a multi-character split; Papa only handles
   // single characters, so those rows are split manually (quotes are content).
+  // Every line is kept: title, export-date, error and summary lines are
+  // classified into the Rejected rows table by R1 rather than dropped here.
   if (!delimiter) {
     const multi = detectMultiDelimiter(source);
     if (multi) {
       const lines = source.split('\n').filter((line) => line.trim() !== '');
       const rows: Cell[][] = [];
-      let nonTabular = 0;
-      let annotation = 0;
-      let nonTabularExample = '';
-      let annotationExample = '';
       for (const line of lines) {
         const cells = line
           .split(MULTI_DELIMITER)
           .map((cell) => cell.trim().replace(/^"|"$/g, '').trim());
-        if (cells.length < Math.ceil(multi.fields / 2)) {
-          nonTabular += 1;
-          if (!nonTabularExample) nonTabularExample = line.trim().slice(0, 70);
-          continue;
-        }
-        const filled = cells.filter((cell) => cell !== '').length;
-        if (cells.length >= 6 && filled <= 2) {
-          annotation += 1;
-          if (!annotationExample) annotationExample = line.trim().slice(0, 70);
-          continue;
-        }
         rows.push(cells);
       }
       notes.push(`multi-character delimiter " | " detected (${multi.fields} columns)`);
-      if (nonTabular > 0) notes.push(`${nonTabular} non-tabular line(s) skipped (e.g. "${nonTabularExample}")`);
-      if (annotation > 0) notes.push(`${annotation} sparse annotation row(s) skipped (e.g. "${annotationExample}")`);
       return { columns: [], rows, delimiter: '|', notes };
     }
   }

@@ -114,6 +114,153 @@ export function looksLikeDate(value: string): boolean {
   return parseDateValue(value) !== null;
 }
 
+// ------------------------------------------------------------------ R3 ----
+//
+// Day/month order is proven per FORMAT PATTERN (separator + shape), never per
+// column: "11-23-2025" proves the dash shape is MM-DD, which then applies to
+// every ambiguous dash value in that column ("02-12-2025" → 2025-02-12),
+// while "30/06/2025" proves the slash shape is DD/MM.
+
+/** DM = day first (DD-MM), MD = month first (MM-DD). */
+export type DayMonthOrder = 'DM' | 'MD';
+
+/** 2025-06-01 · 2025/06/01 · 2025.06.01 – year first, never ambiguous. */
+const YEAR_FIRST_RE = /^(\d{4})([-/.])(\d{1,2})\2(\d{1,2})$/;
+/** 06-01-2025 · 06/01/2025 · 06.01.25 – separator + shape, order to prove. */
+const NUMERIC_RE = /^(\d{1,2})([-/.])(\d{1,2})\2(\d{2,4})$/;
+/** 17-Apr-2026 · 17 April 2026 – month is named, never ambiguous. */
+const DAY_NAMED_RE = /^(\d{1,2})[- ,]([a-z]{3,9})[- ,](\d{2,4})$/i;
+/** Feb 17, 2026 · Apr 17 2026 – month is named, never ambiguous. */
+const NAMED_DAY_RE = /^([a-z]{3,9})[- ,](\d{1,2}),?[- ,](\d{2,4})$/i;
+
+/** Separator + shape identity, e.g. "numeric-/-4" or "numeric--4". */
+export function datePatternKey(value: string): string | null {
+  const s = value.trim();
+  const yearFirst = YEAR_FIRST_RE.exec(s);
+  if (yearFirst) return `year-first${yearFirst[2]}4`;
+  const numeric = NUMERIC_RE.exec(s);
+  if (numeric) return `numeric${numeric[2]}${numeric[4].length}`;
+  if (DAY_NAMED_RE.test(s) || NAMED_DAY_RE.test(s)) return 'named';
+  return null;
+}
+
+interface NumericSample {
+  first: number;
+  second: number;
+}
+
+function numericSample(value: string): NumericSample | null {
+  const match = NUMERIC_RE.exec(value.trim());
+  if (!match) return null;
+  return { first: Number(match[1]), second: Number(match[3]) };
+}
+
+/**
+ * Prove the day/month order for every numeric pattern seen in these values.
+ * A pattern with no proof maps to null → the caller flags `date_ambiguous`
+ * and falls back to the UI toggle.
+ */
+export function inferDayMonthOrder(values: string[]): Map<string, DayMonthOrder | null> {
+  const proofs = new Map<string, { dayFirst: number; monthFirst: number }>();
+  for (const value of values) {
+    const key = datePatternKey(value);
+    if (key === null || key.startsWith('year-first') || key === 'named') continue;
+    const sample = numericSample(value);
+    if (!sample) continue;
+    const entry = proofs.get(key) ?? { dayFirst: 0, monthFirst: 0 };
+    if (sample.first > 12 && sample.second <= 12) entry.dayFirst += 1;
+    else if (sample.second > 12 && sample.first <= 12) entry.monthFirst += 1;
+    proofs.set(key, entry);
+  }
+
+  const orders = new Map<string, DayMonthOrder | null>();
+  for (const [key, proof] of proofs) {
+    if (proof.dayFirst > 0 && proof.monthFirst === 0) orders.set(key, 'DM');
+    else if (proof.monthFirst > 0 && proof.dayFirst === 0) orders.set(key, 'MD');
+    else if (proof.dayFirst > proof.monthFirst) orders.set(key, 'DM');
+    else if (proof.monthFirst > proof.dayFirst) orders.set(key, 'MD');
+    else orders.set(key, null);
+  }
+  return orders;
+}
+
+export interface DateResolution {
+  /** ISO value per input index (null when the value is not a date). */
+  values: (string | null)[];
+  /** Indices whose day/month order was never proven → `date_ambiguous`. */
+  ambiguousIndices: number[];
+  /** How many values were written as ISO instead of left as-is. */
+  converted: number;
+}
+
+/**
+ * Parse a column of dates with the proven per-pattern order.
+ * `fallback` is the UI toggle (default DD-MM) used only for unproven patterns.
+ */
+export function resolveDates(values: Cell[], fallback: DayMonthOrder = 'DM'): DateResolution {
+  const texts = values
+    .map((value) => (typeof value === 'string' ? value.trim() : ''))
+    .filter((text) => text !== '');
+  const orders = inferDayMonthOrder(texts);
+
+  const out: (string | null)[] = [];
+  const ambiguousIndices: number[] = [];
+  let converted = 0;
+
+  values.forEach((cell, index) => {
+    if (cell === null || cell === undefined || typeof cell !== 'string' || cell.trim() === '') {
+      out.push(null);
+      return;
+    }
+    const text = cell.trim();
+    const key = datePatternKey(text);
+    let order: DayMonthOrder | null = null;
+    if (key !== null && !key.startsWith('year-first') && key !== 'named') {
+      const proven = orders.get(key);
+      order = proven === undefined ? null : proven;
+      if (order === null) ambiguousIndices.push(index);
+    }
+    const iso = parseDateWithOrder(text, order ?? fallback);
+    out.push(iso);
+    if (iso !== null) converted += 1;
+  });
+
+  return { values: out, ambiguousIndices, converted };
+}
+
+/** Parse one value honouring an explicit day/month order for numeric shapes. */
+export function parseDateWithOrder(value: string, order: DayMonthOrder): string | null {
+  const s = value.trim();
+  if (!s || s.length > 40) return null;
+
+  const yearFirst = YEAR_FIRST_RE.exec(s);
+  if (yearFirst) {
+    return buildDate(Number(yearFirst[1]), Number(yearFirst[3]), Number(yearFirst[4]));
+  }
+
+  const numeric = NUMERIC_RE.exec(s);
+  if (numeric) {
+    const first = Number(numeric[1]);
+    const second = Number(numeric[3]);
+    const year = Number(numeric[4]);
+    const day = order === 'DM' ? first : second;
+    const month = order === 'DM' ? second : first;
+    return buildDate(year, month, day);
+  }
+
+  const dayNamed = DAY_NAMED_RE.exec(s);
+  if (dayNamed && MONTHS[dayNamed[2].toLowerCase()]) {
+    return buildDate(Number(dayNamed[3]), MONTHS[dayNamed[2].toLowerCase()], Number(dayNamed[1]));
+  }
+  const namedDay = NAMED_DAY_RE.exec(s);
+  if (namedDay && MONTHS[namedDay[1].toLowerCase()]) {
+    return buildDate(Number(namedDay[3]), MONTHS[namedDay[1].toLowerCase()], Number(namedDay[2]));
+  }
+
+  // Times, month-year, Excel serials … handled by the general parser.
+  return parseDateValue(s);
+}
+
 /** JS Date → ISO string (date only when the time is midnight). */
 export function formatJsDate(value: Date): string | null {
   if (Number.isNaN(value.getTime())) return null;
